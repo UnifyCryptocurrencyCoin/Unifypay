@@ -296,7 +296,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         }
       })
       .state('tabs.send.confirm', {
-        url: '/confirm/:recipientType/:toAddress/:toName/:toAmount/:toEmail/:toColor/:description/:coin/:useSendMax',
+        url: '/confirm/:recipientType/:toAddress/:toName/:toAmount/:toEmail/:toColor/:description/:coin/:useSendMax/:requiredFeeRate',
         views: {
           'tab-send@tabs': {
             controller: 'confirmController',
@@ -1084,8 +1084,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         params: {
           nextStep: 'tabs.giftcards.mercadoLibre.buy',
           currency: 'BRL',
-          coin: 'btc',
-          fixedUnit: 1,
+          fixedUnit: true
         }
       })
       .state('tabs.giftcards.mercadoLibre.buy', {
@@ -1136,8 +1135,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         params: {
           nextStep: 'tabs.giftcards.amazon.buy',
           currency: 'USD',
-          coin: 'btc',
-          fixedUnit: true,
+          fixedUnit: true
         }
       })
       .state('tabs.giftcards.amazon.buy', {
@@ -1176,13 +1174,11 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         },
         params: {
           id: null,
-          currency: 'USD',
-          coin: 'btc',
           useSendMax: null
         }
       })
       .state('tabs.bitpayCard.amount', {
-        url: '/amount/:nextStep',
+        url: '/amount/:currency/:nextStep',
         views: {
           'tab-home@tabs': {
             controller: 'amountController',
@@ -1191,7 +1187,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         }
       })
       .state('tabs.bitpayCard.topup', {
-        url: '/topup/:amount',
+        url: '/topup/:amount/:currency',
         views: {
           'tab-home@tabs': {
             controller: 'topUpController',

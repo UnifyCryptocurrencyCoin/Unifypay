@@ -1,8 +1,7 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('buyAmazonController', function($scope, $log, $state, $timeout, $filter, $ionicHistory, $ionicConfig, $ionicModal, lodash, amazonService, popupService, profileService, ongoingProcess, configService, walletService, payproService, bwcError, externalLinkService, platformInfo, gettextCatalog, txFormatService, emailService) {
+angular.module('copayApp.controllers').controller('buyAmazonController', function($scope, $log, $state, $timeout, $filter, $ionicHistory, $ionicConfig, $ionicModal, lodash, amazonService, popupService, profileService, ongoingProcess, configService, walletService, payproService, bwcError, externalLinkService, platformInfo, gettextCatalog, txFormatService, emailService, bitcoreCash) {
 
-  var coin = 'btc';
   var amount;
   var currency;
   var createdTx;
@@ -48,7 +47,9 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
     }
 
     walletService.publishAndSign(wallet, txp, function(err, txp) {
-      if (err) return cb(err);
+      if (err) {
+        return cb(err);
+      }
       return cb(null, txp);
     }, onSendStatusChange);
   };
@@ -65,20 +66,20 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
     }
   };
 
-  var satToFiat = function(sat, cb) {
+  var satToFiat = function(coin, sat, cb) {
     txFormatService.toFiat(coin, sat, $scope.currencyIsoCode, function(value) {
       return cb(value);
     });
   };
 
-  var setTotalAmount = function(amountSat, invoiceFeeSat, networkFeeSat) {
-    satToFiat(amountSat, function(a) {
+  var setTotalAmount = function(wallet, amountSat, invoiceFeeSat, networkFeeSat) {
+    satToFiat(wallet.coin, amountSat, function(a) {
       $scope.amount = Number(a);
 
-      satToFiat(invoiceFeeSat, function(i) {
+      satToFiat(wallet.coin, invoiceFeeSat, function(i) {
         $scope.invoiceFee = Number(i);
 
-        satToFiat(networkFeeSat, function(n) {
+        satToFiat(wallet.coin, networkFeeSat, function(n) {
           $scope.networkFee = Number(n);
           $scope.totalAmount = $scope.amount + $scope.invoiceFee + $scope.networkFee;
           $timeout(function() {
@@ -87,6 +88,12 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
         });
       });
     });
+  };
+
+  var isCryptoCurrencySupported = function(wallet, invoice) {
+    var COIN = wallet.coin.toUpperCase();
+    if (!invoice['supportedTransactionCurrencies'][COIN]) return false;
+    return invoice['supportedTransactionCurrencies'][COIN].enabled;
   };
 
   var createInvoice = function(data, cb) {
@@ -130,7 +137,8 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
   };
 
   var createTx = function(wallet, invoice, message, cb) {
-    var payProUrl = (invoice && invoice.paymentUrls) ? invoice.paymentUrls.BIP73 : null;
+    var COIN = wallet.coin.toUpperCase();
+    var payProUrl = (invoice && invoice.paymentCodes) ? invoice.paymentCodes[COIN].BIP73 : null;
 
     if (!payProUrl) {
       return cb({
@@ -140,33 +148,52 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
     }
 
     var outputs = [];
-    var toAddress = invoice.bitcoinAddress;
-    var amountSat = parseInt((invoice.btcDue * 100000000).toFixed(0)); // BTC to Satoshi
 
-    outputs.push({
-      'toAddress': toAddress,
-      'amount': amountSat,
-      'message': message
-    });
-
-    var txp = {
-      toAddress: toAddress,
-      amount: amountSat,
-      outputs: outputs,
-      message: message,
-      payProUrl: payProUrl,
-      excludeUnconfirmedUtxos: configWallet.spendUnconfirmed ? false : true,
-      feeLevel: configWallet.settings.feeLevel || 'normal'
-    };
-
-    walletService.createTx(wallet, txp, function(err, ctxp) {
+    payproService.getPayProDetails(payProUrl, wallet.coin, function(err, details) {
       if (err) {
         return cb({
-          title: gettextCatalog.getString('Could not create transaction'),
-          message: bwcError.msg(err)
+          title: gettextCatalog.getString('Error in Payment Protocol'),
+          message: gettextCatalog.getString('Invalid URL')
         });
       }
-      return cb(null, ctxp);
+ 
+      var txp = {
+        amount: details.amount,
+        toAddress: details.toAddress,
+        outputs: [{
+            'toAddress': details.toAddress,
+            'amount': details.amount,
+            'message': message
+        }],
+        message: message,
+        payProUrl: payProUrl,
+        excludeUnconfirmedUtxos: configWallet.spendUnconfirmed ? false : true,
+      };
+
+      if (details.requiredFeeRate) {
+        txp.feePerKb = Math.ceil(details.requiredFeeRate * 1024);
+        $log.debug('Using merchant fee rate (for amazon gc): ' + txp.feePerKb);
+      } else {
+        txp.feeLevel = configWallet.settings.feeLevel || 'normal';
+      }
+
+      txp['origToAddress'] = txp.toAddress;
+
+      if (wallet.coin && wallet.coin == 'bch') {
+        // Use legacy address
+        txp.toAddress = new bitcoreCash.Address(txp.toAddress).toString();
+        txp.outputs[0].toAddress = txp.toAddress;
+      }
+
+      walletService.createTx(wallet, txp, function(err, ctxp) {
+        if (err) {
+          return cb({
+            title: gettextCatalog.getString('Could not create transaction'),
+            message: bwcError.msg(err)
+          });
+        }
+        return cb(null, ctxp);
+      });
     });
   };
 
@@ -222,8 +249,9 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
   });
 
   var initialize = function(wallet) {
+    var COIN = wallet.coin.toUpperCase();
     var email = emailService.getEmailIfEnabled();
-    var parsedAmount = txFormatService.parseAmount(coin, amount, currency);
+    var parsedAmount = txFormatService.parseAmount(wallet.coin, amount, currency);
     $scope.currencyIsoCode = parsedAmount.currency;
     $scope.amountUnitStr = parsedAmount.amountUnitStr;
     var dataSrc = {
@@ -231,7 +259,7 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
       currency: parsedAmount.currency,
       uuid: wallet.id,
       email: email,
-      buyerSelectedTransactionCurrency: coin.toUpperCase()
+      buyerSelectedTransactionCurrency: COIN
     };
     ongoingProcess.set('loadingTxInfo', true);
     createInvoice(dataSrc, function(err, invoice, accessKey) {
@@ -240,9 +268,18 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
         showErrorAndBack(err.title, err.message);
         return;
       }
+
+      // Check if BTC or BCH is enabled in this account
+      if (!isCryptoCurrencySupported(wallet, invoice)) {
+        ongoingProcess.set('loadingTxInfo', false);
+        var msg = gettextCatalog.getString('Purchases with this cryptocurrency is not enabled');
+        showErrorAndBack(null, msg);
+        return;
+      }
+
       // Sometimes API does not return this element;
-      invoice['buyerPaidBtcMinerFee'] = invoice.buyerPaidBtcMinerFee || 0;
-      var invoiceFeeSat = (invoice.buyerPaidBtcMinerFee * 100000000).toFixed();
+      invoice['minerFees'][COIN]['totalFee'] = invoice.minerFees[COIN].totalFee || 0;
+      var invoiceFeeSat = invoice.minerFees[COIN].totalFee;
 
       message = gettextCatalog.getString("{{amountStr}} for Amazon.com Gift Card", {
         amountStr: $scope.amountUnitStr
@@ -269,12 +306,12 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
           invoiceUrl: invoice.url,
           invoiceTime: invoice.invoiceTime
         };
-        $scope.totalAmountStr = txFormatService.formatAmountStr(coin, ctxp.amount);
+        $scope.totalAmountStr = txFormatService.formatAmountStr(wallet.coin, ctxp.amount);
 
         // Warn: fee too high
         checkFeeHigh(Number(parsedAmount.amountSat), Number(invoiceFeeSat) + Number(ctxp.fee));
 
-        setTotalAmount(parsedAmount.amountSat, invoiceFeeSat, ctxp.fee);
+        setTotalAmount(wallet, parsedAmount.amountSat, invoiceFeeSat, ctxp.fee);
       });
     });
   };
@@ -322,14 +359,13 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
     $scope.wallets = profileService.getWallets({
       onlyComplete: true,
       network: $scope.network,
-      hasFunds: true,
-      coin: coin
+      hasFunds: true
     });
     if (lodash.isEmpty($scope.wallets)) {
       showErrorAndBack(null, gettextCatalog.getString('No wallets available'));
       return;
     }
-    $scope.onWalletSelect($scope.wallets[0]); // Default first wallet
+    $scope.showWalletSelector(); // Show wallet selector
   });
 
   $scope.buyConfirm = function() {
