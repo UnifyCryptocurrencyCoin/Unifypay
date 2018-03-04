@@ -14,7 +14,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
 
     // Bitcore wallet service URL
     bws: {
-      url: 'https://bws.bitpay.com/bws/api',
+      url: 'http://uws.unify.today:3232/bws/api', //'http://uws.unify.today:3232/bws/api',
     },
 
     download: {
@@ -29,7 +29,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
     rateApp: {
       bitpay: {
         ios: 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1149581638&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8',
-        android: 'https://play.google.com/store/apps/details?id=com.bitpay.wallet',
+        android: 'https://play.google.com/store/apps/details?id=com.unifypay.wallet',
         wp: ''
       },
       copay: {
