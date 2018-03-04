@@ -15,8 +15,8 @@
       </div>
       <div class="item" copy-to-clipboard="walletId">
         <span translate>Coin</span>
-        <span class="item-note">
-          {{wallet.coin}}
+        <span class="item-note"> UNIFY
+          <!-- by hms {{wallet.coin}}-->
         </span>
       </div>
       <div class="item" copy-to-clipboard="walletId">
@@ -25,12 +25,14 @@
           {{walletId}}
         </span>
       </div>
+      <!-- by hms
       <div class="item">
         <span translate>Wallet Configuration (m-n)</span>
         <span class="item-note">
           {{M}}-{{N}}
         </span>
       </div>
+    -->
       <div class="item">
         <span translate>Wallet Network</span>
         <span class="item-note">
@@ -43,6 +45,7 @@
           {{addressType}}
         </span>
       </div>
+      <!-- by hms
       <div class="item">
         <span translate>Derivation Strategy</span>
         <span class="item-note">
@@ -94,7 +97,7 @@
         <span translate>Copayer {{$index}}</span>
         <span class="item-note">
           <span>{{pk}}</span>
-        <span ng-if="$index == 0">({{basePath}})</span>
+          <span ng-if="$index == 0">({{basePath}})</span>
         </span>
       </div>
 
@@ -117,6 +120,7 @@
           </span>
         </div>
       </div>
+    -->
     </div>
   </ion-content>
 </ion-view>
