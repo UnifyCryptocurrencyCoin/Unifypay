@@ -6,7 +6,8 @@
     <li translate>The wallet service URL</li>
   </ul>
   <div translate>
-    NOTE: To import a wallet from a 3rd party software, please go to Add Wallet &gt; Create Wallet, and specify the Recovery Phrase there.
+    NOTE: To import a wallet from a 3rd party software, please go to Add Wallet &gt; Create Wallet, and specify the Recovery
+    Phrase there.
   </div>
 </div>
 
@@ -15,20 +16,15 @@
     <div>
       <label class="item item-input item-stacked-label no-border">
         <span class="input-label" translate>Type the Recovery Phrase (usually 12 words)</span>
-          <textarea ng-model="formData.words"
-                    rows="3"
-                    autocapitalize="off"
-                    autocomplete="off"
-                    autocorrect="off"
-                    spellcheck="false"></textarea>
+        <textarea ng-model="formData.words" rows="3" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
       </label>
       <div class="qr-scan-icon">
         <qr-scanner class="qr-icon size-24" on-scan="processWalletInfo(data)"></qr-scanner>
       </div>
     </div>
-
+    <!--
     <div ng-include="'views/includes/cash.html'"></div>
-
+    -->
     <div class="item item-divider"></div>
 
     <a class="item" ng-click="showAdvChange()">
@@ -39,12 +35,10 @@
     <div ng-show="showAdv">
       <label class="item item-input item-stacked-label">
         <span class="input-label" translate>Password</span>
-        <input type="password"
-        placeholder="{{'The recovery phrase could require a password to be imported'|translate}}"
-        autocapitalize="off"
-        ng-model="formData.passphrase">
+        <input type="password" placeholder="{{'The recovery phrase could require a password to be imported'|translate}}" autocapitalize="off"
+          ng-model="formData.passphrase">
       </label>
-
+      <!-- by hms
       <label class="item item-input item-stacked-label">
         <span class="input-label" translate>Derivation Path</span>
         <input type="text"
@@ -73,12 +67,10 @@
         <span class="input-label" translate>Wallet Service URL</span>
         <input type="text" ng-model="formData.bwsurl">
       </label>
-
+    -->
     </div>
   </div>
 
-  <button type="submit"
-    class="button button-standard button-primary"
-    ng-disabled="importForm12.$invalid" translate>Import
+  <button type="submit" class="button button-standard button-primary" ng-disabled="importForm12.$invalid" translate>Import
   </button>
 </form>
