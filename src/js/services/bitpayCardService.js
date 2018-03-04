@@ -167,7 +167,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     // Get Debit Cards
     bitpayService.post('/api/v2/' + apiContext.token, json, function(data) {
       if (data && data.data.error) return cb(data.data.error);
-      $log.info('BitPay Get Debit Cards: SUCCESS');
+      $log.info('UnifyPay Get Debit Cards: SUCCESS');
 
       var cards = [];
 
@@ -175,7 +175,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
         var n = {};
 
         if (!x.eid || !x.id || !x.lastFourDigits || !x.token) {
-          $log.warn('BAD data from BitPay card' + JSON.stringify(x));
+          $log.warn('BAD data from UnifyPay card' + JSON.stringify(x));
           return;
         }
 
@@ -193,7 +193,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
         return cb(err, cards);
       });
     }, function(data) {
-      return cb(_setError('BitPay Card Error: Get Debit Cards', data));
+      return cb(_setError('UnifyPay Card Error: Get Debit Cards', data));
     });
   };
 
@@ -231,7 +231,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
 
         // Get invoices
         bitpayService.post('/api/v2/' + card.token, json, function(data) {
-          $log.info('BitPay Get Invoices: SUCCESS');
+          $log.info('UnifyPay Get Invoices: SUCCESS');
           invoices = data.data.data || [];
 
           if (lodash.isEmpty(invoices))
@@ -243,7 +243,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
           };
           // Get transactions History list
           bitpayService.post('/api/v2/' + card.token, json, function(data) {
-            $log.info('BitPay Get History: SUCCESS');
+            $log.info('UnifyPay Get History: SUCCESS');
             history = data.data.data || {};
             history['txs'] = _processTransactions(invoices, history);
 
@@ -251,10 +251,10 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
 
             return cb(data.data.error, history);
           }, function(data) {
-            return cb(_setError('BitPay Card Error: Get History', data));
+            return cb(_setError('UnifyPay Card Error: Get History', data));
           });
         }, function(data) {
-          return cb(_setError('BitPay Card Error: Get Invoices', data));
+          return cb(_setError('UnifyPay Card Error: Get Invoices', data));
         });
       });
     });
@@ -280,14 +280,14 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
           return cb(_setError('Card not found'));
 
         bitpayService.post('/api/v2/' + card.token, json, function(data) {
-          $log.info('BitPay TopUp: SUCCESS');
+          $log.info('UnifyPay TopUp: SUCCESS');
           if (data.data.error) {
             return cb(data.data.error);
           } else {
             return cb(null, data.data.data.invoice);
           }
         }, function(data) {
-          return cb(_setError('BitPay Card Error: TopUp', data));
+          return cb(_setError('UnifyPay Card Error: TopUp', data));
         });
       });
     });
@@ -295,10 +295,10 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
 
   root.getInvoice = function(id, cb) {
     bitpayService.get('/invoices/' + id, function(data) {
-      $log.info('BitPay Get Invoice: SUCCESS');
+      $log.info('UnifyPay Get Invoice: SUCCESS');
       return cb(data.data.error, data.data.data);
     }, function(data) {
-      return cb(_setError('BitPay Card Error: Get Invoice', data));
+      return cb(_setError('UnifyPay Card Error: Get Invoice', data));
     });
   };
 
@@ -336,7 +336,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
   root.remove = function(cardId, cb) {
     storageService.removeBitpayDebitCard(bitpayService.getEnvironment().network, cardId, function(err) {
       if (err) {
-        $log.error('Error removing BitPay debit card: ' + err);
+        $log.error('Error removing UnifyPay debit card: ' + err);
         return cb(err);
       }
       root.registerNextStep();
@@ -346,19 +346,19 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
 
   root.getRates = function(currency, cb) {
     bitpayService.get('/rates/' + currency, function(data) {
-      $log.info('BitPay Get Rates: SUCCESS');
+      $log.info('UnifyPay Get Rates: SUCCESS');
       return cb(data.data.error, data.data.data);
     }, function(data) {
-      return cb(_setError('BitPay Error: Get Rates', data));
+      return cb(_setError('UnifyPay Error: Get Rates', data));
     });
   };
 
   root.getRatesFromCoin = function(coin, currency, cb) {
     bitpayService.get('/rates/' + coin + '/' + currency, function(data) {
-      $log.info('BitPay Get Rates From Coin: SUCCESS');
+      $log.info('UnifyPay Get Rates From Coin: SUCCESS');
       return cb(data.data.error, data.data.data);
     }, function(data) {
-      return cb(_setError('BitPay Error: Get Rates From Coin', data));
+      return cb(_setError('UnifyPay Error: Get Rates From Coin', data));
     });
   };
 
@@ -408,7 +408,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
   root.bpTranCodes = {
     '00611': {
       merchant: {
-        name: 'BitPay',
+        name: 'UnifyPay',
         city: 'Atlanta',
         state: 'GA'
       },
@@ -466,7 +466,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     },
     'load': {
       merchant: {
-        name: 'BitPay',
+        name: 'UnifyPay',
         city: 'Atlanta',
         state: 'GA'
       },
@@ -1476,14 +1476,14 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
 
   var nextStepItem = {
     name: 'bitpaycard',
-    title: 'Add BitPay Visa® Card',
+    title: 'Add UnifyPay Visa® Card',
     icon: 'icon-bitpay-card',
     sref: 'tabs.bitpayCardIntro',
   };
 
 
   root.registerNextStep = function() {
-    // Disable BitPay Card
+    // Disable UnifyPay Card
     if (!appConfigService._enabledExtensions.debitcard) return;
     root.getCards(function(err, cards) {
       if (lodash.isEmpty(cards)) {

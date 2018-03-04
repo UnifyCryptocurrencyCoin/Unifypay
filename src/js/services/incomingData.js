@@ -69,11 +69,11 @@ angular.module('copayApp.services').factory('incomingData', function($log, $stat
       }, 100);
     }
     // data extensions for Payment Protocol with non-backwards-compatible request
-    if ((/^bitcoin(cash)?:\?r=[\w+]/).exec(data)) {
+    if ((/^unifycoin(cash)?:\?r=[\w+]/).exec(data)) {
       var coin = 'btc';
       if (data.indexOf('bitcoincash') === 0) coin = 'bch';
 
-      data = decodeURIComponent(data.replace(/bitcoin(cash)?:\?r=/, ''));
+      data = decodeURIComponent(data.replace(/unifycoin(cash)?:\?r=/, ''));
 
       payproService.getPayProDetails(data, coin, function(err, details) {
         if (err) {
@@ -142,10 +142,10 @@ angular.module('copayApp.services').factory('incomingData', function($log, $stat
         return true;
 
     // Cash URI with bitcoin core address version number?
-    } else if (bitcore.URI.isValid(data.replace(/^bitcoincash:/,'bitcoin:'))) {
+    } else if (bitcore.URI.isValid(data.replace(/^unifycoincash:/,'unifycoin:'))) {
         $log.debug('Handling bitcoincash URI with legacy address');
         var coin = 'bch';
-        var parsed = new bitcore.URI(data.replace(/^bitcoincash:/,'bitcoin:'));
+        var parsed = new bitcore.URI(data.replace(/^unifycoincash:/,'unifycoin:'));
 
         var oldAddr = parsed.address ? parsed.address.toString() : '';
         if (!oldAddr) return false;

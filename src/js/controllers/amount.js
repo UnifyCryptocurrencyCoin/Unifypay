@@ -36,9 +36,9 @@ angular.module('copayApp.controllers').controller('amountController', function (
 
       if (hasBTCWallets) {
         availableUnits.push({
-          name: 'Bitcoin',
+          name: 'Unifycoin',
           id: 'btc',
-          shortName: 'BTC',
+          shortName: 'UNIFY',
         });
       }
 

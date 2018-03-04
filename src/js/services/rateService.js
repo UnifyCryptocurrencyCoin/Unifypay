@@ -7,7 +7,7 @@
 //var request = require('request');
 
 /*
-  This class lets interfaces with BitPay's exchange rate API.
+  This class lets interfaces with UnifyPay's exchange rate API.
 */
 
 var RateService = function(opts) {
@@ -52,7 +52,7 @@ RateService.prototype.updateRates = function() {
   function getBTC(cb, tries) {
     tries = tries || 0;
     if (!self.httprequest) return;
-    if (tries > 5) return cb('could not get BTC rates');
+    if (tries > 5) return cb('could not get UNIFY rates');
 
     //log.info('Fetching exchange rates');
     self.httprequest.get(rateServiceUrl).success(function(res) {

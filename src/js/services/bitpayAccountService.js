@@ -17,7 +17,7 @@ angular.module('copayApp.services').factory('bitpayAccountService', function($lo
    *
    * pairingReason - text string to be embedded into popup message.  If `null` then the reason
    * message is not shown to the UI.
-   *   "To {{reason}} you must pair this app with your BitPay account ({{email}})."
+   *   "To {{reason}} you must pair this app with your UnifyPay account ({{email}})."
    *
    * cb - callback after completion
    *   callback(err, paired, apiContext)
@@ -62,20 +62,20 @@ angular.module('copayApp.services').factory('bitpayAccountService', function($lo
           pairData: pairData,
           appIdentity: data.appIdentity
         };
-        $log.info('BitPay service BitAuth create token: SUCCESS');
+        $log.info('UnifyPay service BitAuth create token: SUCCESS');
 
         fetchBasicInfo(apiContext, function(err, basicInfo) {
           if (err) return cb(err);
-          var title = gettextCatalog.getString('Add BitPay Account?');
+          var title = gettextCatalog.getString('Add UnifyPay Account?');
           var msg;
 
           if (pairingReason) {
-            msg = gettextCatalog.getString('To {{reason}} you must first add your BitPay account - {{email}}', {
+            msg = gettextCatalog.getString('To {{reason}} you must first add your UnifyPay account - {{email}}', {
               reason: pairingReason,
               email: pairData.email
             });
           } else {
-            msg = gettextCatalog.getString('Add this BitPay account ({{email}})?', {
+            msg = gettextCatalog.getString('Add this UnifyPay account ({{email}})?', {
               email: pairData.email
             });
           }
@@ -94,20 +94,20 @@ angular.module('copayApp.services').factory('bitpayAccountService', function($lo
   			        return cb(err, true, apiContext);
   						});
           	} else {
-  				    $log.info('User cancelled BitPay pairing process');
+  				    $log.info('User cancelled UnifyPay pairing process');
   		        return cb(null, false);
           	}
           });
         });
       }, function(data) {
-        return cb(_setError('BitPay service BitAuth create token: ERROR ', data));
+        return cb(_setError('UnifyPay service BitAuth create token: ERROR ', data));
 	    });
 	  });
   };
 
   var checkOtp = function(pairData, cb) {
     if (pairData.otp) {
-      var msg = gettextCatalog.getString('Enter Two Factor for your BitPay account');
+      var msg = gettextCatalog.getString('Enter Two Factor for your UnifyPay account');
       popupService.showPrompt(null, msg, null, function(res) {
         cb(res);
       });
@@ -123,10 +123,10 @@ angular.module('copayApp.services').factory('bitpayAccountService', function($lo
     // Get basic account information
     bitpayService.post('/api/v2/' + apiContext.token, json, function(data) {
       if (data && data.data.error) return cb(data.data.error);
-      $log.info('BitPay Account Get Basic Info: SUCCESS');
+      $log.info('UnifyPay Account Get Basic Info: SUCCESS');
       return cb(null, data.data.data);
     }, function(data) {
-      return cb(_setError('BitPay Account Error: Get Basic Info', data));
+      return cb(_setError('UnifyPay Account Error: Get Basic Info', data));
     });
   };
 

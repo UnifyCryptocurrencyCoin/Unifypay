@@ -90,8 +90,8 @@ msgid "Add Account"
 msgstr "Account Toevoegen"
 
 #: src/js/services/bitpayAccountService.js:69
-msgid "Add BitPay Account?"
-msgstr "BitPay Account Toevoegen?"
+msgid "Add UnifyPay Account?"
+msgstr "UnifyPay Account Toevoegen?"
 
 #: www/views/addressbook.add.html:4
 #: www/views/addressbook.html:22
@@ -135,8 +135,8 @@ msgid "Add funds"
 msgstr "Saldo toevoegen"
 
 #: src/js/services/bitpayAccountService.js:78
-msgid "Add this BitPay account ({{email}})?"
-msgstr "Deze BitPay account ({{email}}) toevoegen?"
+msgid "Add this UnifyPay account ({{email}})?"
+msgstr "Deze UnifyPay account ({{email}}) toevoegen?"
 
 #: www/views/add.html:3
 msgid "Add wallet"
@@ -233,8 +233,8 @@ msgid "Anyone with your backup phrase can access or spend your bitcoin."
 msgstr "Iemand die uw herstel zin weet heeft toegang tot uw bitcoin en kan deze uitgeven."
 
 #: www/views/addresses.html:94
-msgid "Approximate Bitcoin network fee to transfer wallet's balance (with normal priority)"
-msgstr "Geschatte Bitcoin netwerk transactiekosten voor overdracht van volledige saldo van portemonnee (met normale prioriteit)"
+msgid "Approximate Unifycoin network fee to transfer wallet's balance (with normal priority)"
+msgstr "Geschatte Unifycoin netwerk transactiekosten voor overdracht van volledige saldo van portemonnee (met normale prioriteit)"
 
 #: www/views/backupWarning.html:10
 msgid "Are you being watched?"
@@ -269,13 +269,13 @@ msgid "Are you sure you want to skip it?"
 msgstr "Weet u zeker dat u dit wilt overslaan?"
 
 #: www/views/modals/bitpay-card-confirmation.html:4
-msgid "Are you sure you would like to log out of your BitPay Card account?"
-msgstr "Weet u zeker dat u wilt uitloggen uit uw BitPay Kaart account?"
+msgid "Are you sure you would like to log out of your UnifyPay Card account?"
+msgstr "Weet u zeker dat u wilt uitloggen uit uw UnifyPay Kaart account?"
 
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
-msgid "Are you sure you would like to remove your BitPay Card ({{lastFourDigits}}) from this device?"
-msgstr "Weet u zeker dat u de BitPay Kaart ({{lastFourDigits}}) van dit apparaat wilt verwijderen?"
+msgid "Are you sure you would like to remove your UnifyPay Card ({{lastFourDigits}}) from this device?"
+msgstr "Weet u zeker dat u de UnifyPay Kaart ({{lastFourDigits}}) van dit apparaat wilt verwijderen?"
 
 #: www/views/includes/walletInfo.html:10
 msgid "Auditable"
@@ -302,8 +302,8 @@ msgid "BIP32 path for address derivation"
 msgstr "BIP32 pad voor adres derivatie"
 
 #: www/views/preferencesCash.html:25
-msgid "BTC wallets"
-msgstr "BTC portemonnees"
+msgid "UNIFY wallets"
+msgstr "UNIFY portemonnees"
 
 #: www/views/preferences.html:34
 msgid "Backup"
@@ -349,51 +349,51 @@ msgid "Be sure to store your recovery phrase in a secure place. If this app is d
 msgstr "Zorg dat u de herstel zin op een veilige plek bewaard. Als deze app verwijderd is, kan uw saldo niet meer worden hersteld zonder de herstel zin."
 
 #: www/views/preferencesBitpayServices.html:9
-msgid "BitPay Visa&reg; Cards"
-msgstr "BitPay Visa&reg; Kaarten"
+msgid "UnifyPay Visa&reg; Cards"
+msgstr "UnifyPay Visa&reg; Kaarten"
 
 #: www/views/addressbook.add.html:38
 #: www/views/includes/incomingDataMenu.html:29
-msgid "Bitcoin Address"
-msgstr "Bitcoin Adres"
+msgid "Unifycoin Address"
+msgstr "Unifycoin Adres"
 
 #: www/views/includes/walletSelector.html:42
 #: www/views/tab-home.html:112
 #: www/views/tab-settings.html:108
-msgid "Bitcoin Cash Wallets"
-msgstr "Bitcoin Cash Portemonnees"
+msgid "Unifycoin Cash Wallets"
+msgstr "Unifycoin Cash Portemonnees"
 
 #: www/views/modals/chooseFeeLevel.html:4
 #: www/views/preferencesFee.html:4
 #: www/views/tab-settings.html:83
-msgid "Bitcoin Network Fee Policy"
-msgstr "Transactiekostenbeleid Bitcoin-netwerk"
+msgid "Unifycoin Network Fee Policy"
+msgstr "Transactiekostenbeleid Unifycoin-netwerk"
 
 #: www/views/includes/walletSelector.html:11
 #: www/views/tab-home.html:97
 #: www/views/tab-settings.html:100
-msgid "Bitcoin Wallets"
-msgstr "Bitcoin Portemonnees"
+msgid "Unifycoin Wallets"
+msgstr "Unifycoin Portemonnees"
 
 #: src/js/services/incomingData.js:151
-msgid "Bitcoin cash Payment"
-msgstr "Bitcoin cash Betaling"
+msgid "Unifycoin cash Payment"
+msgstr "Unifycoin cash Betaling"
 
 #: www/views/onboarding/tour.html:31
-msgid "Bitcoin is a currency."
-msgstr "Bitcoin is een valuta."
+msgid "Unifycoin is a currency."
+msgstr "Unifycoin is een valuta."
 
 #: www/views/onboarding/disclaimer.html:15
-msgid "Bitcoin is different &ndash; it cannot be safely held with a bank or web service."
-msgstr "Bitcoin is anders &ndash; het kan niet veilig worden bewaard bij een bank of online dienst."
+msgid "Unifycoin is different &ndash; it cannot be safely held with a bank or web service."
+msgstr "Unifycoin is anders &ndash; het kan niet veilig worden bewaard bij een bank of online dienst."
 
 #: www/views/onboarding/tour.html:18
-msgid "Bitcoin is secure,<br>digital money."
-msgstr "Bitcoin is veilig,<br>digitaal geld."
+msgid "Unifycoin is secure,<br>digital money."
+msgstr "Unifycoin is veilig,<br>digitaal geld."
 
 #: www/views/preferencesFee.html:11
-msgid "Bitcoin transactions include a fee collected by miners on the network."
-msgstr "Bitcoin transacties bevatten transactiekosten betaald aan de miners in het netwerk."
+msgid "Unifycoin transactions include a fee collected by miners on the network."
+msgstr "Unifycoin transacties bevatten transactiekosten betaald aan de miners in het netwerk."
 
 #: www/views/buyAmazon.html:108
 msgid "Bought {{amountUnitStr}}"
@@ -422,12 +422,12 @@ msgid "Buy"
 msgstr "Kopen"
 
 #: www/views/includes/buyAndSellCard.html:3
-msgid "Buy &amp; Sell Bitcoin"
-msgstr "Koop &amp; Verkoop Bitcoin"
+msgid "Buy &amp; Sell Unifycoin"
+msgstr "Koop &amp; Verkoop Unifycoin"
 
 #: www/views/tab-send.html:40
-msgid "Buy Bitcoin"
-msgstr "Bitcoin kopen"
+msgid "Buy Unifycoin"
+msgstr "Unifycoin kopen"
 
 #: www/views/mercadoLibre.html:22
 #: www/views/mercadoLibre.html:50
@@ -439,8 +439,8 @@ msgid "Buy from"
 msgstr "Kopen van"
 
 #: src/js/services/onGoingProcess.js:40
-msgid "Buying Bitcoin..."
-msgstr "Bitcoin kopen..."
+msgid "Buying Unifycoin..."
+msgstr "Unifycoin kopen..."
 
 #: src/js/services/onGoingProcess.js:12
 msgid "Calculating fee"
@@ -593,8 +593,8 @@ msgid "Confirming"
 msgstr "Bevestigen"
 
 #: www/views/bitpayCardIntro.html:37
-msgid "Connect my BitPay Card"
-msgstr "Koppelen met mijn BitPay Kaart"
+msgid "Connect my UnifyPay Card"
+msgstr "Koppelen met mijn UnifyPay Kaart"
 
 #: src/js/services/onGoingProcess.js:13
 msgid "Connecting to Coinbase..."
@@ -621,8 +621,8 @@ msgid "Contribute Translations"
 msgstr "Bijdragen aan Vertalingen"
 
 #: src/js/controllers/confirm.js:130
-msgid "Copay only supports Bitcoin Cash using new version numbers addresses"
-msgstr "Copay ondersteunt Bitcoin Cash alleen met gebruik van nieuwe versienummer adressen"
+msgid "Copay only supports Unifycoin Cash using new version numbers addresses"
+msgstr "Copay ondersteunt Unifycoin Cash alleen met gebruik van nieuwe versienummer adressen"
 
 #: src/js/services/bwcError.js:62
 msgid "Copayer already in this wallet"
@@ -814,7 +814,7 @@ msgstr "Gedeelde Portemonnee Aanmaken"
 #: www/views/tab-home.html:89
 #: www/views/tab-send.html:41
 msgid "Create bitcoin wallet"
-msgstr "Bitcoin portemonnee aanmaken"
+msgstr "Unifycoin portemonnee aanmaken"
 
 #: www/views/tab-create-personal.html:131
 msgid "Create new wallet"
@@ -985,8 +985,8 @@ msgid "Enter Spending Password"
 msgstr "Voer Bestedingswachtwoord in"
 
 #: src/js/services/bitpayAccountService.js:110
-msgid "Enter Two Factor for your BitPay account"
-msgstr "Voer Two Factor in voor uw BitPay account"
+msgid "Enter Two Factor for your UnifyPay account"
+msgstr "Voer Two Factor in voor uw UnifyPay account"
 
 #: www/views/amount.html:4
 msgid "Enter amount"
@@ -1121,8 +1121,8 @@ msgid "Error in Payment Protocol"
 msgstr "Fout in Betalings Protocol"
 
 #: src/js/controllers/bitpayCardIntro.js:14
-msgid "Error pairing BitPay Account"
-msgstr "Fout tijdens koppelen BitPay Account"
+msgid "Error pairing UnifyPay Account"
+msgstr "Fout tijdens koppelen UnifyPay Account"
 
 #: src/js/controllers/paperWallet.js:41
 msgid "Error scanning funds:"
@@ -1219,8 +1219,8 @@ msgid "Feedback could not be submitted. Please try again later."
 msgstr "Feedback kon niet worden ingediend. Probeer het later nog eens."
 
 #: src/js/services/onGoingProcess.js:42
-msgid "Fetching BitPay Account..."
-msgstr "Ophalen BitPay Account..."
+msgid "Fetching UnifyPay Account..."
+msgstr "Ophalen UnifyPay Account..."
 
 #: src/js/services/onGoingProcess.js:21
 msgid "Fetching payment information"
@@ -1261,8 +1261,8 @@ msgid "From"
 msgstr "Van"
 
 #: src/js/controllers/bitpayCardIntro.js:71
-msgid "From BitPay account"
-msgstr "Van BitPay account"
+msgid "From UnifyPay account"
+msgstr "Van UnifyPay account"
 
 #: www/views/tab-import-phrase.html:57
 msgid "From Hardware Wallet"
@@ -1313,8 +1313,8 @@ msgid "Get local cash anywhere you go, from any Visa<sup>&reg;</sup> compatible 
 msgstr "Verkrijg lokaal contant geld waar je ook gaat, van elke Visa<sup>&reg;</sup> ondersteunende pinautomaat. Kosten voor gebruik van de pinautomaat kunnen in rekening gebracht worden."
 
 #: www/views/onboarding/collectEmail.html:15
-msgid "Get news and updates from BitPay"
-msgstr "Ontvang nieuws en updates van BitPay"
+msgid "Get news and updates from UnifyPay"
+msgstr "Ontvang nieuws en updates van UnifyPay"
 
 #: www/views/bitpayCard.html:49
 msgid "Get started"
@@ -1394,8 +1394,8 @@ msgstr "Hardware portemonnee"
 
 #: src/js/controllers/create.js:178
 #: src/js/controllers/join.js:144
-msgid "Hardware wallets are not yet supported with Bitcoin Cash"
-msgstr "Hardware portemonnees worden nog niet ondersteund bij Bitcoin Cash"
+msgid "Hardware wallets are not yet supported with Unifycoin Cash"
+msgstr "Hardware portemonnees worden nog niet ondersteund bij Unifycoin Cash"
 
 #: www/views/modals/mercadolibre-card-details.html:69
 #: www/views/tab-settings.html:20
@@ -1500,8 +1500,8 @@ msgid "If enabled, wallets will also try to spend unconfirmed funds. This option
 msgstr "Indien ingeschakeld, zullen portemonnees ook onbevestigd saldo proberen te besteden. Deze optie kan transactie vertragingen veroorzaken."
 
 #: src/js/controllers/onboarding/backupRequest.js:18
-msgid "If this device is replaced or this app is deleted, neither you nor BitPay can recover your funds without a backup."
-msgstr "Als dit apparaat wordt vervangen of deze app wordt verwijderd, kunnen u noch BitPay uw saldo herstellen zonder backup."
+msgid "If this device is replaced or this app is deleted, neither you nor UnifyPay can recover your funds without a backup."
+msgstr "Als dit apparaat wordt vervangen of deze app wordt verwijderd, kunnen u noch UnifyPay uw saldo herstellen zonder backup."
 
 #: www/views/feedback/complete.html:23
 msgid "If you have additional feedback, please let us know by tapping the \"Send feedback\" option in the Settings tab."
@@ -1907,16 +1907,16 @@ msgid "No wallets available to receive funds"
 msgstr "Geen portemonnees beschikbaar om saldo te ontvangen"
 
 #: www/views/preferencesCash.html:15
-msgid "No wallets eligible for Bitcoin Cash support"
-msgstr "Geen geschikte portemonnees voor Bitcoin Cash ondersteuning"
+msgid "No wallets eligible for Unifycoin Cash support"
+msgstr "Geen geschikte portemonnees voor Unifycoin Cash ondersteuning"
 
 #: src/js/controllers/preferencesCash.js:58
 msgid "Non BIP44 wallet"
 msgstr "Niet-BIP44 portemonnee"
 
 #: www/views/preferencesCash.html:46
-msgid "Non eligible BTC wallets"
-msgstr "Geen geschikte BTC-portemonnees"
+msgid "Non eligible UNIFY wallets"
+msgstr "Geen geschikte UNIFY-portemonnees"
 
 #: src/js/services/feeService.js:12
 msgid "Normal"
@@ -1931,8 +1931,8 @@ msgid "Not enough funds for fee"
 msgstr "Onvoldoende saldo voor transactiekosten"
 
 #: www/views/onboarding/tour.html:50
-msgid "Not even BitPay can access it."
-msgstr "Zelfs BitPay heeft geen toegang."
+msgid "Not even UnifyPay can access it."
+msgstr "Zelfs UnifyPay heeft geen toegang."
 
 #: src/js/controllers/paperWallet.js:47
 msgid "Not funds found"
@@ -1948,8 +1948,8 @@ msgid "Note"
 msgstr "Notitie"
 
 #: www/views/backup.html:19
-msgid "Note: if this BCH wallet was duplicated from a BTC wallet, they share the same recovery phrase."
-msgstr "Let op: als deze BCH portemonnee is gedupliceerd van een BTC portemonnee, dan delen zij de zelfde herstel zin."
+msgid "Note: if this BCH wallet was duplicated from a UNIFY wallet, they share the same recovery phrase."
+msgstr "Let op: als deze BCH portemonnee is gedupliceerd van een UNIFY portemonnee, dan delen zij de zelfde herstel zin."
 
 #: www/views/modals/wallets.html:25
 msgid "Notice: only 1-1 (single signature) wallets can be used for sell bitcoin"
@@ -2065,8 +2065,8 @@ msgid "Open website"
 msgstr "Website openen"
 
 #: www/views/bitpayCardIntro.html:34
-msgid "Order the BitPay Card"
-msgstr "Bestel de BitPay Kaart"
+msgid "Order the UnifyPay Card"
+msgstr "Bestel de UnifyPay Kaart"
 
 #: www/views/join.html:105
 #: www/views/join.html:96
@@ -2153,8 +2153,8 @@ msgid "Payment accepted. It will be broadcasted by Glidera. In case there is a p
 msgstr "Betaling geaccepteerd. Deze zal worden verzonden door Glidera. In geval van problemen kan de betaling worden verwijderd 6 uur na aanmaken."
 
 #: src/js/services/incomingData.js:152
-msgid "Payment address was translated to new Bitcoin Cash address format:"
-msgstr "Betalingsadres is vertaald naar nieuw adresformat voor Bitcoin Cash:"
+msgid "Payment address was translated to new Unifycoin Cash address format:"
+msgstr "Betalingsadres is vertaald naar nieuw adresformat voor Unifycoin Cash:"
 
 #: www/views/modals/txp-details.html:107
 msgid "Payment details"
@@ -2404,16 +2404,16 @@ msgid "Remove"
 msgstr "Verwijderen"
 
 #: src/js/controllers/preferencesBitpayServices.js:7
-msgid "Remove BitPay Account?"
-msgstr "BitPay Account verwijderen?"
+msgid "Remove UnifyPay Account?"
+msgstr "UnifyPay Account verwijderen?"
 
 #: src/js/controllers/preferencesBitpayServices.js:19
-msgid "Remove BitPay Card?"
-msgstr "BitPay Kaart verwijderen?"
+msgid "Remove UnifyPay Card?"
+msgstr "UnifyPay Kaart verwijderen?"
 
 #: src/js/controllers/preferencesBitpayServices.js:8
-msgid "Removing your BitPay account will remove all associated BitPay account data from this device. Are you sure you would like to remove your BitPay Account ({{email}}) from this device?"
-msgstr "Het verwijderen van uw BitPay account zal alle geassocieerde BitPay accountgegevens van dit apparaat verwijderen. Weet u zeker dat u de BitPay Account ({{email}}) van dit apparaat wilt verwijderen?"
+msgid "Removing your UnifyPay account will remove all associated UnifyPay account data from this device. Are you sure you would like to remove your UnifyPay Account ({{email}}) from this device?"
+msgstr "Het verwijderen van uw UnifyPay account zal alle geassocieerde UnifyPay accountgegevens van dit apparaat verwijderen. Weet u zeker dat u de UnifyPay Account ({{email}}) van dit apparaat wilt verwijderen?"
 
 #: www/views/join.html:116
 #: www/views/join.html:124
@@ -2539,8 +2539,8 @@ msgid "Self-signed Certificate"
 msgstr "Zelf-gesigneerd Certificaat"
 
 #: src/js/services/onGoingProcess.js:41
-msgid "Selling Bitcoin..."
-msgstr "Bitcoin verkopen..."
+msgid "Selling Unifycoin..."
+msgstr "Unifycoin verkopen..."
 
 #: www/views/feedback/send.html:13
 #: www/views/feedback/send.html:43
@@ -2740,8 +2740,8 @@ msgid "Slide to send"
 msgstr "Schuiven om te verzenden"
 
 #: www/views/preferencesCash.html:56
-msgid "Some of your wallets are not eligible for Bitcoin Cash support. You can try to access BCH funds from these wallets using the"
-msgstr "Sommige van uw portemonnees komen niet in aanmerking voor Bitcoin Cash ondersteuning. U kunt proberen toegang te krijgen tot het BCH saldo van deze portemonnees met gebruik van de"
+msgid "Some of your wallets are not eligible for Unifycoin Cash support. You can try to access BCH funds from these wallets using the"
+msgstr "Sommige van uw portemonnees komen niet in aanmerking voor Unifycoin Cash ondersteuning. U kunt proberen toegang te krijgen tot het BCH saldo van deze portemonnees met gebruik van de"
 
 #: src/js/controllers/create.js:86
 #: src/js/controllers/join.js:70
@@ -2761,7 +2761,7 @@ msgid "Spending Password needed"
 msgstr "Bestedingswachtwoord vereist"
 
 #: www/views/walletDetails.html:173
-msgid "Spending this balance will need significant Bitcoin network fees"
+msgid "Spending this balance will need significant Unifycoin network fees"
 msgstr "Dit bedrag uitgeven vereist aanzienlijke transactiekosten"
 
 #: www/views/tab-send.html:33
@@ -2887,8 +2887,8 @@ msgid "The maximum number of consecutive unused addresses (20) has been reached.
 msgstr "Het maximum aantal opeenvolgende ongebruikte adressen (20) is bereikt. Wanneer een van uw ongebruikte adressen een betaling ontvangt zal een nieuw adres worden gegenereerd en worden getoond in het tabblad Ontvangen."
 
 #: src/js/controllers/onboarding/terms.js:21
-msgid "The official English Terms of Service are available on the BitPay website."
-msgstr "De officiële Engelse Gebruiksvoorwaarden zijn beschikbaar op de BitPay website."
+msgid "The official English Terms of Service are available on the UnifyPay website."
+msgstr "De officiële Engelse Gebruiksvoorwaarden zijn beschikbaar op de UnifyPay website."
 
 #: www/views/tab-import-phrase.html:4
 msgid "The password of the recovery phrase (if set)"
@@ -2971,8 +2971,8 @@ msgid "This recovery phrase was created with a password. To recover this wallet 
 msgstr "Deze herstel zin is aangemaakt met een wachtwoord. Om deze portemonnee te herstellen heeft u de herstel zin en het wachtwoord nodig."
 
 #: www/views/tx-details.html:91
-msgid "This transaction amount is too small compared to current Bitcoin network fees. Spending these funds will need a Bitcoin network fee cost comparable to the funds itself."
-msgstr "Het bedrag van deze transactie is te klein vergeleken met huidige Bitcoin netwerk transactiekosten. Bij dit bedrag betaald u transactiekosten vergelijkbaar met het bedrag zelf."
+msgid "This transaction amount is too small compared to current Unifycoin network fees. Spending these funds will need a Unifycoin network fee cost comparable to the funds itself."
+msgstr "Het bedrag van deze transactie is te klein vergeleken met huidige Unifycoin netwerk transactiekosten. Bij dit bedrag betaald u transactiekosten vergelijkbaar met het bedrag zelf."
 
 #: www/views/tx-details.html:87
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender"
@@ -3006,8 +3006,8 @@ msgid "To get started, you'll need to create a bitcoin wallet and get some bitco
 msgstr "Om aan de slag te gaan zult u een bitcoin portemonnee moeten aanmaken en wat bitcoin moeten verkrijgen."
 
 #: src/js/services/bitpayAccountService.js:73
-msgid "To {{reason}} you must first add your BitPay account - {{email}}"
-msgstr "Om {{reason}} zult u eerst uw BitPay account moeten toevoegen - {{email}}"
+msgid "To {{reason}} you must first add your UnifyPay account - {{email}}"
+msgstr "Om {{reason}} zult u eerst uw UnifyPay account moeten toevoegen - {{email}}"
 
 #: src/js/services/onGoingProcess.js:48
 msgid "Top up in progress..."
@@ -3204,8 +3204,8 @@ msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "WAARSCHUWING: NIET-VERTROUWD CERTIFICAAT"
 
 #: www/views/preferencesPrivateKey.html:14
-msgid "WARNING: Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. BitPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
-msgstr "WAARSCHUWING: Uw verlengde privé sleutels zijn het enige dat nodig is om toegang tot uw bitcoin te verkrijgen. Bescherm uw privé sleutels goed en bewaar deze alleen op beveiligde apparaten. BitPay heeft geen toegang tot uw privé sleutels, u bent zelf als enige verantwoordelijk voor het bewaren van uw sleutels. Als u toegang tot de sleutels deelt met externe diensten neemt u zelf de verantwoordelijkheid voor het risico op diefstal of inbraak. Het direct hanteren van verlengde privé sleutels is enkel voor gevorderde gebruikers."
+msgid "WARNING: Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. UnifyPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgstr "WAARSCHUWING: Uw verlengde privé sleutels zijn het enige dat nodig is om toegang tot uw bitcoin te verkrijgen. Bescherm uw privé sleutels goed en bewaar deze alleen op beveiligde apparaten. UnifyPay heeft geen toegang tot uw privé sleutels, u bent zelf als enige verantwoordelijk voor het bewaren van uw sleutels. Als u toegang tot de sleutels deelt met externe diensten neemt u zelf de verantwoordelijkheid voor het risico op diefstal of inbraak. Het direct hanteren van verlengde privé sleutels is enkel voor gevorderde gebruikers."
 
 #: src/js/services/onGoingProcess.js:15
 msgid "Waiting for Ledger..."
@@ -3485,16 +3485,16 @@ msgid "You should not set a fee higher than {{maxFeeRecommended}} satoshis/byte.
 msgstr "Het is af te raden transactiekosten te kiezen hoger dan {{maxFeeRecommended}} satoshi's/byte."
 
 #: www/views/modals/bitpay-card-confirmation.html:5
-msgid "You will need to log back for fill in your BitPay Card."
-msgstr "U zult opnieuw moeten inloggen om uw BitPay Kaart op te laden."
+msgid "You will need to log back for fill in your UnifyPay Card."
+msgstr "U zult opnieuw moeten inloggen om uw UnifyPay Kaart op te laden."
 
 #: www/views/preferencesNotifications.html:34
 msgid "You'll receive email notifications about payments sent and received from your wallets."
 msgstr "U zult email meldingen ontvangen over verzonden en ontvangen betalingen van uw portemonnee."
 
 #: www/views/bitpayCard.html:50
-msgid "Your BitPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
-msgstr "Uw BitPay Kaart is gereed. Voeg saldo toe aan uw kaart om deze te kunnen gebruiken in winkels en pinautomaten over de hele wereld."
+msgid "Your UnifyPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
+msgstr "Uw UnifyPay Kaart is gereed. Voeg saldo toe aan uw kaart om deze te kunnen gebruiken in winkels en pinautomaten over de hele wereld."
 
 #: www/views/mercadoLibre.html:57
 #: www/views/mercadoLibreCards.html:6
@@ -3562,8 +3562,8 @@ msgid "[Scanning Funds]"
 msgstr "[Saldo Scannen]"
 
 #: src/js/controllers/bitpayCardIntro.js:11
-msgid "add your BitPay Visa card(s)"
-msgstr "voeg uw BitPay Visa kaart(en) toe"
+msgid "add your UnifyPay Visa card(s)"
+msgstr "voeg uw UnifyPay Visa kaart(en) toe"
 
 #: www/views/includes/available-balance.html:8
 msgid "locked by pending payments"
@@ -3594,8 +3594,8 @@ msgid "{{amountStr}} for Mercado Livre Brazil Gift Card"
 msgstr "{{amountStr}} voor Mercado Livre Brazil Cadeaubon"
 
 #: www/views/preferencesBwsUrl.html:21
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to http://uws.unify.today:3232 (BitPay's public BWS instance)."
-msgstr "{{appName}} is afhankelijk van Bitcore Wallet Service (BWS) voor blockchain informatie, netwerk verbinding en Copayer synchronisatie. De standaard instelling wijst naar http://uws.unify.today:3232 (BitPay's openbare BWS instance)."
+msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to http://uws.unify.today:3232 (UnifyPay's public BWS instance)."
+msgstr "{{appName}} is afhankelijk van Bitcore Wallet Service (BWS) voor blockchain informatie, netwerk verbinding en Copayer synchronisatie. De standaard instelling wijst naar http://uws.unify.today:3232 (UnifyPay's openbare BWS instance)."
 
 #: src/js/controllers/confirm.js:408
 msgid "{{fee}} will be deducted for bitcoin networking fees."

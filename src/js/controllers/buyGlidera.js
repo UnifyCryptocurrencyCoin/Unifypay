@@ -111,7 +111,7 @@ angular.module('copayApp.controllers').controller('buyGlideraController', functi
   };
 
   $scope.buyConfirm = function() {
-    var message = 'Buy bitcoin for ' + amount + ' ' + currency;
+    var message = 'Buy unifycoin for ' + amount + ' ' + currency;
     var okText = 'Confirm';
     var cancelText = 'Cancel';
     popupService.showConfirm(null, message, okText, cancelText, function(ok) {

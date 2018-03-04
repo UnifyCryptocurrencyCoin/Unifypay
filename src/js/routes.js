@@ -1150,7 +1150,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
 
       /*
        *
-       * BitPay Card
+       * UnifyPay Card
        *
        */
 

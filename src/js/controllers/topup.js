@@ -330,7 +330,7 @@ angular.module('copayApp.controllers').controller('topUpController', function($s
     currency = data.stateParams.currency;
 
     var coin;
-    if (currency == 'BTC') coin = 'btc';
+    if (currency == 'UNIFY') coin = 'btc';
     if (currency == 'BCH') coin = 'bch';
 
     bitpayCardService.get({

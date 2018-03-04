@@ -90,8 +90,8 @@ msgid "Add Account"
 msgstr "添加帐户"
 
 #: src/js/services/bitpayAccountService.js:69
-msgid "Add BitPay Account?"
-msgstr "添加 BitPay 帐户吗？"
+msgid "Add UnifyPay Account?"
+msgstr "添加 UnifyPay 帐户吗？"
 
 #: www/views/addressbook.add.html:4
 #: www/views/addressbook.html:22
@@ -135,8 +135,8 @@ msgid "Add funds"
 msgstr "添加资金"
 
 #: src/js/services/bitpayAccountService.js:78
-msgid "Add this BitPay account ({{email}})?"
-msgstr "确定添加此BitPay账户:{{email}} 吗？"
+msgid "Add this UnifyPay account ({{email}})?"
+msgstr "确定添加此UnifyPay账户:{{email}} 吗？"
 
 #: www/views/add.html:3
 msgid "Add wallet"
@@ -179,11 +179,11 @@ msgstr "所有地址"
 
 #: www/views/modals/wallet-balance.html:18
 msgid "All of your bitcoin wallet balance may not be available for immediate spending."
-msgstr "所有您的比特币的钱包余额可能无法用于直接支出。"
+msgstr "所有您的鱼尼比的钱包余额可能无法用于直接支出。"
 
 #: www/views/tab-receive.html:25
 msgid "All signing devices must be added to this multisig wallet before bitcoin addresses can be created."
-msgstr "比特币地址可以创建之前，签名的所有设备都必须都添加到这个对数钱包。"
+msgstr "鱼尼比地址可以创建之前，签名的所有设备都必须都添加到这个对数钱包。"
 
 #: www/views/tab-scan.html:21
 msgid "Allow Camera Access"
@@ -230,11 +230,11 @@ msgstr "本程序有一个可用的更新。为了您的安全，请更新到最
 
 #: www/views/backupWarning.html:14
 msgid "Anyone with your backup phrase can access or spend your bitcoin."
-msgstr "任何人只要持有你的备份短语，就可以访问或者花掉你的比特币。"
+msgstr "任何人只要持有你的备份短语，就可以访问或者花掉你的鱼尼比。"
 
 #: www/views/addresses.html:94
-msgid "Approximate Bitcoin network fee to transfer wallet's balance (with normal priority)"
-msgstr "转移钱包余额大约需要的比特币网络费用（正常优先级）"
+msgid "Approximate Unifycoin network fee to transfer wallet's balance (with normal priority)"
+msgstr "转移钱包余额大约需要的鱼尼比网络费用（正常优先级）"
 
 #: www/views/backupWarning.html:10
 msgid "Are you being watched?"
@@ -242,7 +242,7 @@ msgstr "你正在被监视吗？"
 
 #: src/js/controllers/preferencesExternal.js:15
 msgid "Are you being watched? Anyone with your recovery phrase can access or spend your bitcoin."
-msgstr "请确认目前没有人在监视你的屏幕！因为只要有人知道了你的恢复短语，他就拥有你的比特币完全访问权限，甚至可以直接用于消费！"
+msgstr "请确认目前没有人在监视你的屏幕！因为只要有人知道了你的恢复短语，他就拥有你的鱼尼比完全访问权限，甚至可以直接用于消费！"
 
 #: src/js/controllers/copayers.js:56
 msgid "Are you sure you want to cancel and delete this wallet?"
@@ -269,13 +269,13 @@ msgid "Are you sure you want to skip it?"
 msgstr "你确定你想跳过它？"
 
 #: www/views/modals/bitpay-card-confirmation.html:4
-msgid "Are you sure you would like to log out of your BitPay Card account?"
-msgstr "你确定你要登出你的BitPay Card账户？"
+msgid "Are you sure you would like to log out of your UnifyPay Card account?"
+msgstr "你确定你要登出你的UnifyPay Card账户？"
 
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
-msgid "Are you sure you would like to remove your BitPay Card ({{lastFourDigits}}) from this device?"
-msgstr "你确定你想要从这个设备中删除您的 BitPay 卡 ({{lastFourDigits}})吗？"
+msgid "Are you sure you would like to remove your UnifyPay Card ({{lastFourDigits}}) from this device?"
+msgstr "你确定你想要从这个设备中删除您的 UnifyPay 卡 ({{lastFourDigits}})吗？"
 
 #: www/views/includes/walletInfo.html:10
 msgid "Auditable"
@@ -302,8 +302,8 @@ msgid "BIP32 path for address derivation"
 msgstr "BIP32 路径的地址衍生"
 
 #: www/views/preferencesCash.html:25
-msgid "BTC wallets"
-msgstr "比特币钱包"
+msgid "UNIFY wallets"
+msgstr "鱼尼比钱包"
 
 #: www/views/preferences.html:34
 msgid "Backup"
@@ -349,51 +349,51 @@ msgid "Be sure to store your recovery phrase in a secure place. If this app is d
 msgstr "请务必将您的恢复短语存储在一个安全的地方。如果这个程序被删除，不能没有它恢复你的钱。"
 
 #: www/views/preferencesBitpayServices.html:9
-msgid "BitPay Visa&reg; Cards"
-msgstr "BitPay Visa&reg; 牌"
+msgid "UnifyPay Visa&reg; Cards"
+msgstr "UnifyPay Visa&reg; 牌"
 
 #: www/views/addressbook.add.html:38
 #: www/views/includes/incomingDataMenu.html:29
-msgid "Bitcoin Address"
-msgstr "比特币地址"
+msgid "Unifycoin Address"
+msgstr "鱼尼比地址"
 
 #: www/views/includes/walletSelector.html:42
 #: www/views/tab-home.html:112
 #: www/views/tab-settings.html:108
-msgid "Bitcoin Cash Wallets"
-msgstr "比特币现金钱包"
+msgid "Unifycoin Cash Wallets"
+msgstr "鱼尼比现金钱包"
 
 #: www/views/modals/chooseFeeLevel.html:4
 #: www/views/preferencesFee.html:4
 #: www/views/tab-settings.html:83
-msgid "Bitcoin Network Fee Policy"
-msgstr "比特币网络手续费策略"
+msgid "Unifycoin Network Fee Policy"
+msgstr "鱼尼比网络手续费策略"
 
 #: www/views/includes/walletSelector.html:11
 #: www/views/tab-home.html:97
 #: www/views/tab-settings.html:100
-msgid "Bitcoin Wallets"
-msgstr "比特币钱包"
+msgid "Unifycoin Wallets"
+msgstr "鱼尼比钱包"
 
 #: src/js/services/incomingData.js:151
-msgid "Bitcoin cash Payment"
-msgstr "比特币现金支付"
+msgid "Unifycoin cash Payment"
+msgstr "鱼尼比现金支付"
 
 #: www/views/onboarding/tour.html:31
-msgid "Bitcoin is a currency."
-msgstr "比特币是一种货币。"
+msgid "Unifycoin is a currency."
+msgstr "鱼尼比是一种货币。"
 
 #: www/views/onboarding/disclaimer.html:15
-msgid "Bitcoin is different &ndash; it cannot be safely held with a bank or web service."
-msgstr "比特币是不同 — — 它不能安全地举行以银行或 web 服务。"
+msgid "Unifycoin is different &ndash; it cannot be safely held with a bank or web service."
+msgstr "鱼尼比是不同 — — 它不能安全地举行以银行或 web 服务。"
 
 #: www/views/onboarding/tour.html:18
-msgid "Bitcoin is secure,<br>digital money."
-msgstr "比特币是安全的 <br>数字货币。"
+msgid "Unifycoin is secure,<br>digital money."
+msgstr "鱼尼比是安全的 <br>数字货币。"
 
 #: www/views/preferencesFee.html:11
-msgid "Bitcoin transactions include a fee collected by miners on the network."
-msgstr "比特币交易包括在网络上被矿工所收取的费用。"
+msgid "Unifycoin transactions include a fee collected by miners on the network."
+msgstr "鱼尼比交易包括在网络上被矿工所收取的费用。"
 
 #: www/views/buyAmazon.html:108
 msgid "Bought {{amountUnitStr}}"
@@ -422,12 +422,12 @@ msgid "Buy"
 msgstr "购买"
 
 #: www/views/includes/buyAndSellCard.html:3
-msgid "Buy &amp; Sell Bitcoin"
-msgstr "购买或出售比特币"
+msgid "Buy &amp; Sell Unifycoin"
+msgstr "购买或出售鱼尼比"
 
 #: www/views/tab-send.html:40
-msgid "Buy Bitcoin"
-msgstr "购买比特币"
+msgid "Buy Unifycoin"
+msgstr "购买鱼尼比"
 
 #: www/views/mercadoLibre.html:22
 #: www/views/mercadoLibre.html:50
@@ -439,8 +439,8 @@ msgid "Buy from"
 msgstr "从什么地方购买"
 
 #: src/js/services/onGoingProcess.js:40
-msgid "Buying Bitcoin..."
-msgstr "正在发送 比特币..."
+msgid "Buying Unifycoin..."
+msgstr "正在发送 鱼尼比..."
 
 #: src/js/services/onGoingProcess.js:12
 msgid "Calculating fee"
@@ -593,8 +593,8 @@ msgid "Confirming"
 msgstr "确认"
 
 #: www/views/bitpayCardIntro.html:37
-msgid "Connect my BitPay Card"
-msgstr "我 BitPay 卡连接"
+msgid "Connect my UnifyPay Card"
+msgstr "我 UnifyPay 卡连接"
 
 #: src/js/services/onGoingProcess.js:13
 msgid "Connecting to Coinbase..."
@@ -621,8 +621,8 @@ msgid "Contribute Translations"
 msgstr "参与翻译"
 
 #: src/js/controllers/confirm.js:130
-msgid "Copay only supports Bitcoin Cash using new version numbers addresses"
-msgstr "Copay只支持新版本的比特币现金地址"
+msgid "Copay only supports Unifycoin Cash using new version numbers addresses"
+msgstr "Copay只支持新版本的鱼尼比现金地址"
 
 #: src/js/services/bwcError.js:62
 msgid "Copayer already in this wallet"
@@ -814,7 +814,7 @@ msgstr "创建自己的免费钱包"
 #: www/views/tab-home.html:89
 #: www/views/tab-send.html:41
 msgid "Create bitcoin wallet"
-msgstr "创建比特币的钱包"
+msgstr "创建鱼尼比的钱包"
 
 #: www/views/tab-create-personal.html:131
 msgid "Create new wallet"
@@ -940,7 +940,7 @@ msgstr "正在复制钱包……"
 
 #: www/views/addresses.html:19
 msgid "Each bitcoin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
-msgstr "每个比特币钱包可以从您的 12 字备份生成亿万个地址。一个新的地址是自动生成和显示每个时间你收到付款。"
+msgstr "每个鱼尼比钱包可以从您的 12 字备份生成亿万个地址。一个新的地址是自动生成和显示每个时间你收到付款。"
 
 #: src/js/services/feeService.js:13
 msgid "Economy"
@@ -985,8 +985,8 @@ msgid "Enter Spending Password"
 msgstr "输入支出密码"
 
 #: src/js/services/bitpayAccountService.js:110
-msgid "Enter Two Factor for your BitPay account"
-msgstr "为您的 BitPay 帐户输入两个因素"
+msgid "Enter Two Factor for your UnifyPay account"
+msgstr "为您的 UnifyPay 帐户输入两个因素"
 
 #: www/views/amount.html:4
 msgid "Enter amount"
@@ -1121,8 +1121,8 @@ msgid "Error in Payment Protocol"
 msgstr "付款协议中的错误"
 
 #: src/js/controllers/bitpayCardIntro.js:14
-msgid "Error pairing BitPay Account"
-msgstr "错误配对 BitPay 帐户"
+msgid "Error pairing UnifyPay Account"
+msgstr "错误配对 UnifyPay 帐户"
 
 #: src/js/controllers/paperWallet.js:41
 msgid "Error scanning funds:"
@@ -1219,8 +1219,8 @@ msgid "Feedback could not be submitted. Please try again later."
 msgstr "无法提交反馈。请稍后再试。"
 
 #: src/js/services/onGoingProcess.js:42
-msgid "Fetching BitPay Account..."
-msgstr "正在获取 BitPay 帐户..."
+msgid "Fetching UnifyPay Account..."
+msgstr "正在获取 UnifyPay 帐户..."
 
 #: src/js/services/onGoingProcess.js:21
 msgid "Fetching payment information"
@@ -1261,8 +1261,8 @@ msgid "From"
 msgstr "来自"
 
 #: src/js/controllers/bitpayCardIntro.js:71
-msgid "From BitPay account"
-msgstr "从 BitPay 帐户"
+msgid "From UnifyPay account"
+msgstr "从 UnifyPay 帐户"
 
 #: www/views/tab-import-phrase.html:57
 msgid "From Hardware Wallet"
@@ -1313,8 +1313,8 @@ msgid "Get local cash anywhere you go, from any Visa<sup>&reg;</sup> compatible 
 msgstr "得到当地现金任何地方您去，从任何 Visa<sup>®</sup> 兼容的自动取款机 ATM 银行费用可能适用。"
 
 #: www/views/onboarding/collectEmail.html:15
-msgid "Get news and updates from BitPay"
-msgstr "从 BitPay 获取新闻和更新"
+msgid "Get news and updates from UnifyPay"
+msgstr "从 UnifyPay 获取新闻和更新"
 
 #: www/views/bitpayCard.html:49
 msgid "Get started"
@@ -1394,8 +1394,8 @@ msgstr "硬件钱包"
 
 #: src/js/controllers/create.js:178
 #: src/js/controllers/join.js:144
-msgid "Hardware wallets are not yet supported with Bitcoin Cash"
-msgstr "比特币现金钱包暂时不支持硬件钱包"
+msgid "Hardware wallets are not yet supported with Unifycoin Cash"
+msgstr "鱼尼比现金钱包暂时不支持硬件钱包"
 
 #: www/views/modals/mercadolibre-card-details.html:69
 #: www/views/tab-settings.html:20
@@ -1477,7 +1477,7 @@ msgstr "我知道了"
 
 #: www/views/onboarding/disclaimer.html:21
 msgid "I understand that if this app is moved to another device or deleted, my bitcoin can only be recovered with the backup phrase."
-msgstr "我明白是否这个应用程序是搬到另一个设备或删除，我比特币可以只能进行恢复与备份的短语。"
+msgstr "我明白是否这个应用程序是搬到另一个设备或删除，我鱼尼比可以只能进行恢复与备份的短语。"
 
 #: www/views/onboarding/disclaimer.html:18
 msgid "I understand that my funds are held securely on this device, not by a company."
@@ -1500,8 +1500,8 @@ msgid "If enabled, wallets will also try to spend unconfirmed funds. This option
 msgstr "如果启用了，钱包也尝试使用未经证实的资金。此选项可能会导致事务延迟。"
 
 #: src/js/controllers/onboarding/backupRequest.js:18
-msgid "If this device is replaced or this app is deleted, neither you nor BitPay can recover your funds without a backup."
-msgstr "如果此设备被替换或删除此应用程序，你和 BitPay 都不可以恢复你的资金，也没有备份。"
+msgid "If this device is replaced or this app is deleted, neither you nor UnifyPay can recover your funds without a backup."
+msgstr "如果此设备被替换或删除此应用程序，你和 UnifyPay 都不可以恢复你的资金，也没有备份。"
 
 #: www/views/feedback/complete.html:23
 msgid "If you have additional feedback, please let us know by tapping the \"Send feedback\" option in the Settings tab."
@@ -1635,7 +1635,7 @@ msgstr "此电子邮件地址是正确的？"
 
 #: www/views/addresses.html:25
 msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your bitcoins secure against hypothetical attacks by quantum computers."
-msgstr "它是一个好主意，以避免重用地址 — — 这既能保护您的隐私又保持您的比特币安全假设攻击由量子计算机。"
+msgstr "它是一个好主意，以避免重用地址 — — 这既能保护您的隐私又保持您的鱼尼比安全假设攻击由量子计算机。"
 
 #: src/js/controllers/backup.js:76
 msgid "It's important that you write your backup phrase down correctly. If something happens to your wallet, you'll need this backup to recover your money. Please review your backup and try again."
@@ -1851,7 +1851,7 @@ msgstr "授权密钥未定义"
 
 #: www/views/onboarding/backupRequest.html:5
 msgid "No backup, no bitcoin."
-msgstr "没有备份，没有比特币。"
+msgstr "没有备份，没有鱼尼比。"
 
 #: www/views/addressbook.html:19
 msgid "No contacts yet"
@@ -1907,7 +1907,7 @@ msgid "No wallets available to receive funds"
 msgstr "没有可用于接收资金的钱包"
 
 #: www/views/preferencesCash.html:15
-msgid "No wallets eligible for Bitcoin Cash support"
+msgid "No wallets eligible for Unifycoin Cash support"
 msgstr "没有錢包合乎支持小比特幣資格"
 
 #: src/js/controllers/preferencesCash.js:58
@@ -1915,7 +1915,7 @@ msgid "Non BIP44 wallet"
 msgstr "非BIP44錢包"
 
 #: www/views/preferencesCash.html:46
-msgid "Non eligible BTC wallets"
+msgid "Non eligible UNIFY wallets"
 msgstr "非合格比特幣錢包"
 
 #: src/js/services/feeService.js:12
@@ -1931,8 +1931,8 @@ msgid "Not enough funds for fee"
 msgstr "费用的资金不足"
 
 #: www/views/onboarding/tour.html:50
-msgid "Not even BitPay can access it."
-msgstr "甚至没有 BitPay 可以访问它。"
+msgid "Not even UnifyPay can access it."
+msgstr "甚至没有 UnifyPay 可以访问它。"
 
 #: src/js/controllers/paperWallet.js:47
 msgid "Not funds found"
@@ -1948,12 +1948,12 @@ msgid "Note"
 msgstr "备注"
 
 #: www/views/backup.html:19
-msgid "Note: if this BCH wallet was duplicated from a BTC wallet, they share the same recovery phrase."
+msgid "Note: if this BCH wallet was duplicated from a UNIFY wallet, they share the same recovery phrase."
 msgstr "注意: 如此比特幣錢包由小比特幣复制，他們共享相同恢復短語"
 
 #: www/views/modals/wallets.html:25
 msgid "Notice: only 1-1 (single signature) wallets can be used for sell bitcoin"
-msgstr "注意︰ 只有 1-1 （单签名） 钱包可以用于卖比特币"
+msgstr "注意︰ 只有 1-1 （单签名） 钱包可以用于卖鱼尼比"
 
 #: www/views/preferencesNotifications.html:3
 #: www/views/tab-settings.html:54
@@ -2065,8 +2065,8 @@ msgid "Open website"
 msgstr "打开网站"
 
 #: www/views/bitpayCardIntro.html:34
-msgid "Order the BitPay Card"
-msgstr "订单 BitPay 卡"
+msgid "Order the UnifyPay Card"
+msgstr "订单 UnifyPay 卡"
 
 #: www/views/join.html:105
 #: www/views/join.html:96
@@ -2093,7 +2093,7 @@ msgstr "粘贴备份的纯文本代码"
 
 #: www/views/bitpayCardIntro.html:28
 msgid "Pay 0% fees to turn bitcoin into dollars."
-msgstr "0%付费以比特币变成美元。"
+msgstr "0%付费以鱼尼比变成美元。"
 
 #: www/views/modals/paypro.html:18
 msgid "Pay To"
@@ -2153,7 +2153,7 @@ msgid "Payment accepted. It will be broadcasted by Glidera. In case there is a p
 msgstr "支付以被接受。它将由 Glidera 广播。如果出现问题，它可以在创建后的 6 个小时内删除。"
 
 #: src/js/services/incomingData.js:152
-msgid "Payment address was translated to new Bitcoin Cash address format:"
+msgid "Payment address was translated to new Unifycoin Cash address format:"
 msgstr "付款地址转化为新的小比特幣地址格式"
 
 #: www/views/modals/txp-details.html:107
@@ -2404,16 +2404,16 @@ msgid "Remove"
 msgstr "移除"
 
 #: src/js/controllers/preferencesBitpayServices.js:7
-msgid "Remove BitPay Account?"
-msgstr "删除 BitPay 帐户吗？"
+msgid "Remove UnifyPay Account?"
+msgstr "删除 UnifyPay 帐户吗？"
 
 #: src/js/controllers/preferencesBitpayServices.js:19
-msgid "Remove BitPay Card?"
-msgstr "删除 BitPay 卡吗？"
+msgid "Remove UnifyPay Card?"
+msgstr "删除 UnifyPay 卡吗？"
 
 #: src/js/controllers/preferencesBitpayServices.js:8
-msgid "Removing your BitPay account will remove all associated BitPay account data from this device. Are you sure you would like to remove your BitPay Account ({{email}}) from this device?"
-msgstr "从该设备删除您的 BitPay 帐户将删除所有关联的 BitPay 帐户数据。你确定你想要从这个设备中删除您的 BitPay 帐户:({{email}})？"
+msgid "Removing your UnifyPay account will remove all associated UnifyPay account data from this device. Are you sure you would like to remove your UnifyPay Account ({{email}}) from this device?"
+msgstr "从该设备删除您的 UnifyPay 帐户将删除所有关联的 UnifyPay 帐户数据。你确定你想要从这个设备中删除您的 UnifyPay 帐户:({{email}})？"
 
 #: www/views/join.html:116
 #: www/views/join.html:124
@@ -2508,7 +2508,7 @@ msgstr "搜索交易"
 
 #: www/views/tab-send.html:18
 msgid "Search or enter bitcoin address"
-msgstr "搜索或输入比特币地址"
+msgstr "搜索或输入鱼尼比地址"
 
 #: www/views/modals/search.html:16
 msgid "Search transactions"
@@ -2539,8 +2539,8 @@ msgid "Self-signed Certificate"
 msgstr "自签名证书"
 
 #: src/js/services/onGoingProcess.js:41
-msgid "Selling Bitcoin..."
-msgstr "出售比特币......"
+msgid "Selling Unifycoin..."
+msgstr "出售鱼尼比......"
 
 #: www/views/feedback/send.html:13
 #: www/views/feedback/send.html:43
@@ -2662,7 +2662,7 @@ msgstr "邀请您的朋友分享爱。"
 
 #: www/views/copayers.html:20
 msgid "Share this invitation with your copayers"
-msgstr "将此邀请与你的 copayers 共享"
+msgstr "将此邀请鱼尼的 copayers 共享"
 
 #: src/js/controllers/feedback/complete.js:5
 #: www/views/tab-settings.html:36
@@ -2693,7 +2693,7 @@ msgstr "显示高级选项"
 
 #: www/views/tab-send.html:42
 msgid "Show bitcoin address"
-msgstr "显示比特币地址"
+msgstr "显示鱼尼比地址"
 
 #: www/views/tab-send.html:64
 msgid "Show more"
@@ -2740,7 +2740,7 @@ msgid "Slide to send"
 msgstr "在此點擊滑動以發送"
 
 #: www/views/preferencesCash.html:56
-msgid "Some of your wallets are not eligible for Bitcoin Cash support. You can try to access BCH funds from these wallets using the"
+msgid "Some of your wallets are not eligible for Unifycoin Cash support. You can try to access BCH funds from these wallets using the"
 msgstr "你有些錢包不合資格得到小比特幣的支持可嘗試連結這些錢包至BCH基金"
 
 #: src/js/controllers/create.js:86
@@ -2761,12 +2761,12 @@ msgid "Spending Password needed"
 msgstr "需要支付密码"
 
 #: www/views/walletDetails.html:173
-msgid "Spending this balance will need significant Bitcoin network fees"
-msgstr "这笔交易将需要非常高的比特币网络手续费"
+msgid "Spending this balance will need significant Unifycoin network fees"
+msgstr "这笔交易将需要非常高的鱼尼比网络手续费"
 
 #: www/views/tab-send.html:33
 msgid "Start sending bitcoin"
-msgstr "开始发送比特币"
+msgstr "开始发送鱼尼比"
 
 #: www/views/lockSetup.html:3
 msgid "Startup Lock"
@@ -2804,7 +2804,7 @@ msgstr "此操作无法撤消"
 
 #: www/views/onboarding/welcome.html:5
 msgid "Take control of your money,<br>get started with bitcoin."
-msgstr "把你的钱，<br>得到控制开始用比特币。"
+msgstr "把你的钱，<br>得到控制开始用鱼尼比。"
 
 #: www/views/walletDetails.html:132
 #: www/views/walletDetails.html:52
@@ -2860,15 +2860,15 @@ msgstr "Ledger Chrome 应用程序未安装"
 
 #: www/views/modals/wallet-balance.html:55
 msgid "The amount of bitcoin immediately spendable from this wallet."
-msgstr "比特币立即可从这个钱包的金额。"
+msgstr "鱼尼比立即可从这个钱包的金额。"
 
 #: www/views/modals/wallet-balance.html:93
 msgid "The amount of bitcoin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
-msgstr "比特币存储在分配作为你挂起的事务建议的输入这个钱包中的金额。量确定使用未用余额交易记录输出与这个钱包关联，可能会与您挂起的事务建议相关联的实际数额超过。"
+msgstr "鱼尼比存储在分配作为你挂起的事务建议的输入这个钱包中的金额。量确定使用未用余额交易记录输出与这个钱包关联，可能会与您挂起的事务建议相关联的实际数额超过。"
 
 #: www/views/modals/wallet-balance.html:74
 msgid "The amount of bitcoin stored in this wallet with less than 1 blockchain confirmation."
-msgstr "比特币存储在与小于 1 blockchain 确认这个钱包中的金额。"
+msgstr "鱼尼比存储在与小于 1 blockchain 确认这个钱包中的金额。"
 
 #: www/views/tab-import-phrase.html:5
 msgid "The derivation path"
@@ -2887,8 +2887,8 @@ msgid "The maximum number of consecutive unused addresses (20) has been reached.
 msgstr "已连续未使用的地址 (20) 的最大数目。当您未使用的地址之一收到付款时，将生成一个新的地址，和您接收选项卡所示。"
 
 #: src/js/controllers/onboarding/terms.js:21
-msgid "The official English Terms of Service are available on the BitPay website."
-msgstr "官方的英语术语服务是可在 BitPay 网站上。"
+msgid "The official English Terms of Service are available on the UnifyPay website."
+msgstr "官方的英语术语服务是可在 UnifyPay 网站上。"
 
 #: www/views/tab-import-phrase.html:4
 msgid "The password of the recovery phrase (if set)"
@@ -2923,7 +2923,7 @@ msgstr "花费提议不是未决"
 
 #: www/views/modals/wallet-balance.html:36
 msgid "The total amount of bitcoin stored in this wallet."
-msgstr "比特币存储在这个钱包的总量。"
+msgstr "鱼尼比存储在这个钱包的总量。"
 
 #: www/views/preferencesHistory.html:27
 msgid "The transaction history and every new incoming transaction are cached in the app. This feature clean this up and synchronizes again from the server"
@@ -2954,11 +2954,11 @@ msgstr "这个应用程序太棒了 ！"
 
 #: www/views/onboarding/tour.html:47
 msgid "This app stores your bitcoin with cutting-edge security."
-msgstr "此应用程序商店你比特币与尖端的安全。"
+msgstr "此应用程序商店你鱼尼比与尖端的安全。"
 
 #: src/js/controllers/confirm.js:523
 msgid "This bitcoin payment request has expired."
-msgstr "这比特币付款请求已过期。"
+msgstr "这鱼尼比付款请求已过期。"
 
 #: www/views/join.html:133
 #: www/views/tab-create-personal.html:103
@@ -2971,8 +2971,8 @@ msgid "This recovery phrase was created with a password. To recover this wallet 
 msgstr "此恢复短语是用密码创建。为了恢复此钱包，需要恢复短语和密码。"
 
 #: www/views/tx-details.html:91
-msgid "This transaction amount is too small compared to current Bitcoin network fees. Spending these funds will need a Bitcoin network fee cost comparable to the funds itself."
-msgstr "相对于当前比特币网络费，这笔交易金额太小。手续费相当于这笔交易金额本身。"
+msgid "This transaction amount is too small compared to current Unifycoin network fees. Spending these funds will need a Unifycoin network fee cost comparable to the funds itself."
+msgstr "相对于当前鱼尼比网络费，这笔交易金额太小。手续费相当于这笔交易金额本身。"
 
 #: www/views/tx-details.html:87
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender"
@@ -2999,15 +2999,15 @@ msgstr "发送到"
 
 #: www/views/tab-send.html:37
 msgid "To get started, buy bitcoin or share your address. You can receive bitcoin from any wallet or service."
-msgstr "若要开始，请买比特币或共享您的地址。你可以从任何钱包或服务接收比特币。"
+msgstr "若要开始，请买鱼尼比或共享您的地址。你可以从任何钱包或服务接收鱼尼比。"
 
 #: www/views/tab-send.html:38
 msgid "To get started, you'll need to create a bitcoin wallet and get some bitcoin."
-msgstr "若要开始，您将需要创建一个比特币的钱包，并获得一些比特币。"
+msgstr "若要开始，您将需要创建一个鱼尼比的钱包，并获得一些鱼尼比。"
 
 #: src/js/services/bitpayAccountService.js:73
-msgid "To {{reason}} you must first add your BitPay account - {{email}}"
-msgstr "到 {{reason}}，您必须首先添加您的 BitPay 帐户-{{email}}"
+msgid "To {{reason}} you must first add your UnifyPay account - {{email}}"
+msgstr "到 {{reason}}，您必须首先添加您的 UnifyPay 帐户-{{email}}"
 
 #: src/js/services/onGoingProcess.js:48
 msgid "Top up in progress..."
@@ -3095,7 +3095,7 @@ msgstr "在 {{expires}} 中再试一次"
 
 #: www/views/bitpayCardIntro.html:18
 msgid "Turn bitcoin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
-msgstr "比特币变成美元，刷在接受 Visa<sup>®</sup> 的任何地方。"
+msgstr "鱼尼比变成美元，刷在接受 Visa<sup>®</sup> 的任何地方。"
 
 #: www/views/tab-import-phrase.html:17
 msgid "Type the Recovery Phrase (usually 12 words)"
@@ -3204,7 +3204,7 @@ msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "警告︰不受信任的证书"
 
 #: www/views/preferencesPrivateKey.html:14
-msgid "WARNING: Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. BitPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgid "WARNING: Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. UnifyPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
 msgstr ""
 
 #: src/js/services/onGoingProcess.js:15
@@ -3458,7 +3458,7 @@ msgstr "您可以通过签约我们 Crowdin 社区翻译网站作出贡献。我
 
 #: www/views/tab-scan.html:16
 msgid "You can scan bitcoin addresses, payment requests, paper wallets, and more."
-msgstr "您可以扫描比特币地址、 付款申请、 纸钱包和更多。"
+msgstr "您可以扫描鱼尼比地址、 付款申请、 纸钱包和更多。"
 
 #: src/js/controllers/preferencesAbout.js:14
 msgid "You can see the latest developments and contribute to this open source app by visiting our project on GitHub."
@@ -3466,7 +3466,7 @@ msgstr "你可以看到最新的事态发展和贡献这个开放源码应用程
 
 #: www/views/onboarding/tour.html:19
 msgid "You can spend bitcoin at millions of websites and stores worldwide."
-msgstr "你可以花比特币在数以百万计的网站和世界各地的商店。"
+msgstr "你可以花鱼尼比在数以百万计的网站和世界各地的商店。"
 
 #: www/views/backup.html:15
 msgid "You can still export it from Advanced &gt; Export."
@@ -3478,23 +3478,23 @@ msgstr "你可以换其他货币，如美元、 欧元或英镑。"
 
 #: www/views/onboarding/tour.html:46
 msgid "You control your bitcoin."
-msgstr "您可以控制您的比特币。"
+msgstr "您可以控制您的鱼尼比。"
 
 #: www/views/modals/chooseFeeLevel.html:64
 msgid "You should not set a fee higher than {{maxFeeRecommended}} satoshis/byte."
 msgstr "你不应设置高于 {{maxFeeRecommended}} satoshis/字节 的交易手续费。"
 
 #: www/views/modals/bitpay-card-confirmation.html:5
-msgid "You will need to log back for fill in your BitPay Card."
-msgstr "您将需要登录回来为你 BitPay 卡填写。"
+msgid "You will need to log back for fill in your UnifyPay Card."
+msgstr "您将需要登录回来为你 UnifyPay 卡填写。"
 
 #: www/views/preferencesNotifications.html:34
 msgid "You'll receive email notifications about payments sent and received from your wallets."
 msgstr "在您的钱包进行付款操作时发送通知。"
 
 #: www/views/bitpayCard.html:50
-msgid "Your BitPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
-msgstr "您的 BitPay 卡是准备好了。添加到您的卡开始使用它在商店和自动取款机全球基金。"
+msgid "Your UnifyPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
+msgstr "您的 UnifyPay 卡是准备好了。添加到您的卡开始使用它在商店和自动取款机全球基金。"
 
 #: www/views/mercadoLibre.html:57
 #: www/views/mercadoLibreCards.html:6
@@ -3503,11 +3503,11 @@ msgstr "礼品卡"
 
 #: www/views/includes/confirmBackupPopup.html:6
 msgid "Your bitcoin wallet is backed up!"
-msgstr "你的比特币钱包被备份 ！"
+msgstr "你的鱼尼比钱包被备份 ！"
 
 #: www/views/tab-home.html:50
 msgid "Your bitcoin wallet is ready!"
-msgstr "你的比特币钱包是准备好了 ！"
+msgstr "你的鱼尼比钱包是准备好了 ！"
 
 #: www/views/modals/chooseFeeLevel.html:61
 msgid "Your fee is lower than recommended."
@@ -3562,8 +3562,8 @@ msgid "[Scanning Funds]"
 msgstr "[正在掃描資金]"
 
 #: src/js/controllers/bitpayCardIntro.js:11
-msgid "add your BitPay Visa card(s)"
-msgstr "添加您的 BitPay 签证卡"
+msgid "add your UnifyPay Visa card(s)"
+msgstr "添加您的 UnifyPay 签证卡"
 
 #: www/views/includes/available-balance.html:8
 msgid "locked by pending payments"
@@ -3594,12 +3594,12 @@ msgid "{{amountStr}} for Mercado Livre Brazil Gift Card"
 msgstr "梅尔卡多里弗巴西礼品卡 {{amountStr}}"
 
 #: www/views/preferencesBwsUrl.html:21
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to http://uws.unify.today:3232 (BitPay's public BWS instance)."
-msgstr "{{appName}} 中的区块链信息依赖于 Bitcore Wallet Service (BWS)、网络和 Copayer synchronization。默认配置指向 http://uws.unify.today:3232 (BitPay 的公共 BWS 实例)。"
+msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to http://uws.unify.today:3232 (UnifyPay's public BWS instance)."
+msgstr "{{appName}} 中的区块链信息依赖于 Bitcore Wallet Service (BWS)、网络和 Copayer synchronization。默认配置指向 http://uws.unify.today:3232 (UnifyPay 的公共 BWS 实例)。"
 
 #: src/js/controllers/confirm.js:408
 msgid "{{fee}} will be deducted for bitcoin networking fees."
-msgstr "{{fee}} 将比特币网络费用中扣除。"
+msgstr "{{fee}} 将鱼尼比网络费用中扣除。"
 
 #: www/views/confirm.html:85
 msgid "{{tx.txp[wallet.id].feeRatePerStr}}  of the sending amount"

@@ -532,7 +532,7 @@ angular.module('copayApp.services')
 
         allAccounts[data.email] = account;
 
-        $log.info('Storing BitPay accounts with new account:' + data.email);
+        $log.info('Storing UnifyPay accounts with new account:' + data.email);
         storage.set('bitpayAccounts-v2-' + network, allAccounts, cb);
       });
     };

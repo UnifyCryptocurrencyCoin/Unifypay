@@ -1303,7 +1303,7 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
     if (wallet.coin== 'bch') {
       return 'bitcoincash';
     } else {
-      return 'bitcoin';
+      return 'unifycoin';
     }
   }
 
