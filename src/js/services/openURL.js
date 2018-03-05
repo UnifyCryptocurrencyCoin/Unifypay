@@ -83,7 +83,7 @@ angular.module('copayApp.services').factory('openURLService', function($rootScop
 
       if (navigator.registerProtocolHandler) {
         $log.debug('Registering Browser handlers base:' + base);
-        navigator.registerProtocolHandler('unifycoin', url, 'Unifypay Unifycoin Handler');
+        navigator.registerProtocolHandler('web+unifycoin', url, 'Unifypay Unifycoin Handler');
         navigator.registerProtocolHandler('web+bitcoincash', url, 'Copay Bitcoin Cash Handler');
         navigator.registerProtocolHandler('web+copay', url, 'Copay Wallet Handler');
         navigator.registerProtocolHandler('web+unifypay', url, 'UnifyPay Wallet Handler');

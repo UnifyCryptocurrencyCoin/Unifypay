@@ -1,14 +1,14 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('customAmountController', function($scope, $ionicHistory, txFormatService, platformInfo, configService, profileService, walletService, popupService) {
+angular.module('copayApp.controllers').controller('customAmountController', function ($scope, $ionicHistory, txFormatService, platformInfo, configService, profileService, walletService, popupService) {
 
-  var showErrorAndBack = function(title, msg) {
-    popupService.showAlert(title, msg, function() {
+  var showErrorAndBack = function (title, msg) {
+    popupService.showAlert(title, msg, function () {
       $scope.close();
     });
   };
 
-  $scope.$on("$ionicView.beforeEnter", function(event, data) {
+  $scope.$on("$ionicView.beforeEnter", function (event, data) {
     var walletId = data.stateParams.id;
 
     if (!walletId) {
@@ -20,7 +20,7 @@ angular.module('copayApp.controllers').controller('customAmountController', func
 
     $scope.wallet = profileService.getWallet(walletId);
 
-    walletService.getAddress($scope.wallet, false, function(err, addr) {
+    walletService.getAddress($scope.wallet, false, function (err, addr) {
       if (!addr) {
         showErrorAndBack('Error', 'Could not get the address');
         return;
@@ -40,7 +40,7 @@ angular.module('copayApp.controllers').controller('customAmountController', func
       var currency = parsedAmount.currency;
       $scope.amountUnitStr = parsedAmount.amountUnitStr;
 
-      if (currency != 'UNIFY' && currency != 'BCH') {
+      if (currency != 'BTC' && currency != 'BCH') {
         // Convert to BTC or BCH
         var config = configService.getSync().wallet.settings;
         var amountUnit = txFormatService.satToUnit(parsedAmount.amountSat);
@@ -49,26 +49,26 @@ angular.module('copayApp.controllers').controller('customAmountController', func
         $scope.amountBtc = btcParsedAmount.amount;
         $scope.altAmountStr = btcParsedAmount.amountUnitStr;
       } else {
-        $scope.amountBtc = amount; // BTC or BCH
+        $scope.amountBtc = amount; // UNIFY
         $scope.altAmountStr = txFormatService.formatAlternativeStr($scope.wallet.coin, parsedAmount.amountSat);
       }
     });
   });
 
-  $scope.close = function() {
+  $scope.close = function () {
     $ionicHistory.nextViewOptions({
       disableAnimate: true
     });
     $ionicHistory.goBack(-2);
   };
 
-  $scope.shareAddress = function() {
+  $scope.shareAddress = function () {
     if (!platformInfo.isCordova) return;
     var data = $scope.protoAddr + '?amount=' + $scope.amountBtc;
     window.plugins.socialsharing.share(data, null, null, null);
   }
 
-  $scope.copyToClipboard = function() {
+  $scope.copyToClipboard = function () {
     return $scope.protoAddr + '?amount=' + $scope.amountBtc;
   };
 
