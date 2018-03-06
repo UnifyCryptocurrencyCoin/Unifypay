@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('tabSendController', function($scope, $rootScope, $log, $timeout, $ionicScrollDelegate, addressbookService, profileService, lodash, $state, walletService, incomingData, popupService, platformInfo, bwcError, gettextCatalog, scannerService, bitcoreCash, externalLinkService) {
+angular.module('copayApp.controllers').controller('tabSendController', function ($scope, $rootScope, $log, $timeout, $ionicScrollDelegate, addressbookService, profileService, lodash, $state, walletService, incomingData, popupService, platformInfo, bwcError, gettextCatalog, scannerService, bitcoreCash, externalLinkService) {
 
   var originalList;
   var CONTACTS_SHOW_LIMIT;
@@ -8,7 +8,7 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
   $scope.isChromeApp = platformInfo.isChromeApp;
   $scope.serverMessage = null;
 
-  var hasWallets = function() {
+  var hasWallets = function () {
     $scope.wallets = profileService.getWallets({
       onlyComplete: true
     });
@@ -18,7 +18,7 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
   // THIS is ONLY to show the 'buy bitcoins' message
   // does not has any other function.
 
-  var updateHasFunds = function() {
+  var updateHasFunds = function () {
 
     if ($rootScope.everHasFunds) {
       $scope.hasFunds = true;
@@ -28,9 +28,8 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     $scope.hasFunds = false;
     var foundMessage = false;
     var index = 0;
-    lodash.each($scope.wallets, function(w) {
-      walletService.getStatus(w, {}, function(err, status) {
-
+    lodash.each($scope.wallets, function (w) {
+      walletService.getStatus(w, {}, function (err, status) {
         ++index;
         if (err && !status) {
           $log.error(err);
@@ -50,7 +49,7 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
 
         if (index == $scope.wallets.length) {
           $scope.checkingBalance = false;
-          $timeout(function() {
+          $timeout(function () {
             $scope.$apply();
           });
         }
@@ -58,7 +57,7 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     });
   };
 
-  var updateWalletsList = function() {
+  var updateWalletsList = function () {
 
     var networkResult = lodash.countBy($scope.wallets, 'network');
 
@@ -67,24 +66,24 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     if ($scope.showTransferCard) {
       var walletsToTransfer = $scope.wallets;
       if (!(networkResult.livenet > 1)) {
-        walletsToTransfer = lodash.filter(walletsToTransfer, function(item) {
+        walletsToTransfer = lodash.filter(walletsToTransfer, function (item) {
           return item.network == 'testnet';
         });
       }
       if (!(networkResult.testnet > 1)) {
-        walletsToTransfer = lodash.filter(walletsToTransfer, function(item) {
+        walletsToTransfer = lodash.filter(walletsToTransfer, function (item) {
           return item.network == 'livenet';
         });
       }
       var walletList = [];
-      lodash.each(walletsToTransfer, function(v) {
+      lodash.each(walletsToTransfer, function (v) {
         walletList.push({
           color: v.color,
           name: v.name,
           recipientType: 'wallet',
           coin: v.coin,
           network: v.network,
-          getAddress: function(cb) {
+          getAddress: function (cb) {
             walletService.getAddress(v, false, cb);
           },
         });
@@ -93,7 +92,7 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     }
   }
 
-  var getCoin = function(address) {
+  var getCoin = function (address) {
     var cashAddress = bitcoreCash.Address.isValid(address, 'livenet');
     if (cashAddress) {
       return 'bch';
@@ -101,22 +100,22 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     return 'btc';
   };
 
-  var updateContactsList = function(cb) {
-    addressbookService.list(function(err, ab) {
+  var updateContactsList = function (cb) {
+    addressbookService.list(function (err, ab) {
       if (err) $log.error(err);
 
       $scope.hasContacts = lodash.isEmpty(ab) ? false : true;
       if (!$scope.hasContacts) return cb();
 
       var completeContacts = [];
-      lodash.each(ab, function(v, k) {
+      lodash.each(ab, function (v, k) {
         completeContacts.push({
           name: lodash.isObject(v) ? v.name : v,
           address: k,
           email: lodash.isObject(v) ? v.email : null,
           recipientType: 'contact',
           coin: getCoin(k),
-          getAddress: function(cb) {
+          getAddress: function (cb) {
             return cb(null, k);
           },
         });
@@ -128,15 +127,15 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     });
   };
 
-  var updateList = function() {
+  var updateList = function () {
     $scope.list = lodash.clone(originalList);
-    $timeout(function() {
+    $timeout(function () {
       $ionicScrollDelegate.resize();
       $scope.$apply();
     }, 10);
   };
 
-  $scope.openScanner = function() {
+  $scope.openScanner = function () {
     var isWindowsPhoneApp = platformInfo.isCordova && platformInfo.isWP;
 
     if (!isWindowsPhoneApp) {
@@ -144,7 +143,7 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
       return;
     }
 
-    scannerService.useOldScanner(function(err, contents) {
+    scannerService.useOldScanner(function (err, contents) {
       if (err) {
         popupService.showAlert(gettextCatalog.getString('Error'), err);
         return;
@@ -153,22 +152,22 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     });
   };
 
-  $scope.showMore = function() {
+  $scope.showMore = function () {
     currentContactsPage++;
     updateWalletsList();
   };
 
-  $scope.searchInFocus = function() {
+  $scope.searchInFocus = function () {
     $scope.searchFocus = true;
   };
 
-  $scope.searchBlurred = function() {
+  $scope.searchBlurred = function () {
     if ($scope.formData.search == null || $scope.formData.search.length == 0) {
       $scope.searchFocus = false;
     }
   };
 
-  $scope.findContact = function(search) {
+  $scope.findContact = function (search) {
 
     if (incomingData.redir(search)) {
       return;
@@ -176,13 +175,13 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
 
     if (!search || search.length < 2) {
       $scope.list = originalList;
-      $timeout(function() {
+      $timeout(function () {
         $scope.$apply();
       });
       return;
     }
 
-    var result = lodash.filter(originalList, function(item) {
+    var result = lodash.filter(originalList, function (item) {
       var val = item.name;
       return lodash.includes(val.toLowerCase(), search.toLowerCase());
     });
@@ -190,9 +189,9 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     $scope.list = result;
   };
 
-  $scope.goToAmount = function(item) {
-    $timeout(function() {
-      item.getAddress(function(err, addr) {
+  $scope.goToAmount = function (item) {
+    $timeout(function () {
+      item.getAddress(function (err, addr) {
         if (err || !addr) {
           //Error is already formated
           return popupService.showAlert(err);
@@ -210,25 +209,25 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     });
   };
 
-  $scope.openServerMessageLink = function() {
+  $scope.openServerMessageLink = function () {
     var url = $scope.serverMessage.link;
     externalLinkService.open(url);
   };
 
   // This could probably be enhanced refactoring the routes abstract states
-  $scope.createWallet = function() {
-    $state.go('tabs.home').then(function() {
+  $scope.createWallet = function () {
+    $state.go('tabs.home').then(function () {
       $state.go('tabs.add.create-personal');
     });
   };
 
-  $scope.buyBitcoin = function() {
-    $state.go('tabs.home').then(function() {
+  $scope.buyBitcoin = function () {
+    $state.go('tabs.home').then(function () {
       $state.go('tabs.buyandsell');
     });
   };
 
-  $scope.$on("$ionicView.beforeEnter", function(event, data) {
+  $scope.$on("$ionicView.beforeEnter", function (event, data) {
     $scope.checkingBalance = true;
     $scope.formData = {
       search: null
@@ -239,14 +238,14 @@ angular.module('copayApp.controllers').controller('tabSendController', function(
     hasWallets();
   });
 
-  $scope.$on("$ionicView.enter", function(event, data) {
+  $scope.$on("$ionicView.enter", function (event, data) {
     if (!$scope.hasWallets) {
       $scope.checkingBalance = false;
       return;
     }
     updateHasFunds();
     updateWalletsList();
-    updateContactsList(function() {
+    updateContactsList(function () {
       updateList();
     });
   });
