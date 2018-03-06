@@ -19,7 +19,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
     if ($scope.wallet.coin == 'bch') {
       blockexplorerUrl = 'bch-insight.bitpay.com';
     } else {
-      blockexplorerUrl = 'insight.bitpay.com';
+      blockexplorerUrl = 'unifyexplorer.com';
     }
 
     txConfirmNotification.checkIfEnabled(txId, function(res) {
@@ -48,7 +48,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
   });
 
   $scope.readMore = function() {
-    var url = 'https://github.com/bitpay/copay/wiki/COPAY---FAQ#amount-too-low-to-spend';
+    var url = 'https://github.com/unifycoin/unifypay/wiki/UNIFY---FAQ#amount-too-low-to-spend';
     var optIn = true;
     var title = null;
     var message = gettextCatalog.getString('Read more in our Wiki');
@@ -190,8 +190,8 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
     var url = 'https://' + ($scope.getShortNetworkName() == 'test' ? 'test-' : '') + blockexplorerUrl + '/tx/' + btx.txid;
     var optIn = true;
     var title = null;
-    var message = gettextCatalog.getString('View Transaction on Insight');
-    var okText = gettextCatalog.getString('Open Insight');
+    var message = gettextCatalog.getString('View Transaction on Unifysight');
+    var okText = gettextCatalog.getString('Open Unifysight');
     var cancelText = gettextCatalog.getString('Go Back');
     externalLinkService.open(url, optIn, title, message, okText, cancelText);
   };
