@@ -1,6 +1,6 @@
 'use strict';
 angular.module('copayApp.services')
-  .factory('applicationService', function($rootScope, $timeout, $ionicHistory, $ionicModal, platformInfo, fingerprintService, openURLService, configService, $state) {
+  .factory('applicationService', function ($rootScope, $timeout, $ionicHistory, $ionicModal, platformInfo, fingerprintService, openURLService, configService, $state) {
     var root = {};
 
     root.isPinModalOpen = false;
@@ -8,11 +8,11 @@ angular.module('copayApp.services')
     var isChromeApp = platformInfo.isChromeApp;
     var isNW = platformInfo.isNW;
 
-    root.restart = function() {
+    root.restart = function () {
       var hashIndex = window.location.href.indexOf('#/');
       if (platformInfo.isCordova) {
         window.location = window.location.href.substr(0, hashIndex);
-        $timeout(function() {
+        $timeout(function () {
           $rootScope.$digest();
         }, 1);
 
@@ -23,7 +23,7 @@ angular.module('copayApp.services')
         } else if (isNW) {
           $ionicHistory.removeBackView();
           $state.go('tabs.home');
-          $timeout(function() {
+          $timeout(function () {
             var win = require('nw.gui').Window.get();
             win.reload(3);
             //or
@@ -35,7 +35,7 @@ angular.module('copayApp.services')
       }
     };
 
-    root.fingerprintModal = function() {
+    root.fingerprintModal = function () {
 
       var scope = $rootScope.$new(true);
       $ionicModal.fromTemplateUrl('views/modals/fingerprintCheck.html', {
@@ -43,30 +43,30 @@ angular.module('copayApp.services')
         animation: 'none',
         backdropClickToClose: false,
         hardwareBackButtonClose: false
-      }).then(function(modal) {
+      }).then(function (modal) {
         scope.fingerprintCheckModal = modal;
         root.isModalOpen = true;
         scope.openModal();
       });
-      scope.openModal = function() {
+      scope.openModal = function () {
         scope.fingerprintCheckModal.show();
         scope.checkFingerprint();
       };
-      scope.hideModal = function() {
+      scope.hideModal = function () {
         root.isModalOpen = false;
         scope.fingerprintCheckModal.hide();
       };
-      scope.checkFingerprint = function() {
-        fingerprintService.check('unlockingApp', function(err) {
+      scope.checkFingerprint = function () {
+        fingerprintService.check('unlockingApp', function (err) {
           if (err) return;
-          $timeout(function() {
+          $timeout(function () {
             scope.hideModal();
           }, 200);
         });
       }
     };
 
-    root.pinModal = function(action) {
+    root.pinModal = function (action) {
 
       var scope = $rootScope.$new(true);
       scope.action = action;
@@ -75,26 +75,26 @@ angular.module('copayApp.services')
         animation: 'none',
         backdropClickToClose: false,
         hardwareBackButtonClose: false
-      }).then(function(modal) {
+      }).then(function (modal) {
         scope.pinModal = modal;
         root.isModalOpen = true;
         scope.openModal();
       });
-      scope.openModal = function() {
+      scope.openModal = function () {
         scope.pinModal.show();
       };
-      scope.hideModal = function() {
+      scope.hideModal = function () {
         scope.$emit('pinModalClosed');
         root.isModalOpen = false;
         scope.pinModal.hide();
       };
     };
 
-    root.appLockModal = function(action) {
+    root.appLockModal = function (action) {
 
       if (root.isModalOpen) return;
 
-      configService.whenAvailable(function(config) {
+      configService.whenAvailable(function (config) {
         var lockMethod = config.lock && config.lock.method;
         if (!lockMethod || lockMethod == 'none') return;
 

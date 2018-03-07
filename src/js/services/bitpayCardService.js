@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('copayApp.services').factory('bitpayCardService', function($log, $rootScope, $filter, lodash, storageService, bitauthService, platformInfo, moment, appIdentityService, bitpayService, nextStepsService, txFormatService, appConfigService) {
+angular.module('copayApp.services').factory('bitpayCardService', function ($log, $rootScope, $filter, lodash, storageService, bitauthService, platformInfo, moment, appIdentityService, bitpayService, nextStepsService, txFormatService, appConfigService) {
   var root = {};
 
-  var _setError = function(msg, e) {
+  var _setError = function (msg, e) {
     $log.error(msg);
     var error = (e && e.data && e.data.error) ? e.data.error : msg;
     return error;
   };
 
-  var _buildDate = function(date, time) {
+  var _buildDate = function (date, time) {
     date = date.match(/(\d{2})\/(\d{2})\/(\d{4})/);
     time = time.match(/(\d{2})(\d{2})(\d{2})/);
     var newDate = new Date(date[1] + '/' + date[2] + '/' + date[3]);
@@ -17,7 +17,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     return newDate;
   };
 
-  var _lowercaseMerchant = function(merchant) {
+  var _lowercaseMerchant = function (merchant) {
     if (merchant.name && merchant.name.toLowerCase) {
       merchant.name = merchant.name.toLowerCase();
     }
@@ -28,9 +28,9 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     return merchant;
   };
 
-  var _getMerchantInfo = function(tx) {
+  var _getMerchantInfo = function (tx) {
     var bpTranCodes = root.bpTranCodes;
-    lodash.keys(bpTranCodes).forEach(function(code) {
+    lodash.keys(bpTranCodes).forEach(function (code) {
       if (tx.type.indexOf(code) === 0) {
         lodash.assign(tx, bpTranCodes[code]);
       }
@@ -38,20 +38,20 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     return tx;
   };
 
-  var _getIconName = function(tx) {
+  var _getIconName = function (tx) {
     var icon = tx.mcc || tx.category || null;
     if (!icon || root.iconMap[icon] == undefined) return 'default';
     return root.iconMap[icon];
   };
 
-  var _processDescription = function(tx) {
+  var _processDescription = function (tx) {
     if (lodash.isArray(tx.description)) {
       return tx.description[0];
     }
     return tx.description;
   };
 
-  var _processLocation = function(tx) {
+  var _processLocation = function (tx) {
     if (tx.merchant.city && tx.merchant.state) {
       return tx.merchant.city + ', ' + tx.merchant.state;
     } else {
@@ -59,7 +59,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     }
   };
 
-  var _fromTransaction = function(txn, runningBalance) {
+  var _fromTransaction = function (txn, runningBalance) {
     var dateTime = _buildDate(txn.date, txn.time);
     var merchant = _lowercaseMerchant(txn.merchant);
     return _getMerchantInfo({
@@ -73,13 +73,13 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     });
   };
 
-  var _processTransactions = function(invoices, history) {
+  var _processTransactions = function (invoices, history) {
 
     var balance = history.endingBalance || history.currentCardBalance;
     var runningBalance = parseFloat(balance);
     var activityList = [];
 
-    if(history && history.transactionList){
+    if (history && history.transactionList) {
       for (var j = 0; j < history.transactionList.length; j++) {
         runningBalance -= parseFloat(history.transactionList[j].amount);
         activityList.push(_fromTransaction(history.transactionList[j], runningBalance));
@@ -88,7 +88,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
 
     if (activityList.length > 0) {
 
-      invoices = invoices ||  [];
+      invoices = invoices || [];
       for (var i = 0; i < invoices.length; i++) {
         var matched = false;
         for (var j = 0; j < history.transactionList.length; j++) {
@@ -131,15 +131,15 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     return activityList;
   };
 
-  root.filterTransactions = function(type, txns) {
+  root.filterTransactions = function (type, txns) {
     var list,
-      getPreAuth = lodash.filter(txns, function(txn) {
+      getPreAuth = lodash.filter(txns, function (txn) {
         return txn.type.indexOf('93') > -1;
       }),
-      getPending = lodash.filter(txns, function(txn) {
+      getPending = lodash.filter(txns, function (txn) {
         return txn.pending;
       }),
-      getCompleted = lodash.filter(txns, function(txn) {
+      getCompleted = lodash.filter(txns, function (txn) {
         return !txn.pending && txn.type.indexOf('93') == -1;
       });
 
@@ -160,18 +160,18 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     return list;
   };
 
-  root.sync = function(apiContext, cb) {
+  root.sync = function (apiContext, cb) {
     var json = {
       method: 'getDebitCards'
     };
     // Get Debit Cards
-    bitpayService.post('/api/v2/' + apiContext.token, json, function(data) {
+    bitpayService.post('/api/v2/' + apiContext.token, json, function (data) {
       if (data && data.data.error) return cb(data.data.error);
       $log.info('UnifyPay Get Debit Cards: SUCCESS');
 
       var cards = [];
 
-      lodash.each(data.data.data, function(x) {
+      lodash.each(data.data.data, function (x) {
         var n = {};
 
         if (!x.eid || !x.id || !x.lastFourDigits || !x.token) {
@@ -188,16 +188,16 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
         cards.push(n);
       });
 
-      storageService.setBitpayDebitCards(bitpayService.getEnvironment().network, apiContext.pairData.email, cards, function(err) {
+      storageService.setBitpayDebitCards(bitpayService.getEnvironment().network, apiContext.pairData.email, cards, function (err) {
         root.registerNextStep();
         return cb(err, cards);
       });
-    }, function(data) {
+    }, function (data) {
       return cb(_setError('UnifyPay Card Error: Get Debit Cards', data));
     });
   };
 
-  root.setCurrencySymbol = function(card) {
+  root.setCurrencySymbol = function (card) {
     // Sets a currency symbol.
     // Uses the currency code if no symbol is mapped (should never happen).
     // Backaward compatibility for FirstView cards (all USD).
@@ -209,7 +209,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
   };
 
   // opts: range
-  root.getHistory = function(cardId, opts, cb) {
+  root.getHistory = function (cardId, opts, cb) {
     var invoices, history;
     opts = opts || {};
 
@@ -217,10 +217,10 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
       method: 'getInvoiceHistory'
     };
 
-    appIdentityService.getIdentity(bitpayService.getEnvironment().network, function(err, appIdentity) {
+    appIdentityService.getIdentity(bitpayService.getEnvironment().network, function (err, appIdentity) {
       if (err) return cb(err);
 
-      root.getCards(function(err, data) {
+      root.getCards(function (err, data) {
         if (err) return cb(err);
         var card = lodash.find(data, {
           id: cardId
@@ -230,7 +230,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
           return cb(_setError('Card not found'));
 
         // Get invoices
-        bitpayService.post('/api/v2/' + card.token, json, function(data) {
+        bitpayService.post('/api/v2/' + card.token, json, function (data) {
           $log.info('UnifyPay Get Invoices: SUCCESS');
           invoices = data.data.data || [];
 
@@ -242,34 +242,34 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
             params: JSON.stringify(opts)
           };
           // Get transactions History list
-          bitpayService.post('/api/v2/' + card.token, json, function(data) {
+          bitpayService.post('/api/v2/' + card.token, json, function (data) {
             $log.info('UnifyPay Get History: SUCCESS');
             history = data.data.data || {};
             history['txs'] = _processTransactions(invoices, history);
 
-            root.setLastKnownBalance(cardId, history.currentCardBalance, function() {});
+            root.setLastKnownBalance(cardId, history.currentCardBalance, function () { });
 
             return cb(data.data.error, history);
-          }, function(data) {
+          }, function (data) {
             return cb(_setError('UnifyPay Card Error: Get History', data));
           });
-        }, function(data) {
+        }, function (data) {
           return cb(_setError('UnifyPay Card Error: Get Invoices', data));
         });
       });
     });
   };
 
-  root.topUp = function(cardId, opts, cb) {
+  root.topUp = function (cardId, opts, cb) {
     opts = opts || {};
     var json = {
       method: 'generateTopUpInvoice',
       params: JSON.stringify(opts)
     };
-    appIdentityService.getIdentity(bitpayService.getEnvironment().network, function(err, appIdentity) {
+    appIdentityService.getIdentity(bitpayService.getEnvironment().network, function (err, appIdentity) {
       if (err) return cb(err);
 
-      root.getCards(function(err, data) {
+      root.getCards(function (err, data) {
         if (err) return cb(err);
 
         var card = lodash.find(data, {
@@ -279,43 +279,43 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
         if (!card)
           return cb(_setError('Card not found'));
 
-        bitpayService.post('/api/v2/' + card.token, json, function(data) {
+        bitpayService.post('/api/v2/' + card.token, json, function (data) {
           $log.info('UnifyPay TopUp: SUCCESS');
           if (data.data.error) {
             return cb(data.data.error);
           } else {
             return cb(null, data.data.data.invoice);
           }
-        }, function(data) {
+        }, function (data) {
           return cb(_setError('UnifyPay Card Error: TopUp', data));
         });
       });
     });
   };
 
-  root.getInvoice = function(id, cb) {
-    bitpayService.get('/invoices/' + id, function(data) {
+  root.getInvoice = function (id, cb) {
+    bitpayService.get('/invoices/' + id, function (data) {
       $log.info('UnifyPay Get Invoice: SUCCESS');
       return cb(data.data.error, data.data.data);
-    }, function(data) {
+    }, function (data) {
       return cb(_setError('UnifyPay Card Error: Get Invoice', data));
     });
   };
 
   // get all cards, for all accounts.
-  root.getCards = function(cb) {
+  root.getCards = function (cb) {
     storageService.getBitpayDebitCards(bitpayService.getEnvironment().network, cb);
   };
 
-  root.getLastKnownBalance = function(cardId, cb) {
+  root.getLastKnownBalance = function (cardId, cb) {
     storageService.getBalanceCache(cardId, cb);
   };
 
-  root.addLastKnownBalance = function(card, cb) {
+  root.addLastKnownBalance = function (card, cb) {
     var now = Math.floor(Date.now() / 1000);
     var showRange = 600; // 10min;
 
-    root.getLastKnownBalance(card.eid, function(err, data) {
+    root.getLastKnownBalance(card.eid, function (err, data) {
       if (data) {
         data = JSON.parse(data);
         card.balance = data.balance;
@@ -325,7 +325,7 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     });
   };
 
-  root.setLastKnownBalance = function(cardId, balance, cb) {
+  root.setLastKnownBalance = function (cardId, balance, cb) {
 
     storageService.setBalanceCache(cardId, {
       balance: balance,
@@ -333,8 +333,8 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     }, cb);
   };
 
-  root.remove = function(cardId, cb) {
-    storageService.removeBitpayDebitCard(bitpayService.getEnvironment().network, cardId, function(err) {
+  root.remove = function (cardId, cb) {
+    storageService.removeBitpayDebitCard(bitpayService.getEnvironment().network, cardId, function (err) {
       if (err) {
         $log.error('Error removing UnifyPay debit card: ' + err);
         return cb(err);
@@ -344,26 +344,26 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
     });
   };
 
-  root.getRates = function(currency, cb) {
-    bitpayService.get('/rates/' + currency, function(data) {
+  root.getRates = function (currency, cb) {
+    bitpayService.get('/rates/' + currency, function (data) {
       $log.info('UnifyPay Get Rates: SUCCESS');
       return cb(data.data.error, data.data.data);
-    }, function(data) {
+    }, function (data) {
       return cb(_setError('UnifyPay Error: Get Rates', data));
     });
   };
 
-  root.getRatesFromCoin = function(coin, currency, cb) {
-    bitpayService.get('/rates/' + coin + '/' + currency, function(data) {
+  root.getRatesFromCoin = function (coin, currency, cb) {
+    bitpayService.get('/rates/' + coin + '/' + currency, function (data) {
       $log.info('UnifyPay Get Rates From Coin: SUCCESS');
       return cb(data.data.error, data.data.data);
-    }, function(data) {
+    }, function (data) {
       return cb(_setError('UnifyPay Error: Get Rates From Coin', data));
     });
   };
 
-  root.get = function(opts, cb) {
-    root.getCards(function(err, cards) {
+  root.get = function (opts, cb) {
+    root.getCards(function (err, cards) {
       if (err) return;
 
       if (lodash.isEmpty(cards)) {
@@ -371,22 +371,22 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
       }
 
       if (opts.cardId) {
-        cards = lodash.filter(cards, function(x) {
+        cards = lodash.filter(cards, function (x) {
           return opts.cardId == x.eid;
         });
       }
 
       // Async, no problem
-      lodash.each(cards, function(x) {
+      lodash.each(cards, function (x) {
 
         root.setCurrencySymbol(x);
-        root.addLastKnownBalance(x, function() {});
+        root.addLastKnownBalance(x, function () { });
 
         // async refresh
         if (!opts.noRefresh) {
-          root.getHistory(x.id, {}, function(err, data) {
+          root.getHistory(x.id, {}, function (err, data) {
             if (err) return;
-            root.addLastKnownBalance(x, function() {});
+            root.addLastKnownBalance(x, function () { });
           });
         }
       });
@@ -1482,10 +1482,10 @@ angular.module('copayApp.services').factory('bitpayCardService', function($log, 
   };
 
 
-  root.registerNextStep = function() {
+  root.registerNextStep = function () {
     // Disable UnifyPay Card
     if (!appConfigService._enabledExtensions.debitcard) return;
-    root.getCards(function(err, cards) {
+    root.getCards(function (err, cards) {
       if (lodash.isEmpty(cards)) {
         nextStepsService.register(nextStepItem);
       } else {

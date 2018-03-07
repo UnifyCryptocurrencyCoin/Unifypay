@@ -1,16 +1,16 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('walletsController', function($scope, $timeout, bwcError, profileService) {
+angular.module('copayApp.controllers').controller('walletsController', function ($scope, $timeout, bwcError, profileService) {
 
-  $scope.selectWallet = function(walletId) {
+  $scope.selectWallet = function (walletId) {
 
     var client = profileService.getClient(walletId);
     $scope.errorSelectedWallet = {};
 
-    profileService.isReady(client, function(err) {
+    profileService.isReady(client, function (err) {
       if (err) {
         $scope.errorSelectedWallet[walletId] = bwcError.msg(err);
-        $timeout(function() {
+        $timeout(function () {
           $scope.$apply();
         });
         return;
@@ -20,7 +20,7 @@ angular.module('copayApp.controllers').controller('walletsController', function(
     });
   };
 
-  $scope.cancel = function() {
+  $scope.cancel = function () {
     $scope.walletsModal.hide();
   };
 

@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('txpDetailsController', function($scope, $rootScope, $timeout, $interval, $log, ongoingProcess, platformInfo, $ionicScrollDelegate, txFormatService, bwcError, gettextCatalog, lodash, walletService, popupService, $ionicHistory, feeService) {
+angular.module('copayApp.controllers').controller('txpDetailsController', function ($scope, $rootScope, $timeout, $interval, $log, ongoingProcess, platformInfo, $ionicScrollDelegate, txFormatService, bwcError, gettextCatalog, lodash, walletService, popupService, $ionicHistory, feeService) {
   var isGlidera = $scope.isGlidera;
   var GLIDERA_LOCK_TIME = 6 * 60 * 60;
   var now = Math.floor(Date.now() / 1000);
   var countDown;
 
-  $scope.init = function() {
+  $scope.init = function () {
     $scope.loading = null;
     $scope.isCordova = platformInfo.isCordova;
     $scope.isWindowsPhoneApp = platformInfo.isCordova && platformInfo.isWP;
@@ -23,7 +23,7 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
   };
 
   function displayFeeValues() {
-    txFormatService.formatAlternativeStr($scope.wallet.coin, $scope.tx.fee, function(v) {
+    txFormatService.formatAlternativeStr($scope.wallet.coin, $scope.tx.fee, function (v) {
       $scope.tx.feeFiatStr = v;
     });
     $scope.tx.feeRateStr = ($scope.tx.fee / ($scope.tx.amount + $scope.tx.fee) * 100).toFixed(2) + '%';
@@ -71,7 +71,7 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
       by: $scope.tx.creatorName
     });
 
-    lodash.each($scope.tx.actions, function(action) {
+    lodash.each($scope.tx.actions, function (action) {
       $scope.actionList.push({
         type: action.type,
         time: action.createdOn,
@@ -80,7 +80,7 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
       });
     });
 
-    $timeout(function() {
+    $timeout(function () {
       $scope.actionList.reverse();
     }, 10);
   };
@@ -89,7 +89,7 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
     if ($scope.tx.payProUrl && !platformInfo.isChromeApp) {
       $scope.wallet.fetchPayPro({
         payProUrl: $scope.tx.payProUrl,
-      }, function(err, paypro) {
+      }, function (err, paypro) {
         if (err) {
           $scope.paymentExpired = true;
           $log.error(err);
@@ -98,7 +98,7 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
         }
         $scope.tx.paypro = paypro;
         paymentTimeControl($scope.tx.paypro.expires);
-        $timeout(function() {
+        $timeout(function () {
           $ionicScrollDelegate.resize();
         }, 10);
       });
@@ -109,7 +109,7 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
     $scope.paymentExpired = false;
     setExpirationTime();
 
-    countDown = $interval(function() {
+    countDown = $interval(function () {
       setExpirationTime();
     }, 1000);
 
@@ -127,7 +127,7 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
     };
   };
 
-  $scope.$on('accepted', function(event) {
+  $scope.$on('accepted', function (event) {
     $scope.sign();
   });
 
@@ -139,29 +139,29 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
     }
   }
 
-  var setError = function(err, prefix) {
+  var setError = function (err, prefix) {
     $scope.sendStatus = '';
     $scope.loading = false;
     popupService.showAlert(gettextCatalog.getString('Error'), bwcError.msg(err, prefix));
   };
 
-  $scope.sign = function(onSendStatusChange) {
+  $scope.sign = function (onSendStatusChange) {
     $scope.loading = true;
-    walletService.publishAndSign($scope.wallet, $scope.tx, function(err, txp) {
+    walletService.publishAndSign($scope.wallet, $scope.tx, function (err, txp) {
       $scope.$emit('UpdateTx');
       if (err) return setError(err, gettextCatalog.getString('Could not send payment'));
       success();
     }, onSendStatusChange);
   };
 
-  $scope.reject = function(txp) {
+  $scope.reject = function (txp) {
     var title = gettextCatalog.getString('Warning!');
     var msg = gettextCatalog.getString('Are you sure you want to reject this transaction?');
-    popupService.showConfirm(title, msg, null, null, function(res) {
+    popupService.showConfirm(title, msg, null, null, function (res) {
       if (res) {
         $scope.loading = true;
 
-        walletService.reject($scope.wallet, $scope.tx, function(err, txpr) {
+        walletService.reject($scope.wallet, $scope.tx, function (err, txpr) {
           if (err)
             return setError(err, gettextCatalog.getString('Could not reject payment'));
 
@@ -171,13 +171,13 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
     });
   };
 
-  $scope.remove = function() {
+  $scope.remove = function () {
     var title = gettextCatalog.getString('Warning!');
     var msg = gettextCatalog.getString('Are you sure you want to remove this transaction?');
-    popupService.showConfirm(title, msg, null, null, function(res) {
+    popupService.showConfirm(title, msg, null, null, function (res) {
       if (res) {
         ongoingProcess.set('removeTx', true);
-        walletService.removeTx($scope.wallet, $scope.tx, function(err) {
+        walletService.removeTx($scope.wallet, $scope.tx, function (err) {
           ongoingProcess.set('removeTx', false);
 
           // Hacky: request tries to parse an empty response
@@ -192,12 +192,12 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
     });
   };
 
-  $scope.broadcast = function(txp) {
+  $scope.broadcast = function (txp) {
     $scope.loading = true;
 
-    $timeout(function() {
+    $timeout(function () {
       ongoingProcess.set('broadcastingTx', true);
-      walletService.broadcastTx($scope.wallet, $scope.tx, function(err, txpb) {
+      walletService.broadcastTx($scope.wallet, $scope.tx, function (err, txpb) {
         ongoingProcess.set('broadcastingTx', false);
 
         if (err) {
@@ -209,12 +209,12 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
     }, 10);
   };
 
-  $scope.getShortNetworkName = function() {
+  $scope.getShortNetworkName = function () {
     return $scope.wallet.credentials.networkName.substring(0, 4);
   };
 
-  var updateTxInfo = function(eventName) {
-    $scope.wallet.getTx($scope.tx.id, function(err, tx) {
+  var updateTxInfo = function (eventName) {
+    $scope.wallet.getTx($scope.tx.id, function (err, tx) {
       if (err) {
         if (err.message && err.message == 'Transaction proposal not found' &&
           (eventName == 'transactionProposalRemoved' || eventName == 'TxProposalRemoved')) {
@@ -241,24 +241,24 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
     });
   };
 
-  var bwsEvent = $rootScope.$on('bwsEvent', function(e, walletId, type, n) {
+  var bwsEvent = $rootScope.$on('bwsEvent', function (e, walletId, type, n) {
     lodash.each([
-        'TxProposalRejectedBy',
-        'TxProposalAcceptedBy',
-        'transactionProposalRemoved',
-        'TxProposalRemoved',
-        'NewOutgoingTx',
-        'UpdateTx'
-    ], function(eventName) {
+      'TxProposalRejectedBy',
+      'TxProposalAcceptedBy',
+      'transactionProposalRemoved',
+      'TxProposalRemoved',
+      'NewOutgoingTx',
+      'UpdateTx'
+    ], function (eventName) {
       if (walletId == $scope.wallet.id && type == eventName) {
         updateTxInfo(eventName);
       }
     });
   });
 
-  $scope.updateCopayerList = function() {
-    lodash.map($scope.copayers, function(cp) {
-      lodash.each($scope.tx.actions, function(ac) {
+  $scope.updateCopayerList = function () {
+    lodash.map($scope.copayers, function (cp) {
+      lodash.each($scope.tx.actions, function (ac) {
         if (cp.id == ac.copayerId) {
           cp.action = ac.type;
         }
@@ -280,18 +280,18 @@ angular.module('copayApp.controllers').controller('txpDetailsController', functi
 
   $scope.statusChangeHandler = statusChangeHandler;
 
-  $scope.onConfirm = function() {
+  $scope.onConfirm = function () {
     $scope.sign(statusChangeHandler);
   };
 
-  $scope.onSuccessConfirm = function() {
+  $scope.onSuccessConfirm = function () {
     $ionicHistory.nextViewOptions({
       disableAnimate: true
     });
     $scope.close();
   };
 
-  $scope.close = function() {
+  $scope.close = function () {
     bwsEvent();
     $scope.loading = null;
     $scope.txpDetailsModal.hide();

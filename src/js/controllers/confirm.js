@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('confirmController', function($rootScope, $scope, $interval, $filter, $timeout, $ionicScrollDelegate, gettextCatalog, walletService, platformInfo, lodash, configService, $stateParams, $window, $state, $log, profileService, bitcore, bitcoreCash, txFormatService, ongoingProcess, $ionicModal, popupService, $ionicHistory, $ionicConfig, payproService, feeService, bwcError, txConfirmNotification, externalLinkService) {
+angular.module('copayApp.controllers').controller('confirmController', function ($rootScope, $scope, $interval, $filter, $timeout, $ionicScrollDelegate, gettextCatalog, walletService, platformInfo, lodash, configService, $stateParams, $window, $state, $log, profileService, bitcore, bitcoreCash, txFormatService, ongoingProcess, $ionicModal, popupService, $ionicHistory, $ionicConfig, payproService, feeService, bwcError, txConfirmNotification, externalLinkService) {
 
   var countDown = null;
   var CONFIRM_LIMIT_USD = 20;
@@ -26,33 +26,33 @@ angular.module('copayApp.controllers').controller('confirmController', function(
   var usingMerchantFee = false;
 
   function refresh() {
-    $timeout(function() {
+    $timeout(function () {
       $scope.$apply();
     }, 10);
   }
 
-  $scope.openSupport = function() {
+  $scope.openSupport = function () {
     var url = 'https://support.bitpay.com/hc/en-us/articles/115005936786';
     externalLinkService.open(url);
   };
 
-  $scope.showWalletSelector = function() {
+  $scope.showWalletSelector = function () {
     $scope.walletSelector = true;
     refresh();
   };
 
-  $scope.$on("$ionicView.beforeLeave", function(event, data) {
+  $scope.$on("$ionicView.beforeLeave", function (event, data) {
     $ionicConfig.views.swipeBackEnabled(true);
   });
 
-  $scope.$on("$ionicView.enter", function(event, data) {
+  $scope.$on("$ionicView.enter", function (event, data) {
     $ionicConfig.views.swipeBackEnabled(false);
   });
 
 
   function exitWithError(err) {
     $log.info('Error setting wallet selector:' + err);
-    popupService.showAlert(gettextCatalog.getString(), bwcError.msg(err), function() {
+    popupService.showAlert(gettextCatalog.getString(), bwcError.msg(err), function () {
       $ionicHistory.nextViewOptions({
         disableAnimate: true,
         historyRoot: true
@@ -67,12 +67,12 @@ angular.module('copayApp.controllers').controller('confirmController', function(
     $scope.noWalletMessage = msg;
     $scope.criticalError = criticalError;
     $log.warn('Not ready to make the payment:' + msg);
-    $timeout(function() {
+    $timeout(function () {
       $scope.$apply();
     });
   };
 
-  $scope.$on("$ionicView.beforeEnter", function(event, data) {
+  $scope.$on("$ionicView.beforeEnter", function (event, data) {
 
     function setWalletSelector(coin, network, minAmount, cb) {
 
@@ -94,8 +94,8 @@ angular.module('copayApp.controllers').controller('confirmController', function(
       var index = 0;
       var walletsUpdated = 0;
 
-      lodash.each($scope.wallets, function(w) {
-        walletService.getStatus(w, {}, function(err, status) {
+      lodash.each($scope.wallets, function (w) {
+        walletService.getStatus(w, {}, function (err, status) {
           if (err || !status) {
             $log.error(err);
           } else {
@@ -134,12 +134,12 @@ angular.module('copayApp.controllers').controller('confirmController', function(
       var message = gettextCatalog.getString('Copay only supports Unifycoin Cash using new version numbers addresses');
       var backText = gettextCatalog.getString('Go back');
       var learnText = gettextCatalog.getString('Learn more');
-      popupService.showConfirm(null, message, backText, learnText, function(back) {
+      popupService.showConfirm(null, message, backText, learnText, function (back) {
         $ionicHistory.nextViewOptions({
           disableAnimate: true,
           historyRoot: true
         });
-        $state.go('tabs.send').then(function() {
+        $state.go('tabs.send').then(function () {
           $ionicHistory.clearHistory();
           if (!back) {
             var url = 'https://support.bitpay.com/hc/en-us/articles/115004671663';
@@ -174,8 +174,8 @@ angular.module('copayApp.controllers').controller('confirmController', function(
     if (data.stateParams.requiredFeeRate) {
       usingMerchantFee = true;
       tx.feeRate = data.stateParams.requiredFeeRate;
-    }  else {
-      tx.feeLevel=  (tx.coin && tx.coin == 'bch') ? 'normal ' : configFeeLevel;
+    } else {
+      tx.feeLevel = (tx.coin && tx.coin == 'bch') ? 'normal ' : configFeeLevel;
     }
 
     if (tx.coin && tx.coin == 'bch') {
@@ -190,7 +190,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
 
     $scope.walletSelectorTitle = gettextCatalog.getString('Send from');
 
-    setWalletSelector(tx.coin, tx.network, tx.toAmount, function(err) {
+    setWalletSelector(tx.coin, tx.network, tx.toAmount, function (err) {
       if (err) {
         return exitWithError('Could not update wallets');
       }
@@ -256,7 +256,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
     }
     txp.excludeUnconfirmedUtxos = !tx.spendUnconfirmed;
     txp.dryRun = dryRun;
-    walletService.createTx(wallet, txp, function(err, ctxp) {
+    walletService.createTx(wallet, txp, function (err, ctxp) {
       if (err) {
         setSendError(err);
         return cb(err);
@@ -281,7 +281,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
       tx.amountStr = txFormatService.formatAmountStr(wallet.coin, tx.toAmount);
       tx.amountValueStr = tx.amountStr.split(' ')[0];
       tx.amountUnitStr = tx.amountStr.split(' ')[1];
-      txFormatService.formatAlternativeStr(wallet.coin, tx.toAmount, function(v) {
+      txFormatService.formatAlternativeStr(wallet.coin, tx.toAmount, function (v) {
         tx.alternativeAmountStr = v;
       });
     }
@@ -300,7 +300,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
       bch: 'normal',
     };
 
-    feeService.getFeeRate(wallet.coin, tx.network, usingMerchantFee ? maxAllowedMerchantFee[wallet.coin] : tx.feeLevel, function(err, feeRate) {
+    feeService.getFeeRate(wallet.coin, tx.network, usingMerchantFee ? maxAllowedMerchantFee[wallet.coin] : tx.feeLevel, function (err, feeRate) {
       if (err) {
         $log.warn(err);
         ongoingProcess.set('calculatingFee', false);
@@ -311,7 +311,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
       if (usingCustomFee) {
         msg = gettextCatalog.getString('Custom');
         tx.feeLevelName = msg;
-      }  else if (usingMerchantFee) {
+      } else if (usingMerchantFee) {
 
         var maxAllowedfee = feeRate * 2;
         $log.info('Using Merchant Fee:' + tx.feeRate + ' vs. referent level:' + maxAllowedfee);
@@ -327,7 +327,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
         tx.feeLevelName = feeService.feeOpts[tx.feeLevel];
         tx.feeRate = feeRate;
       }
-      getSendMaxInfo(lodash.clone(tx), wallet, function(err, sendMaxInfo) {
+      getSendMaxInfo(lodash.clone(tx), wallet, function (err, sendMaxInfo) {
         if (err) {
           ongoingProcess.set('calculatingFee', false);
           var msg = gettextCatalog.getString('Error getting SendMax information');
@@ -349,7 +349,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
           tx.toAmount = tx.sendMaxInfo.amount;
           updateAmount();
           ongoingProcess.set('calculatingFee', false);
-          $timeout(function() {
+          $timeout(function () {
             showSendMaxWarning(wallet, sendMaxInfo);
           }, 200);
         }
@@ -361,7 +361,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
           refresh();
           return cb();
         }
-        getTxp(lodash.clone(tx), wallet, opts.dryRun, function(err, txp) {
+        getTxp(lodash.clone(tx), wallet, opts.dryRun, function (err, txp) {
           ongoingProcess.set('calculatingFee', false);
           if (err) {
             if (err.message == 'Insufficient funds') {
@@ -373,7 +373,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
           }
 
           txp.feeStr = txFormatService.formatAmountStr(wallet.coin, txp.fee);
-          txFormatService.formatAlternativeStr(wallet.coin, txp.fee, function(v) {
+          txFormatService.formatAlternativeStr(wallet.coin, txp.fee, function (v) {
             txp.alternativeFeeStr = v;
           });
 
@@ -384,12 +384,12 @@ angular.module('copayApp.controllers').controller('confirmController', function(
           if (txp.feeTooHigh) {
             $ionicModal.fromTemplateUrl('views/modals/fee-warning.html', {
               scope: $scope
-            }).then(function(modal) {
+            }).then(function (modal) {
               $scope.feeWarningModal = modal;
               $scope.feeWarningModal.show();
             });
 
-            $scope.close = function() {
+            $scope.close = function () {
               $scope.feeWarningModal.hide();
             };
           }
@@ -437,7 +437,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
   };
 
 
-  $scope.toggleAddress = function() {
+  $scope.toggleAddress = function () {
     $scope.showAddress = !$scope.showAddress;
   };
 
@@ -468,22 +468,22 @@ angular.module('copayApp.controllers').controller('confirmController', function(
     if (!lodash.isEmpty(warningMsg))
       msg += '\n' + warningMsg;
 
-    popupService.showAlert(null, msg, function() {});
+    popupService.showAlert(null, msg, function () { });
   };
 
-  $scope.onWalletSelect = function(wallet) {
+  $scope.onWalletSelect = function (wallet) {
     setWallet(wallet, tx);
   };
 
-  $scope.showDescriptionPopup = function(tx) {
+  $scope.showDescriptionPopup = function (tx) {
     var message = gettextCatalog.getString('Add description');
     var opts = {
       defaultText: tx.description
     };
 
-    popupService.showPrompt(null, message, opts, function(res) {
+    popupService.showPrompt(null, message, opts, function (res) {
       if (typeof res != 'undefined') tx.description = res;
-      $timeout(function() {
+      $timeout(function () {
         $scope.$apply();
       });
     });
@@ -493,7 +493,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
     $scope.paymentExpired = false;
     setExpirationTime();
 
-    countDown = $interval(function() {
+    countDown = $interval(function () {
       setExpirationTime();
     }, 1000);
 
@@ -515,7 +515,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
       $scope.paymentExpired = true;
       $scope.remainingTimeStr = gettextCatalog.getString('Expired');
       if (countDown) $interval.cancel(countDown);
-      $timeout(function() {
+      $timeout(function () {
         $scope.$apply();
       });
     };
@@ -541,8 +541,8 @@ angular.module('copayApp.controllers').controller('confirmController', function(
 
     updateTx(tx, wallet, {
       dryRun: true
-    }, function(err) {
-      $timeout(function() {
+    }, function (err) {
+      $timeout(function () {
         $ionicScrollDelegate.resize();
         $scope.$apply();
       }, 10);
@@ -551,42 +551,42 @@ angular.module('copayApp.controllers').controller('confirmController', function(
 
   };
 
-  var setSendError = function(msg) {
+  var setSendError = function (msg) {
     $scope.sendStatus = '';
-    $timeout(function() {
+    $timeout(function () {
       $scope.$apply();
     });
     popupService.showAlert(gettextCatalog.getString('Error at confirm'), bwcError.msg(msg));
   };
 
-  $scope.openPPModal = function() {
+  $scope.openPPModal = function () {
     $ionicModal.fromTemplateUrl('views/modals/paypro.html', {
       scope: $scope
-    }).then(function(modal) {
+    }).then(function (modal) {
       $scope.payproModal = modal;
       $scope.payproModal.show();
     });
   };
 
-  $scope.cancel = function() {
+  $scope.cancel = function () {
     $scope.payproModal.hide();
   };
 
-  $scope.approve = function(tx, wallet, onSendStatusChange) {
+  $scope.approve = function (tx, wallet, onSendStatusChange) {
 
     if (!tx || !wallet) return;
 
     if ($scope.paymentExpired) {
       popupService.showAlert(null, gettextCatalog.getString('This unifycoin payment request has expired.'));
       $scope.sendStatus = '';
-      $timeout(function() {
+      $timeout(function () {
         $scope.$apply();
       });
       return;
     }
 
     ongoingProcess.set('creatingTx', true, onSendStatusChange);
-    getTxp(lodash.clone(tx), wallet, false, function(err, txp) {
+    getTxp(lodash.clone(tx), wallet, false, function (err, txp) {
       ongoingProcess.set('creatingTx', false, onSendStatusChange);
       if (err) return;
 
@@ -605,7 +605,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
         });
         var okText = gettextCatalog.getString('Confirm');
         var cancelText = gettextCatalog.getString('Cancel');
-        popupService.showConfirm(null, message, okText, cancelText, function(ok) {
+        popupService.showConfirm(null, message, okText, cancelText, function (ok) {
           return cb(!ok);
         });
       };
@@ -614,12 +614,12 @@ angular.module('copayApp.controllers').controller('confirmController', function(
         if (!wallet.canSign() && !wallet.isPrivKeyExternal()) {
           $log.info('No signing proposal: No private key');
 
-          return walletService.onlyPublish(wallet, txp, function(err) {
+          return walletService.onlyPublish(wallet, txp, function (err) {
             if (err) setSendError(err);
           }, onSendStatusChange);
         }
 
-        walletService.publishAndSign(wallet, txp, function(err, txp) {
+        walletService.publishAndSign(wallet, txp, function (err, txp) {
           if (err) return setSendError(err);
           if (config.confirmedTxsNotifications && config.confirmedTxsNotifications.enabled) {
             txConfirmNotification.subscribe(wallet, {
@@ -629,10 +629,10 @@ angular.module('copayApp.controllers').controller('confirmController', function(
         }, onSendStatusChange);
       };
 
-      confirmTx(function(nok) {
+      confirmTx(function (nok) {
         if (nok) {
           $scope.sendStatus = '';
-          $timeout(function() {
+          $timeout(function () {
             $scope.$apply();
           });
           return;
@@ -651,7 +651,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
         (processName == 'sendingTx' && !$scope.wallet.canSign() && !$scope.wallet.isPrivKeyExternal())
       ) && !isOn) {
       $scope.sendStatus = 'success';
-      $timeout(function() {
+      $timeout(function () {
         $scope.$digest();
       }, 100);
     } else if (showName) {
@@ -661,19 +661,19 @@ angular.module('copayApp.controllers').controller('confirmController', function(
 
   $scope.statusChangeHandler = statusChangeHandler;
 
-  $scope.onSuccessConfirm = function() {
+  $scope.onSuccessConfirm = function () {
     $scope.sendStatus = '';
     $ionicHistory.nextViewOptions({
       disableAnimate: true,
       historyRoot: true
     });
-    $state.go('tabs.send').then(function() {
+    $state.go('tabs.send').then(function () {
       $ionicHistory.clearHistory();
       $state.transitionTo('tabs.home');
     });
   };
 
-  $scope.chooseFeeLevel = function(tx, wallet) {
+  $scope.chooseFeeLevel = function (tx, wallet) {
 
     if (wallet.coin == 'bch') return;
     if (usingMerchantFee) return;       // ToDo: should we allow overwride?
@@ -693,15 +693,15 @@ angular.module('copayApp.controllers').controller('confirmController', function(
       scope: scope,
       backdropClickToClose: false,
       hardwareBackButtonClose: false
-    }).then(function(modal) {
+    }).then(function (modal) {
       scope.chooseFeeLevelModal = modal;
       scope.openModal();
     });
-    scope.openModal = function() {
+    scope.openModal = function () {
       scope.chooseFeeLevelModal.show();
     };
 
-    scope.hideModal = function(newFeeLevel, customFeePerKB) {
+    scope.hideModal = function (newFeeLevel, customFeePerKB) {
       scope.chooseFeeLevelModal.hide();
       $log.debug('New fee level choosen:' + newFeeLevel + ' was:' + tx.feeLevel);
 
@@ -715,7 +715,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
       updateTx(tx, wallet, {
         clearCache: true,
         dryRun: true
-      }, function() {
+      }, function () {
       });
     };
   };

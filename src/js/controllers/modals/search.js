@@ -1,23 +1,23 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('searchController', function($scope, $interval, $timeout, $filter, $log, $ionicModal, $ionicPopover, $state, $stateParams, $ionicScrollDelegate, bwcError, profileService, lodash, configService, gettext, gettextCatalog, platformInfo, walletService) {
+angular.module('copayApp.controllers').controller('searchController', function ($scope, $interval, $timeout, $filter, $log, $ionicModal, $ionicPopover, $state, $stateParams, $ionicScrollDelegate, bwcError, profileService, lodash, configService, gettext, gettextCatalog, platformInfo, walletService) {
 
   var HISTORY_SHOW_LIMIT = 10;
   var currentTxHistoryPage = 0;
   var wallet;
   var isCordova = platformInfo.isCordova;
 
-  $scope.updateSearchInput = function(search) {
+  $scope.updateSearchInput = function (search) {
     if (isCordova)
       window.plugins.toast.hide();
     currentTxHistoryPage = 0;
     throttleSearch(search);
-    $timeout(function() {
+    $timeout(function () {
       $ionicScrollDelegate.resize();
     }, 10);
   }
 
-  var throttleSearch = lodash.throttle(function(search) {
+  var throttleSearch = lodash.throttle(function (search) {
 
     function filter(search) {
       $scope.filteredTxHistory = [];
@@ -45,7 +45,7 @@ angular.module('copayApp.controllers').controller('searchController', function($
         return [];
       }
 
-      $scope.filteredTxHistory = lodash.filter($scope.completeTxHistory, function(tx) {
+      $scope.filteredTxHistory = lodash.filter($scope.completeTxHistory, function (tx) {
         if (!tx.searcheableString) tx.searcheableString = computeSearchableString(tx);
         return lodash.includes(tx.searcheableString, search.toLowerCase());
       });
@@ -60,19 +60,19 @@ angular.module('copayApp.controllers').controller('searchController', function($
     if (isCordova)
       window.plugins.toast.showShortBottom(gettextCatalog.getString('Matches: ' + $scope.filteredTxHistory.length));
 
-    $timeout(function() {
+    $timeout(function () {
       $scope.$apply();
     });
 
   }, 1000);
 
-  $scope.moreSearchResults = function() {
+  $scope.moreSearchResults = function () {
     currentTxHistoryPage++;
     $scope.showHistory();
     $scope.$broadcast('scroll.infiniteScrollComplete');
   };
 
-  $scope.showHistory = function() {
+  $scope.showHistory = function () {
     $scope.txHistorySearchResults = $scope.filteredTxHistory ? $scope.filteredTxHistory.slice(0, (currentTxHistoryPage + 1) * HISTORY_SHOW_LIMIT) : [];
     $scope.txHistoryShowMore = $scope.filteredTxHistory.length > $scope.txHistorySearchResults.length;
   };

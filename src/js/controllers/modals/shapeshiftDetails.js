@@ -17,7 +17,7 @@ angular.module('copayApp.controllers').controller('shapeshiftDetailsController',
   $scope.openTransaction = function(id) {
     var url;
     if ($scope.ss['outgoingType'].toUpperCase() == 'UNIFY') {
-      url = "https://insight.bitpay.com/tx/" + id;
+      url = "https://unifyexplorer.com/tx/" + id;
     } else if ($scope.ss['outgoingType'].toUpperCase() == 'BCH') {
       url = "https://bch-insight.bitpay.com/tx/" + id;
     } else {

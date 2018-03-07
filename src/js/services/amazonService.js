@@ -1,5 +1,5 @@
 'use strict';
-angular.module('copayApp.services').factory('amazonService', function($http, $log, lodash, moment, storageService, configService, platformInfo, nextStepsService, homeIntegrationsService) {
+angular.module('copayApp.services').factory('amazonService', function ($http, $log, lodash, moment, storageService, configService, platformInfo, nextStepsService, homeIntegrationsService) {
   var root = {};
   var credentials = {};
 
@@ -32,7 +32,7 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
     sref: 'tabs.giftcards.amazon',
   };
 
-  var _getBitPay = function(endpoint) {
+  var _getBitPay = function (endpoint) {
     return {
       method: 'GET',
       url: credentials.BITPAY_API_URL + endpoint,
@@ -42,7 +42,7 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
     };
   };
 
-  var _postBitPay = function(endpoint, data) {
+  var _postBitPay = function (endpoint, data) {
     return {
       method: 'POST',
       url: credentials.BITPAY_API_URL + endpoint,
@@ -53,13 +53,13 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
     };
   };
 
-  root.getNetwork = function() {
+  root.getNetwork = function () {
     return credentials.NETWORK;
   };
 
-  root.savePendingGiftCard = function(gc, opts, cb) {
+  root.savePendingGiftCard = function (gc, opts, cb) {
     var network = root.getNetwork();
-    storageService.getAmazonGiftCards(network, function(err, oldGiftCards) {
+    storageService.getAmazonGiftCards(network, function (err, oldGiftCards) {
       if (lodash.isString(oldGiftCards)) {
         oldGiftCards = JSON.parse(oldGiftCards);
       }
@@ -72,13 +72,13 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
         inv[gc.invoiceId] = lodash.assign(inv[gc.invoiceId], opts);
       }
       if (opts && opts.remove) {
-        delete(inv[gc.invoiceId]);
+        delete (inv[gc.invoiceId]);
       }
 
       inv = JSON.stringify(inv);
 
 
-      storageService.setAmazonGiftCards(network, inv, function(err) {
+      storageService.setAmazonGiftCards(network, inv, function (err) {
 
         homeIntegrationsService.register(homeItem);
         nextStepsService.unregister(nextStepItem.name);
@@ -87,15 +87,15 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
     });
   };
 
-  root.getPendingGiftCards = function(cb) {
+  root.getPendingGiftCards = function (cb) {
     var network = root.getNetwork();
-    storageService.getAmazonGiftCards(network, function(err, giftCards) {
+    storageService.getAmazonGiftCards(network, function (err, giftCards) {
       var _gcds = giftCards ? JSON.parse(giftCards) : null;
       return cb(err, _gcds);
     });
   };
 
-  root.createBitPayInvoice = function(data, cb) {
+  root.createBitPayInvoice = function (data, cb) {
 
     var dataSrc = {
       currency: data.currency,
@@ -105,26 +105,26 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
       buyerSelectedTransactionCurrency: data.buyerSelectedTransactionCurrency
     };
 
-    $http(_postBitPay('/amazon-gift/pay', dataSrc)).then(function(data) {
+    $http(_postBitPay('/amazon-gift/pay', dataSrc)).then(function (data) {
       $log.info('BitPay Create Invoice: SUCCESS');
       return cb(null, data.data);
-    }, function(data) {
+    }, function (data) {
       $log.error('BitPay Create Invoice: ERROR ' + data.data.message);
       return cb(data.data);
     });
   };
 
-  root.getBitPayInvoice = function(id, cb) {
-    $http(_getBitPay('/invoices/' + id)).then(function(data) {
+  root.getBitPayInvoice = function (id, cb) {
+    $http(_getBitPay('/invoices/' + id)).then(function (data) {
       $log.info('BitPay Get Invoice: SUCCESS');
       return cb(null, data.data.data);
-    }, function(data) {
+    }, function (data) {
       $log.error('BitPay Get Invoice: ERROR ' + data.data.error);
       return cb(data.data.error);
     });
   };
 
-  root.createGiftCard = function(data, cb) {
+  root.createGiftCard = function (data, cb) {
 
     var dataSrc = {
       "clientId": data.uuid,
@@ -132,18 +132,18 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
       "accessKey": data.accessKey
     };
 
-    $http(_postBitPay('/amazon-gift/redeem', dataSrc)).then(function(data) {
+    $http(_postBitPay('/amazon-gift/redeem', dataSrc)).then(function (data) {
       var status = data.data.status == 'new' ? 'PENDING' : (data.data.status == 'paid') ? 'PENDING' : data.data.status;
       data.data.status = status;
       $log.info('Amazon.com Gift Card Create/Update: ' + status);
       return cb(null, data.data);
-    }, function(data) {
+    }, function (data) {
       $log.error('Amazon.com Gift Card Create/Update: ' + data.data.message);
       return cb(data.data);
     });
   };
 
-  root.cancelGiftCard = function(data, cb) {
+  root.cancelGiftCard = function (data, cb) {
 
     var dataSrc = {
       "clientId": data.uuid,
@@ -151,17 +151,17 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
       "accessKey": data.accessKey
     };
 
-    $http(_postBitPay('/amazon-gift/cancel', dataSrc)).then(function(data) {
+    $http(_postBitPay('/amazon-gift/cancel', dataSrc)).then(function (data) {
       $log.info('Amazon.com Gift Card Cancel: SUCCESS');
       return cb(null, data.data);
-    }, function(data) {
+    }, function (data) {
       $log.error('Amazon.com Gift Card Cancel: ' + data.data.message);
       return cb(data.data);
     });
   };
 
-  var register = function() {
-    storageService.getAmazonGiftCards(root.getNetwork(), function(err, giftCards) {
+  var register = function () {
+    storageService.getAmazonGiftCards(root.getNetwork(), function (err, giftCards) {
       if (giftCards) {
         homeIntegrationsService.register(homeItem);
       } else {

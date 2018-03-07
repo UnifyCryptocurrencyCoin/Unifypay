@@ -4,8 +4,8 @@ angular.module('copayApp.services')
 
     var root = {};
 
-    var _download = function(ew, filename, cb) {
-      var NewBlob = function(data, datatype) {
+    var _download = function (ew, filename, cb) {
+      var NewBlob = function (data, datatype) {
         var out;
 
         try {
@@ -46,14 +46,14 @@ angular.module('copayApp.services')
       return cb();
     };
 
-    root.addMetadata = function(b, opts) {
+    root.addMetadata = function (b, opts) {
 
       b = JSON.parse(b);
       if (opts.addressBook) b.addressBook = opts.addressBook;
       return JSON.stringify(b);
     }
 
-    root.walletExport = function(password, opts) {
+    root.walletExport = function (password, opts) {
       if (!password) {
         return null;
       }
@@ -73,7 +73,7 @@ angular.module('copayApp.services')
       };
     };
 
-    root.walletDownload = function(password, opts, cb) {
+    root.walletDownload = function (password, opts, cb) {
       var wallet = profileService.getWallet($stateParams.walletId);
       var ew = root.walletExport(password, opts);
       if (!ew) return cb('Could not create backup');

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('pinController', function($state, $interval, $stateParams, $ionicHistory, $timeout, $scope, $log, configService, appConfigService, applicationService) {
+angular.module('copayApp.controllers').controller('pinController', function ($state, $interval, $stateParams, $ionicHistory, $timeout, $scope, $log, configService, appConfigService, applicationService) {
   var ATTEMPT_LIMIT = 3;
   var ATTEMPT_LOCK_OUT_TIME = 5 * 60;
   var currentPin;
@@ -10,7 +10,7 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
   $scope.currentAttempts = 0;
   $scope.appName = appConfigService.name;
 
-  configService.whenAvailable(function(config) {
+  configService.whenAvailable(function (config) {
     if (!config.lock) return;
     $scope.bannedUntil = config.lock.bannedUntil || null;
     if ($scope.bannedUntil) {
@@ -41,7 +41,7 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
   function lockTimeControl(bannedUntil) {
     setExpirationTime();
 
-    var countDown = $interval(function() {
+    var countDown = $interval(function () {
       setExpirationTime();
     }, 1000);
 
@@ -62,18 +62,18 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
       $scope.expires = $scope.error = $scope.disableButtons = null;
       currentPin = $scope.confirmPin = '';
       $interval.cancel(countDown);
-      $timeout(function() {
+      $timeout(function () {
         $scope.$apply();
       });
       return;
     };
   };
 
-  $scope.getFilledClass = function(limit) {
+  $scope.getFilledClass = function (limit) {
     return currentPin.length >= limit ? 'filled-' + $scope.appName : null;
   };
 
-  $scope.delete = function() {
+  $scope.delete = function () {
     if ($scope.disableButtons) return;
     if (currentPin.length > 0) {
       currentPin = currentPin.substring(0, currentPin.length - 1);
@@ -82,17 +82,17 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
     }
   };
 
-  $scope.isComplete = function() {
+  $scope.isComplete = function () {
     if (currentPin.length < 4) return false;
     else return true;
   };
 
-  $scope.updatePin = function(value) {
+  $scope.updatePin = function (value) {
     if ($scope.disableButtons) return;
     $scope.error = false;
     if (value && !$scope.isComplete()) {
       currentPin = currentPin + value;
-      $timeout(function() {
+      $timeout(function () {
         $scope.$apply();
       });
     }
@@ -104,7 +104,7 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
     return config.lock.value == pin;
   };
 
-  $scope.save = function() {
+  $scope.save = function () {
     if (!$scope.isComplete()) return;
     var savedMethod = getSavedMethod();
 
@@ -132,19 +132,19 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
   };
 
   function showError() {
-    $timeout(function() {
+    $timeout(function () {
       $scope.confirmPin = currentPin = '';
       $scope.error = true;
     }, 200);
 
-    $timeout(function() {
+    $timeout(function () {
       $scope.$apply();
     });
   };
 
   function applyAndCheckPin() {
     if (!$scope.confirmPin) {
-      $timeout(function() {
+      $timeout(function () {
         $scope.confirmPin = currentPin;
         currentPin = '';
       }, 200);
@@ -156,7 +156,7 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
         $scope.error = true;
       }
     }
-    $timeout(function() {
+    $timeout(function () {
       $scope.$apply();
     });
   };
@@ -170,7 +170,7 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
       }
     };
 
-    configService.set(opts, function(err) {
+    configService.set(opts, function (err) {
       if (err) $log.debug(err);
       $scope.hideModal();
     });
@@ -185,7 +185,7 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
       }
     };
 
-    configService.set(opts, function(err) {
+    configService.set(opts, function (err) {
       if (err) $log.debug(err);
       $scope.hideModal();
     });
@@ -198,7 +198,7 @@ angular.module('copayApp.controllers').controller('pinController', function($sta
       }
     };
 
-    configService.set(opts, function(err) {
+    configService.set(opts, function (err) {
       if (err) $log.debug(err);
       lockTimeControl(bannedUntil);
     });

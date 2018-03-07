@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('copayApp.services').factory('appIdentityService', function($log, lodash, storageService, bitauthService) {
+angular.module('copayApp.services').factory('appIdentityService', function ($log, lodash, storageService, bitauthService) {
   var root = {};
 
-  root.getIdentity = function(network, cb) {
+  root.getIdentity = function (network, cb) {
     var pubkey, sin, isNew;
-    storageService.getAppIdentity(network, function(err, data) {
+    storageService.getAppIdentity(network, function (err, data) {
       if (err) return cb(err);
       var appIdentity = data || {};
       if (lodash.isEmpty(appIdentity) || (appIdentity && !appIdentity.priv)) {
@@ -16,7 +16,7 @@ angular.module('copayApp.services').factory('appIdentityService', function($log,
         pubkey = bitauthService.getPublicKeyFromPrivateKey(appIdentity.priv);
         sin = bitauthService.getSinFromPublicKey(pubkey);
         if (isNew)
-          storageService.setAppIdentity(network, JSON.stringify(appIdentity), function(err) {});
+          storageService.setAppIdentity(network, JSON.stringify(appIdentity), function (err) { });
       }
       catch (e) {
         $log.error(e);
@@ -27,5 +27,5 @@ angular.module('copayApp.services').factory('appIdentityService', function($log,
   };
 
   return root;
-  
+
 });

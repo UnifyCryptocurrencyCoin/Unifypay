@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('copayApp.controllers').controller('backupController',
-  function($scope, $timeout, $log, $state, $stateParams, $ionicHistory, lodash, profileService, bwcService, walletService, ongoingProcess, popupService, gettextCatalog, $ionicModal) {
+  function ($scope, $timeout, $log, $state, $stateParams, $ionicHistory, lodash, profileService, bwcService, walletService, ongoingProcess, popupService, gettextCatalog, $ionicModal) {
     $scope.wallet = profileService.getWallet($stateParams.walletId);
     $scope.viewTitle = $scope.wallet.name || $scope.wallet.credentials.walletName;
     $scope.n = $scope.wallet.n;
@@ -9,17 +9,17 @@ angular.module('copayApp.controllers').controller('backupController',
 
     $scope.credentialsEncrypted = $scope.wallet.isPrivKeyEncrypted();
 
-    var isDeletedSeed = function() {
+    var isDeletedSeed = function () {
       if (!$scope.wallet.credentials.mnemonic && !$scope.wallet.credentials.mnemonicEncrypted)
         return true;
 
       return false;
     };
 
-    var shuffledWords = function(words) {
+    var shuffledWords = function (words) {
       var sort = lodash.sortBy(words);
 
-      return lodash.map(sort, function(w) {
+      return lodash.map(sort, function (w) {
         return {
           word: w,
           selected: false
@@ -27,7 +27,7 @@ angular.module('copayApp.controllers').controller('backupController',
       });
     };
 
-    $scope.setFlow = function(step) {
+    $scope.setFlow = function (step) {
       if (!keys) return;
 
       var words = keys.mnemonic;
@@ -44,17 +44,17 @@ angular.module('copayApp.controllers').controller('backupController',
       $scope.backupError = false;
 
       words = lodash.repeat('x', 300);
-      $timeout(function() {
+      $timeout(function () {
         $scope.$apply();
       }, 10);
     };
 
-    var backupError = function(err) {
+    var backupError = function (err) {
       ongoingProcess.set('validatingWords', false);
       $log.debug('Failed to verify backup: ', err);
       $scope.backupError = true;
 
-      $timeout(function() {
+      $timeout(function () {
         $scope.$apply();
       }, 1);
     };
@@ -64,17 +64,17 @@ angular.module('copayApp.controllers').controller('backupController',
         scope: $scope,
         backdropClickToClose: false,
         hardwareBackButtonClose: false
-      }).then(function(modal) {
+      }).then(function (modal) {
         $scope.confirmBackupModal = modal;
         $scope.confirmBackupModal.show();
       });
     };
 
-    var showBackupResult = function() {
+    var showBackupResult = function () {
       if ($scope.backupError) {
         var title = gettextCatalog.getString('Uh oh...');
         var message = gettextCatalog.getString("It's important that you write your backup phrase down correctly. If something happens to your wallet, you'll need this backup to recover your money. Please review your backup and try again.");
-        popupService.showAlert(title, message, function() {
+        popupService.showAlert(title, message, function () {
           $scope.setFlow(2);
         })
       } else {
@@ -82,11 +82,11 @@ angular.module('copayApp.controllers').controller('backupController',
       }
     };
 
-    $scope.closeBackupResultModal = function() {
+    $scope.closeBackupResultModal = function () {
       $scope.confirmBackupModal.hide();
       $scope.confirmBackupModal.remove();
 
-      profileService.isDisclaimerAccepted(function(val) {
+      profileService.isDisclaimerAccepted(function (val) {
         if (val) {
           $ionicHistory.removeBackView();
           $state.go('tabs.home');
@@ -97,13 +97,13 @@ angular.module('copayApp.controllers').controller('backupController',
       });
     };
 
-    $scope.copyRecoveryPhrase = function() {
+    $scope.copyRecoveryPhrase = function () {
       if ($scope.wallet.network == 'livenet') return null;
       else if (!$scope.wallet.credentials.mnemonic) return null;
       else return $scope.wallet.credentials.mnemonic;
     };
 
-    var confirm = function(cb) {
+    var confirm = function (cb) {
       $scope.backupError = false;
 
       var customWordList = lodash.pluck($scope.customWords, 'word');
@@ -112,7 +112,7 @@ angular.module('copayApp.controllers').controller('backupController',
         return cb('Mnemonic string mismatch');
       }
 
-      $timeout(function() {
+      $timeout(function () {
         if ($scope.mnemonicHasPassphrase) {
           var walletClient = bwcService.getClient();
           var separator = $scope.useIdeograms ? '\u3000' : ' ';
@@ -141,21 +141,21 @@ angular.module('copayApp.controllers').controller('backupController',
       }, 1);
     };
 
-    var finalStep = function() {
+    var finalStep = function () {
       ongoingProcess.set('validatingWords', true);
-      confirm(function(err) {
+      confirm(function (err) {
         ongoingProcess.set('validatingWords', false);
         if (err) {
           backupError(err);
         }
-        $timeout(function() {
+        $timeout(function () {
           showBackupResult();
           return;
         }, 1);
       });
     };
 
-    $scope.goToStep = function(n) {
+    $scope.goToStep = function (n) {
       if (n == 1)
         $scope.setFlow();
       if (n == 2)
@@ -170,7 +170,7 @@ angular.module('copayApp.controllers').controller('backupController',
         finalStep();
     };
 
-    $scope.addButton = function(index, item) {
+    $scope.addButton = function (index, item) {
       var newWord = {
         word: item.word,
         prevIndex: index
@@ -180,28 +180,28 @@ angular.module('copayApp.controllers').controller('backupController',
       $scope.shouldContinue();
     };
 
-    $scope.removeButton = function(index, item) {
+    $scope.removeButton = function (index, item) {
       if ($scope.loading) return;
       $scope.customWords.splice(index, 1);
       $scope.shuffledMnemonicWords[item.prevIndex].selected = false;
       $scope.shouldContinue();
     };
 
-    $scope.shouldContinue = function() {
+    $scope.shouldContinue = function () {
       if ($scope.customWords.length == $scope.shuffledMnemonicWords.length)
         $scope.selectComplete = true;
       else
         $scope.selectComplete = false;
     };
 
-    $scope.$on("$ionicView.enter", function(event, data) {
+    $scope.$on("$ionicView.enter", function (event, data) {
       $scope.deleted = isDeletedSeed();
       if ($scope.deleted) {
         $log.debug('no mnemonics');
         return;
       }
 
-      walletService.getKeys($scope.wallet, function(err, k) {
+      walletService.getKeys($scope.wallet, function (err, k) {
         if (err || !k) {
           $log.error('Could not get keys: ', err);
           $ionicHistory.goBack();
