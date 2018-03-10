@@ -16,14 +16,14 @@ angular.module('copayApp.controllers').controller('feeLevelsController', functio
 
   var getMinRecommended = function () {
     var value = lodash.find($scope.feeLevels[$scope.network], {
-      level: 'superEconomy'
+      level: 'normal' // by hms superEconomy -> normal
     });
     return parseInt((value.feePerKb / 1000).toFixed());
   };
 
   var getMaxRecommended = function () {
     var value = lodash.find($scope.feeLevels[$scope.network], {
-      level: 'urgent'
+      level: 'normal' // by hms urgent -> normal
     });
     return parseInt((value.feePerKb / 1000).toFixed());
   };

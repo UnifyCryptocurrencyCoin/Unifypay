@@ -6,13 +6,15 @@ angular.module('copayApp.services').factory('feeService', function ($log, bwcSer
   var CACHE_TIME_TS = 60; // 1 min
 
   // Constant fee options to translate
+  // by hms 
+  // current only support normal mode
   root.feeOpts = {
-    urgent: gettext('Urgent'),
-    priority: gettext('Priority'),
-    normal: gettext('Normal'),
-    economy: gettext('Economy'),
-    superEconomy: gettext('Super Economy'),
-    custom: gettext('Custom')
+    // urgent: gettext('Urgent'),
+    // priority: gettext('Priority'),
+    normal: gettext('Normal')
+    // economy: gettext('Economy'),
+    // superEconomy: gettext('Super Economy'),
+    // custom: gettext('Custom')
   };
 
   var cache = {
@@ -68,22 +70,22 @@ angular.module('copayApp.services').factory('feeService', function ($log, bwcSer
     var walletClient = bwcService.getClient();
 
     walletClient.getFeeLevels(coin, 'livenet', function (errLivenet, levelsLivenet) {
-      walletClient.getFeeLevels('btc', 'testnet', function (errTestnet, levelsTestnet) {
-        if (errLivenet || errTestnet) {
+      // walletClient.getFeeLevels('btc', 'testnet', function (errTestnet, levelsTestnet) {
+        // if (errLivenet || errTestnet) {
+        if (errLivenet) {
           return cb(gettextCatalog.getString('Could not get dynamic fee'));
         }
-
         cache.updateTs = Date.now();
         cache.coin = coin;
         cache.data = {
           'livenet': levelsLivenet,
-          'testnet': levelsTestnet
+          'testnet': levelsLivenet
         };
 
         root.cachedFeeLevels = cache.data;
 
         return cb(null, cache.data);
-      });
+      // });
     });
   };
 
