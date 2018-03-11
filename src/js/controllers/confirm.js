@@ -336,7 +336,13 @@ angular.module('copayApp.controllers').controller('confirmController', function 
 
         if (sendMaxInfo) {
 
-          $log.debug('Send max info', sendMaxInfo);
+          // $log.debug('Send max info', sendMaxInfo); // by hms
+          if(sendMaxInfo.fee < sendMaxInfo.feePerKb){
+            sendMaxInfo.amount += sendMaxInfo.fee;
+            sendMaxInfo.fee = sendMaxInfo.feePerKb;
+            sendMaxInfo.amount -= sendMaxInfo.fee;
+          }
+          // console.log('Send max info', sendMaxInfo);
 
           if (tx.sendMax && sendMaxInfo.amount == 0) {
             ongoingProcess.set('calculatingFee', false);
