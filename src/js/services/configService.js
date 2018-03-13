@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.services').factory('configService', function(storageService, lodash, $log, $timeout, $rootScope, platformInfo) {
+angular.module('copayApp.services').factory('configService', function (storageService, lodash, $log, $timeout, $rootScope, platformInfo) {
   var root = {};
 
   var isWindowsPhoneApp = platformInfo.isCordova && platformInfo.isWP;
@@ -74,7 +74,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
     },
 
     release: {
-      url: 'https://api.github.com/repos/bitpay/copay/releases/latest'
+      url: 'https://api.github.com/repos/unifycoin/unifypay/releases/latest'
     },
 
     pushNotificationsEnabled: true,
@@ -94,7 +94,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
 
   var configCache = null;
 
-  root.getSync = function() {
+  root.getSync = function () {
     if (!configCache)
       throw new Error('configService#getSync called when cache is not initialized');
 
@@ -102,7 +102,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
   };
 
   root._queue = [];
-  root.whenAvailable = function(cb) {
+  root.whenAvailable = function (cb) {
     if (!configCache) {
       root._queue.push(cb);
       return;
@@ -111,9 +111,9 @@ angular.module('copayApp.services').factory('configService', function(storageSer
   };
 
 
-  root.get = function(cb) {
+  root.get = function (cb) {
 
-    storageService.getConfig(function(err, localConfig) {
+    storageService.getConfig(function (err, localConfig) {
       if (localConfig) {
         configCache = JSON.parse(localConfig);
 
@@ -161,8 +161,8 @@ angular.module('copayApp.services').factory('configService', function(storageSer
 
       $log.debug('Preferences read:', configCache)
 
-      lodash.each(root._queue, function(x) {
-        $timeout(function() {
+      lodash.each(root._queue, function (x) {
+        $timeout(function () {
           return x(configCache);
         }, 1);
       });
@@ -172,9 +172,9 @@ angular.module('copayApp.services').factory('configService', function(storageSer
     });
   };
 
-  root.set = function(newOpts, cb) {
+  root.set = function (newOpts, cb) {
     var config = lodash.cloneDeep(defaultConfig);
-    storageService.getConfig(function(err, oldOpts) {
+    storageService.getConfig(function (err, oldOpts) {
       oldOpts = oldOpts || {};
 
       if (lodash.isString(oldOpts)) {
@@ -196,12 +196,12 @@ angular.module('copayApp.services').factory('configService', function(storageSer
     });
   };
 
-  root.reset = function(cb) {
+  root.reset = function (cb) {
     configCache = lodash.clone(defaultConfig);
     storageService.removeConfig(cb);
   };
 
-  root.getDefaults = function() {
+  root.getDefaults = function () {
     return lodash.clone(defaultConfig);
   };
 

@@ -4,10 +4,10 @@ angular.module('copayApp.services')
 
     var root = {};
 
-    root.checkLatestRelease = function(cb) {
+    root.checkLatestRelease = function (cb) {
       var releaseURL = configService.getDefaults().release.url;
 
-      requestLatestRelease(releaseURL, function(err, release) {
+      requestLatestRelease(releaseURL, function (err, release) {
         if (err) return cb(err);
         var currentVersion = window.version;
         var latestVersion = release.data.tag_name;
@@ -51,10 +51,10 @@ angular.module('copayApp.services')
         json: true
       };
 
-      $http(request).then(function(release) {
+      $http(request).then(function (release) {
         $log.debug('Latest release: ' + release.data.name);
         return cb(null, release);
-      }, function(err) {
+      }, function (err) {
         return cb('Cannot get the release information: ' + err);
       });
     };
