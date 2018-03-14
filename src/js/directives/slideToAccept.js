@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('copayApp.directives')
-  .directive('slideToAccept', function($timeout, $window, $q) {
+  .directive('slideToAccept', function ($timeout, $window, $q) {
     return {
       restrict: 'E',
       templateUrl: 'views/includes/slideToAccept.html',
@@ -11,7 +11,7 @@ angular.module('copayApp.directives')
         onConfirm: '&slideOnConfirm',
         isDisabled: '=isDisabled'
       },
-      link: function(scope, element, attrs) {
+      link: function (scope, element, attrs) {
 
         var KNOB_WIDTH = 71;
         var MAX_SLIDE_START_PERCENTAGE = 50;
@@ -33,12 +33,12 @@ angular.module('copayApp.directives')
         scope.isSlidFully = false;
         scope.displaySendStatus = '';
 
-        scope.$watch('sendStatus', function() {
+        scope.$watch('sendStatus', function () {
           if (!scope.sendStatus) {
             reset();
           } else if (scope.sendStatus === 'success') {
             scope.displaySendStatus = '';
-            $timeout(function() {
+            $timeout(function () {
               reset();
             }, 500);
           } else {
@@ -57,7 +57,7 @@ angular.module('copayApp.directives')
             if (startTime !== currentEaseStartTime) {
               return;
             }
-            $window.requestAnimationFrame(function() {
+            $window.requestAnimationFrame(function () {
               var now = Date.now();
               var elapsed = now - startTime;
               var normalizedElapsedTime = elapsed / duration;
@@ -133,13 +133,13 @@ angular.module('copayApp.directives')
 
         function easeSliderPosition(pct) {
           var duration = INITIAL_TAP_EASE_DURATION;
-          easePosition(curSliderPct, pct, duration, JIGGLE_EASING, function(pct) {
+          easePosition(curSliderPct, pct, duration, JIGGLE_EASING, function (pct) {
             setNewSliderStyle(pct);
           });
-          easePosition(curBitcoinPct, pct, duration, JIGGLE_EASING, function(pct) {
+          easePosition(curBitcoinPct, pct, duration, JIGGLE_EASING, function (pct) {
             setNewBitcoinStyle(pct);
           });
-          easePosition(curTextPct, pct, duration, JIGGLE_EASING, function(pct) {
+          easePosition(curTextPct, pct, duration, JIGGLE_EASING, function (pct) {
             setNewTextStyle(pct);
           });
         }
@@ -147,27 +147,27 @@ angular.module('copayApp.directives')
         function jiggleSlider() {
           var pct = getKnobWidthPercentage() + PERCENTAGE_BUMP;
           var duration = JIGGLE_DURATION;
-          var p1 = easePosition(curSliderPct, pct, duration, JIGGLE_EASING, function(pct) {
+          var p1 = easePosition(curSliderPct, pct, duration, JIGGLE_EASING, function (pct) {
             setNewSliderStyle(pct);
           });
-          var p2 = easePosition(curBitcoinPct, pct, duration, JIGGLE_EASING, function(pct) {
+          var p2 = easePosition(curBitcoinPct, pct, duration, JIGGLE_EASING, function (pct) {
             setNewBitcoinStyle(pct);
           });
 
-          $q.all([p1, p2]).then(function() {
+          $q.all([p1, p2]).then(function () {
             recede();
           });
         }
 
         function recede() {
           var duration = RECEDE_DURATION;
-          easePosition(curSliderPct, getKnobWidthPercentage(), duration, easeInOutBack, function(pct) {
+          easePosition(curSliderPct, getKnobWidthPercentage(), duration, easeInOutBack, function (pct) {
             setNewSliderStyle(pct);
           });
-          easePosition(curBitcoinPct, 0, duration, easeInOutBack, function(pct) {
+          easePosition(curBitcoinPct, 0, duration, easeInOutBack, function (pct) {
             setNewBitcoinStyle(pct);
           });
-          easePosition(curTextPct, 0, duration, easeInOutBack, function(pct) {
+          easePosition(curTextPct, 0, duration, easeInOutBack, function (pct) {
             setNewTextStyle(pct);
           });
         }
@@ -201,7 +201,7 @@ angular.module('copayApp.directives')
           return pct;
         }
 
-        scope.onTouchstart = function($event) {
+        scope.onTouchstart = function ($event) {
           if (scope.isSlidFully) {
             return;
           }
@@ -222,7 +222,7 @@ angular.module('copayApp.directives')
           }
         };
 
-        scope.onTouchmove = function($event) {
+        scope.onTouchmove = function ($event) {
           if (!isSliding || scope.isSlidFully) {
             return;
           }
@@ -236,7 +236,7 @@ angular.module('copayApp.directives')
           setSliderPosition(pct);
         };
 
-        scope.onTouchend = function($event) {
+        scope.onTouchend = function ($event) {
           if (scope.isSlidFully) {
             return;
           }

@@ -9,7 +9,7 @@ function Profile() {
   this.version = '1.0.0';
 };
 
-Profile.create = function(opts) {
+Profile.create = function (opts) {
   opts = opts || {};
 
   var x = new Profile();
@@ -20,7 +20,7 @@ Profile.create = function(opts) {
   return x;
 };
 
-Profile.fromObj = function(obj) {
+Profile.fromObj = function (obj) {
   var x = new Profile();
 
   x.createdOn = obj.createdOn;
@@ -35,17 +35,17 @@ Profile.fromObj = function(obj) {
   return x;
 };
 
-Profile.fromString = function(str) {
+Profile.fromString = function (str) {
   return Profile.fromObj(JSON.parse(str));
 };
 
-Profile.prototype.toObj = function() {
+Profile.prototype.toObj = function () {
   delete this.dirty;
   return JSON.stringify(this);
 };
 
 
-Profile.prototype.hasWallet = function(walletId) {
+Profile.prototype.hasWallet = function (walletId) {
   for (var i in this.credentials) {
     var c = this.credentials[i];
     if (c.walletId == walletId) return true;
@@ -53,17 +53,17 @@ Profile.prototype.hasWallet = function(walletId) {
   return false;
 };
 
-Profile.prototype.isChecked = function(ua, walletId) {
+Profile.prototype.isChecked = function (ua, walletId) {
   return !!(this.checkedUA == ua && this.checked[walletId]);
 };
 
 
-Profile.prototype.isDeviceChecked = function(ua) {
+Profile.prototype.isDeviceChecked = function (ua) {
   return this.checkedUA == ua;
 };
 
 
-Profile.prototype.setChecked = function(ua, walletId) {
+Profile.prototype.setChecked = function (ua, walletId) {
   if (this.checkedUA != ua) {
     this.checkedUA = ua;
     this.checked = {};
@@ -73,7 +73,7 @@ Profile.prototype.setChecked = function(ua, walletId) {
 };
 
 
-Profile.prototype.addWallet = function(credentials) {
+Profile.prototype.addWallet = function (credentials) {
   if (!credentials.walletId)
     throw 'credentials must have .walletId';
 
@@ -85,15 +85,15 @@ Profile.prototype.addWallet = function(credentials) {
   return true;
 };
 
-Profile.prototype.updateWallet = function(credentials) {
+Profile.prototype.updateWallet = function (credentials) {
   if (!credentials.walletId)
     throw 'credentials must have .walletId';
 
   if (!this.hasWallet(credentials.walletId))
     return false;
 
-  this.credentials = this.credentials.map(function(c) {
-    if(c.walletId != credentials.walletId ) {
+  this.credentials = this.credentials.map(function (c) {
+    if (c.walletId != credentials.walletId) {
       return c;
     } else {
       return credentials
@@ -104,11 +104,11 @@ Profile.prototype.updateWallet = function(credentials) {
   return true;
 };
 
-Profile.prototype.deleteWallet = function(walletId) {
+Profile.prototype.deleteWallet = function (walletId) {
   if (!this.hasWallet(walletId))
     return false;
 
-  this.credentials = this.credentials.filter(function(c) {
+  this.credentials = this.credentials.filter(function (c) {
     return c.walletId != walletId;
   });
 
