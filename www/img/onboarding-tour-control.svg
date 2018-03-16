@@ -1,43 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="247px" height="247px" viewBox="0 0 247 247" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>bg-3</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="50%" y1="0%" x2="50%" y2="89.4673583%" id="linearGradient-1">
-            <stop stop-color="#3950B5" offset="0%"></stop>
-            <stop stop-color="#162360" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-    <g id="Onboarding" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="0.2.3---Tour-3" transform="translate(-64.000000, -210.000000)">
-            <g id="bg-3" transform="translate(64.000000, 210.000000)">
-                <path d="M123.5,247 C191.707167,247 247,191.707167 247,123.5 C247,55.2928334 191.707167,1.42108547e-14 123.5,1.42108547e-14 C55.2928334,1.42108547e-14 1.42108547e-14,55.2928334 1.42108547e-14,123.5 C1.42108547e-14,191.707167 55.2928334,247 123.5,247 Z" id="Oval-2" fill="url(#linearGradient-1)" opacity="0.300000012"></path>
-                <rect id="Combined-Shape" stroke="#647CE8" stroke-width="2" fill="#253377" x="63" y="24" width="99.8310062" height="183.875349" rx="8"></rect>
-                <path d="M63.5199532,180.634556 L162.311053,180.634556" id="Line" stroke="#647CE8" stroke-width="2" stroke-linecap="square"></path>
-                <path d="M104.076299,194.254952 L122.794613,194.254952" id="Line" stroke="#647CE8" stroke-width="2" stroke-linecap="square"></path>
-                <g id="Group-4" transform="translate(90.000000, 76.000000)" stroke="#FFFFFF">
-                    <g id="top-up">
-                        <g id="shopping-48px-outline_bitcoin" transform="translate(8.666667, 3.180606)">
-                            <g id="Group" transform="translate(0.619048, 0.627502)">
-                                <path d="M12.3809524,0 L12.3809524,7.5300202" id="Shape"></path>
-                                <path d="M17.3333333,0 L17.3333333,7.5300202" id="Shape"></path>
-                                <path d="M12.3809524,47.6901279 L12.3809524,55.2201481" id="Shape"></path>
-                                <path d="M17.3333333,47.6901279 L17.3333333,55.2201481" id="Shape"></path>
-                                <path d="M0,47.6901279 L7.42857143,47.6901279" id="Shape-Copy"></path>
-                                <path d="M0,7.5300202 L7.42857143,7.5300202" id="Shape-Copy-2"></path>
-                                <path d="M7.42857143,25.1000673 L7.42857143,7.5300202 L21.8042328,7.5300202 C26.9010582,7.5300202 30.952381,11.4205306 30.952381,16.3150438 C30.952381,21.2095569 26.9010582,25.1000673 21.8042328,25.1000673" id="Shape"></path>
-                                <path d="M7.42857143,47.6901279 L7.42857143,25.1000673 L23.6785714,25.1000673 C29.0952381,25.1000673 33.4285714,30.1200808 33.4285714,36.3950976 C33.4285714,42.6701145 29.0952381,47.6901279 23.6785714,47.6901279 L7.42857143,47.6901279 Z" id="Shape"></path>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-                <g id="Group-3" transform="translate(125.000000, 122.000000)" stroke="#12E5B6" stroke-width="2">
-                    <rect id="Rectangle-path" fill="#1F2F7B" x="0.00547760651" y="37.6483369" width="74.7600358" height="65.7214967" rx="4"></rect>
-                    <path d="M18.6954866,37.6483369 L18.6954866,18.8707664 C18.6954866,8.54310266 27.1059906,0.0931959432 37.3854955,0.0931959432 L37.3854955,0.0931959432 C47.6650004,0.0931959432 56.0755044,8.54310266 56.0755044,18.8707664 L56.0755044,37.6483369" id="Shape"></path>
-                    <path d="M36.6300769,65.8146926 L36.6300769,75.2034779" id="Shape" fill="#F9F9F9"></path>
-                </g>
-            </g>
-        </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2017 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="772px" height="772px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 772 772"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str2 {stroke:#12E5B6;stroke-width:6.25}
+    .str0 {stroke:#647CE8;stroke-width:6.25}
+    .str3 {stroke:white;stroke-width:9.38;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#647CE8;stroke-width:6.25;stroke-linecap:square}
+    .fil2 {fill:none}
+    .fil6 {fill:none;fill-rule:nonzero}
+    .fil3 {fill:#1F2F7B}
+    .fil1 {fill:#253377}
+    .fil4 {fill:#F9F9F9}
+    .fil5 {fill:white;fill-rule:nonzero}
+    .fil0 {fill:url(#id0);fill-opacity:0.301961}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="386" y1="81.42" x2="386" y2="771.94">
+   <stop offset="0" style="stop-opacity:1; stop-color:#3950B5"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#162360"/>
+  </linearGradient>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_990450112">
+   <path id="Oval-2" class="fil0" d="M386 771.94c213.15,0 385.94,-172.79 385.94,-385.94 0,-213.15 -172.79,-385.94 -385.94,-385.94 -213.15,0 -385.94,172.79 -385.94,385.94 0,213.15 172.79,385.94 385.94,385.94z"/>
+   <path class="fil1 str0" d="M221.94 75.06l261.97 0c13.8,0 25,11.2 25,25l0 524.61c0,13.81 -11.2,25 -25,25l-261.97 0c-13.81,0 -25,-11.19 -25,-25l0 -524.61c0,-13.8 11.19,-25 25,-25z"/>
+   <line id="Line" class="fil2 str1" x1="198.56" y1="564.55" x2="507.29" y2= "564.55" />
+   <line id="Line_0" class="fil2 str1" x1="325.3" y1="607.11" x2="383.8" y2= "607.11" />
+   <g id="Group-3">
+    <path class="fil3 str2" d="M403.21 498.96l208.62 0c6.9,0 12.5,5.6 12.5,12.5l0 180.38c0,6.91 -5.6,12.5 -12.5,12.5l-208.62 0c-6.91,0 -12.5,-5.59 -12.5,-12.5l-0.01 -180.38c0.01,-6.9 5.6,-12.5 12.51,-12.5z"/>
+    <path id="Shape" class="fil2 str2" d="M449.11 498.96l0 -58.68c0,-32.27 26.28,-58.68 58.41,-58.68l0 0c32.12,0 58.4,26.41 58.4,58.68l0 58.68"/>
+    <g>
+     <path id="Shape_1" class="fil4" d="M505.16 586.98l0 29.34 0 -29.34zm0 0l0 0 0 0z"/>
+     <path id="1" class="fil2 str2" d="M505.16 586.98l0 29.34m0 -29.34l0 0 0 0z"/>
     </g>
+   </g>
+   <g id="_953211696">
+    <path class="fil5" d="M353.14 418.93c30.64,0 53.5,-17.45 53.5,-48.06l0 -114.93c0,-1.49 -0.86,-2.32 -2.32,-2.32l-3.89 0c-1.46,0 -2.32,0.83 -2.32,2.32l0 114.93c0,24.57 -16.99,40.01 -44.97,40.01 -27.99,0 -44.97,-15.44 -44.97,-40.01l0 -114.93c0,-1.49 -0.86,-2.32 -2.33,-2.32l-3.89 0c-1.46,0 -2.32,0.83 -2.32,2.32l0 114.93c0,30.61 22.87,48.06 53.5,48.06l0.01 0z"/>
+    <line class="fil6 str3" x1="372.07" y1="291.14" x2="431.91" y2= "291.14" />
+    <line class="fil6 str3" x1="372.07" y1="314.41" x2="431.91" y2= "314.41" />
+   </g>
+  </g>
+ </g>
 </svg>

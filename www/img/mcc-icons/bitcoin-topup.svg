@@ -1,1 +1,27 @@
-<svg width="41" height="41" viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg"><g class="nc-icon-wrapper" fill="#444444"><title>bitcoin-topup</title><g stroke="#444444" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-1113 -1082) translate(1113 1082) translate(.5 .5)"><path d="M40 20c0 11-9 20-20 20S0 31 0 20 9 0 20 0c7.9 0 14.8 4.6 18 11.3"></path><path d="M39 4L38 11.2 32 10.4"></path></g><path d="M5.714 0v3.467" transform="translate(-1113 -1082) translate(1113 1082) translate(8 6) translate(4 2) translate(.286 .289)"></path><path d="M8 0v3.467" transform="translate(-1113 -1082) translate(1113 1082) translate(8 6) translate(4 2) translate(.286 .289)"></path><path d="M5.714 21.956v3.466" transform="translate(-1113 -1082) translate(1113 1082) translate(8 6) translate(4 2) translate(.286 .289)"></path><path d="M8 21.956v3.466" transform="translate(-1113 -1082) translate(1113 1082) translate(8 6) translate(4 2) translate(.286 .289)"></path><path d="M0 21.956h3.429" transform="translate(-1113 -1082) translate(1113 1082) translate(8 6) translate(4 2) translate(.286 .289)"></path><path d="M0 3.467h3.429" transform="translate(-1113 -1082) translate(1113 1082) translate(8 6) translate(4 2) translate(.286 .289)"></path><path d="M3.429 11.556v-8.09h6.634c2.353 0 4.223 1.792 4.223 4.045s-1.87 4.045-4.223 4.045" transform="translate(-1113 -1082) translate(1113 1082) translate(8 6) translate(4 2) translate(.286 .289)"></path><path d="M3.429 21.956v-10.4h7.5c2.5 0 4.5 2.31 4.5 5.2 0 2.888-2 5.2-4.5 5.2h-7.5z" transform="translate(-1113 -1082) translate(1113 1082) translate(8 6) translate(4 2) translate(.286 .289)"></path></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2017 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="130px" height="130px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 130 130"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#444444;stroke-width:3.13}
+    .str1 {stroke:#444444;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .fil0 {fill:none}
+    .fil1 {fill:#444444;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0 str0" d="M127.5 65c0,34.38 -28.12,62.5 -62.5,62.5 -34.38,0 -62.5,-28.12 -62.5,-62.5 0,-34.38 28.12,-62.5 62.5,-62.5 24.69,0 46.25,14.37 56.25,35.31"/>
+  <polyline class="fil0 str0" points="124.38,15 121.25,37.5 102.5,35 "/>
+  <g id="_953211696">
+   <path class="fil1" d="M64.53 101.08c13.17,0 23,-7.5 23,-20.66l0 -49.4c0,-0.64 -0.37,-1 -1,-1l-1.67 0c-0.63,0 -1,0.36 -1,1l0 49.4c0,10.56 -7.3,17.2 -19.33,17.2 -12.03,0 -19.33,-6.64 -19.33,-17.2l0 -49.4c0,-0.64 -0.37,-1 -1,-1l-1.67 0c-0.63,0 -1,0.36 -1,1l0 49.4c0,13.16 9.83,20.66 23,20.66z"/>
+   <line class="fil0 str1" x1="72.67" y1="46.15" x2="98.39" y2= "46.15" />
+   <line class="fil0 str1" x1="72.67" y1="56.15" x2="98.39" y2= "56.15" />
+  </g>
+ </g>
+</svg>
