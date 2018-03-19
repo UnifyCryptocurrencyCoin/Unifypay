@@ -15,7 +15,7 @@
   "gitHubRepoUrl": "git://github.com/unifycoin/unifypay.git",
   "gitHubRepoBugs": "https://github.com/unifycoin/unifypay/issues",
   "disclaimerUrl": "",
-  "url": "https://pay.unify.today",
+  "url": "https://unifypay.unify.today",
   "appDescription": "Secure Unifycoin Wallet",
   "winAppName": "UnifyPayWallet",
   "WindowsStoreIdentityName": "18C7659D.UnifyPaySecureUnifycoinWallet",

@@ -1,4 +1,4 @@
-Beveilig bitcoin op je eigen voorwaarden met een open source, meervoudige ondertekening-portemonnee van BitPay. 
+Beveilig bitcoin op je eigen voorwaarden met een open source, meervoudige ondertekening-portemonnee van UnifyPay. 
 Copay gebruikers kunnen individueel saldo beheren of veilig financiën delen met andere gebruikers door middel van portemonnees met meervoudige ondertekening, dit voorkomt ongeautoriseerde betalingen doordat meerdere goedkeuringen nodig zijn. Hier zijn een aantal manieren waarop Copay gebruikt kan worden met anderen:
 
 Om te sparen voor vakanties of gezamenlijke aankopen met vrienden 
