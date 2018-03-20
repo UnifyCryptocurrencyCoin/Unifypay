@@ -178,12 +178,12 @@ msgid "All Addresses"
 msgstr "Tutti gli indirizzi"
 
 #: www/views/modals/wallet-balance.html:18
-msgid "All of your bitcoin wallet balance may not be available for immediate spending."
+msgid "All of your unifycoin wallet balance may not be available for immediate spending."
 msgstr "Tutto il bilancio del tuo portafoglio potrebbe non essere disponibile ad essere speso nell'immediato."
 
 #: www/views/tab-receive.html:25
-msgid "All signing devices must be added to this multisig wallet before bitcoin addresses can be created."
-msgstr "Tutti i dispositivi firmanti devono essere aggiunti a questo portafoglio multisig prima che si possano creare indirizzi bitcoin."
+msgid "All signing devices must be added to this multisig wallet before unifycoin addresses can be created."
+msgstr "Tutti i dispositivi firmanti devono essere aggiunti a questo portafoglio multisig prima che si possano creare indirizzi unifycoin."
 
 #: www/views/tab-scan.html:21
 msgid "Allow Camera Access"
@@ -229,8 +229,8 @@ msgid "An update to this app is available. For your security, please update to t
 msgstr "Un aggiornamento dell'app è disponibile. Per la tua sicurezza è consigliato aggiornare all'ultima versione."
 
 #: www/views/backupWarning.html:14
-msgid "Anyone with your backup phrase can access or spend your bitcoin."
-msgstr "Qualcuno con la tua frase di recupero potrebbe avere accesso o spendere i tuoi bitcoin."
+msgid "Anyone with your backup phrase can access or spend your unifycoin."
+msgstr "Qualcuno con la tua frase di recupero potrebbe avere accesso o spendere i tuoi unifycoin."
 
 #: www/views/addresses.html:94
 msgid "Approximate Unifycoin network fee to transfer wallet's balance (with normal priority)"
@@ -241,8 +241,8 @@ msgid "Are you being watched?"
 msgstr "Sei osservato?"
 
 #: src/js/controllers/preferencesExternal.js:15
-msgid "Are you being watched? Anyone with your recovery phrase can access or spend your bitcoin."
-msgstr "Siete osservati? Chiunque con la vostra frase di recupero può accedere o spendere i vostri bitcoin."
+msgid "Are you being watched? Anyone with your recovery phrase can access or spend your unifycoin."
+msgstr "Siete osservati? Chiunque con la vostra frase di recupero può accedere o spendere i vostri unifycoin."
 
 #: src/js/controllers/copayers.js:56
 msgid "Are you sure you want to cancel and delete this wallet?"
@@ -813,8 +813,8 @@ msgstr "Creare portafoglio condiviso"
 #: www/views/onboarding/tour.html:51
 #: www/views/tab-home.html:89
 #: www/views/tab-send.html:41
-msgid "Create bitcoin wallet"
-msgstr "Creare portafoglio bitcoin"
+msgid "Create unifycoin wallet"
+msgstr "Creare portafoglio unifycoin"
 
 #: www/views/tab-create-personal.html:131
 msgid "Create new wallet"
@@ -939,8 +939,8 @@ msgid "Duplicating wallet..."
 msgstr "Duplicazione di portafoglio..."
 
 #: www/views/addresses.html:19
-msgid "Each bitcoin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
-msgstr "Ogni portafoglio bitcoin è in grado di generare miliardi di indirizzi dal tuo backup di 12 parole. Un nuovo indirizzo verrà automaticamente generato e mostrato ogni volta che riceverai un pagamento."
+msgid "Each unifycoin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
+msgstr "Ogni portafoglio unifycoin è in grado di generare miliardi di indirizzi dal tuo backup di 12 parole. Un nuovo indirizzo verrà automaticamente generato e mostrato ogni volta che riceverai un pagamento."
 
 #: src/js/services/feeService.js:13
 msgid "Economy"
@@ -1476,8 +1476,8 @@ msgid "I understand"
 msgstr "Ho capito"
 
 #: www/views/onboarding/disclaimer.html:21
-msgid "I understand that if this app is moved to another device or deleted, my bitcoin can only be recovered with the backup phrase."
-msgstr "Ho compreso che se questa app sarà trasferita ad un altro dispositivo o cancellata, i miei bitcoin potranno essere recuperati solo tramite la tua frase di recupero."
+msgid "I understand that if this app is moved to another device or deleted, my unifycoin can only be recovered with the backup phrase."
+msgstr "Ho compreso che se questa app sarà trasferita ad un altro dispositivo o cancellata, i miei unifycoin potranno essere recuperati solo tramite la tua frase di recupero."
 
 #: www/views/onboarding/disclaimer.html:18
 msgid "I understand that my funds are held securely on this device, not by a company."
@@ -1634,7 +1634,7 @@ msgid "Is this email address correct?"
 msgstr "Questo indirizzo email è corretto?"
 
 #: www/views/addresses.html:25
-msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your bitcoins secure against hypothetical attacks by quantum computers."
+msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your unifycoins secure against hypothetical attacks by quantum computers."
 msgstr "È una buona idea evitare di riutilizzare gli indirizzi - questo protegge la tua privacy e mantiene i Unifycoin al sicuro da ipotetici attacchi di computer quantistici."
 
 #: src/js/controllers/backup.js:76
@@ -1850,8 +1850,8 @@ msgid "No access key defined"
 msgstr "Nessuna chiave di accesso definita"
 
 #: www/views/onboarding/backupRequest.html:5
-msgid "No backup, no bitcoin."
-msgstr "Nessun backup, nessun bitcoin."
+msgid "No backup, no unifycoin."
+msgstr "Nessun backup, nessun unifycoin."
 
 #: www/views/addressbook.html:19
 msgid "No contacts yet"
@@ -1952,8 +1952,8 @@ msgid "Note: if this BCH wallet was duplicated from a UNIFY wallet, they share t
 msgstr "Nota: se questo portafoglio BCH è stato duplicato da un portafoglio UNIFY, condividono la stessa frase di recupero."
 
 #: www/views/modals/wallets.html:25
-msgid "Notice: only 1-1 (single signature) wallets can be used for sell bitcoin"
-msgstr "Avviso: solo i portafogli 1-1 (con singola firma) possono essere utilizzati per vendere bitcoin"
+msgid "Notice: only 1-1 (single signature) wallets can be used for sell unifycoin"
+msgstr "Avviso: solo i portafogli 1-1 (con singola firma) possono essere utilizzati per vendere unifycoin"
 
 #: www/views/preferencesNotifications.html:3
 #: www/views/tab-settings.html:54
@@ -2092,8 +2092,8 @@ msgid "Paste the backup plain text code"
 msgstr "Incolla qui il codice di backup"
 
 #: www/views/bitpayCardIntro.html:28
-msgid "Pay 0% fees to turn bitcoin into dollars."
-msgstr "Pagare 0% di tasse per trasformare bitcoin in dollari."
+msgid "Pay 0% fees to turn unifycoin into dollars."
+msgstr "Pagare 0% di tasse per trasformare unifycoin in dollari."
 
 #: www/views/modals/paypro.html:18
 msgid "Pay To"
@@ -2507,8 +2507,8 @@ msgid "Search Transactions"
 msgstr "Cerca Transazioni"
 
 #: www/views/tab-send.html:18
-msgid "Search or enter bitcoin address"
-msgstr "Cerca o inserisci indirizzo bitcoin"
+msgid "Search or enter unifycoin address"
+msgstr "Cerca o inserisci indirizzo unifycoin"
 
 #: www/views/modals/search.html:16
 msgid "Search transactions"
@@ -2692,8 +2692,8 @@ msgid "Show advanced options"
 msgstr "Mostra opzioni avanzate"
 
 #: www/views/tab-send.html:42
-msgid "Show bitcoin address"
-msgstr "Visualizza indirizzo bitcoin"
+msgid "Show unifycoin address"
+msgstr "Visualizza indirizzo unifycoin"
 
 #: www/views/tab-send.html:64
 msgid "Show more"
@@ -2765,8 +2765,8 @@ msgid "Spending this balance will need significant Unifycoin network fees"
 msgstr "Per spendere questa quantità saranno necessarie significative commissioni di rete Unifycoin"
 
 #: www/views/tab-send.html:33
-msgid "Start sending bitcoin"
-msgstr "Iniziare a inviare bitcoin"
+msgid "Start sending unifycoin"
+msgstr "Iniziare a inviare unifycoin"
 
 #: www/views/lockSetup.html:3
 msgid "Startup Lock"
@@ -2803,8 +2803,8 @@ msgid "THIS ACTION CANNOT BE REVERSED"
 msgstr "QUESTA AZIONE NON PUÒ ESSERE INVERTITA"
 
 #: www/views/onboarding/welcome.html:5
-msgid "Take control of your money,<br>get started with bitcoin."
-msgstr "Prendi il controllo del tuo denaro, <br>inizia con bitcoin."
+msgid "Take control of your money,<br>get started with unifycoin."
+msgstr "Prendi il controllo del tuo denaro, <br>inizia con unifycoin."
 
 #: www/views/walletDetails.html:132
 #: www/views/walletDetails.html:52
@@ -2859,16 +2859,16 @@ msgid "The Ledger Chrome application is not installed"
 msgstr "Non è installata l'applicazione di contabilità Chrome"
 
 #: www/views/modals/wallet-balance.html:55
-msgid "The amount of bitcoin immediately spendable from this wallet."
-msgstr "La quantità di bitcoin immediatamente spendibile da questo portafoglio."
+msgid "The amount of unifycoin immediately spendable from this wallet."
+msgstr "La quantità di unifycoin immediatamente spendibile da questo portafoglio."
 
 #: www/views/modals/wallet-balance.html:93
-msgid "The amount of bitcoin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
-msgstr "La quantità di bitcoin memorizzati in questo portafoglio è allocata come input per le sue proposte di transazione in sospeso. L'importo è determinato usando le transazioni in uscita non spese associate a questo portafoglio e potrebbero essere superiori agli importi effettivi associati con le vostre proposte di transazione in sospeso."
+msgid "The amount of unifycoin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
+msgstr "La quantità di unifycoin memorizzati in questo portafoglio è allocata come input per le sue proposte di transazione in sospeso. L'importo è determinato usando le transazioni in uscita non spese associate a questo portafoglio e potrebbero essere superiori agli importi effettivi associati con le vostre proposte di transazione in sospeso."
 
 #: www/views/modals/wallet-balance.html:74
-msgid "The amount of bitcoin stored in this wallet with less than 1 blockchain confirmation."
-msgstr "La quantità di bitcoin memorizzati in questo portafoglio con meno di una conferma su blockchain."
+msgid "The amount of unifycoin stored in this wallet with less than 1 blockchain confirmation."
+msgstr "La quantità di unifycoin memorizzati in questo portafoglio con meno di una conferma su blockchain."
 
 #: www/views/tab-import-phrase.html:5
 msgid "The derivation path"
@@ -2922,8 +2922,8 @@ msgid "The spend proposal is not pending"
 msgstr "La proposta di pagamento non è in sospeso"
 
 #: www/views/modals/wallet-balance.html:36
-msgid "The total amount of bitcoin stored in this wallet."
-msgstr "La quantità totale di bitcoin depositati su questo portafoglio."
+msgid "The total amount of unifycoin stored in this wallet."
+msgstr "La quantità totale di unifycoin depositati su questo portafoglio."
 
 #: www/views/preferencesHistory.html:27
 msgid "The transaction history and every new incoming transaction are cached in the app. This feature clean this up and synchronizes again from the server"
@@ -2953,12 +2953,12 @@ msgid "This app is fantastic!"
 msgstr "Questa applicazione è fantastica!"
 
 #: www/views/onboarding/tour.html:47
-msgid "This app stores your bitcoin with cutting-edge security."
-msgstr "Questa app memorizza i tuoi bitcoin con sicurezza all'avanguardia."
+msgid "This app stores your unifycoin with cutting-edge security."
+msgstr "Questa app memorizza i tuoi unifycoin con sicurezza all'avanguardia."
 
 #: src/js/controllers/confirm.js:523
-msgid "This bitcoin payment request has expired."
-msgstr "Questa richiesta di pagamento in bitcoin è scaduta."
+msgid "This unifycoin payment request has expired."
+msgstr "Questa richiesta di pagamento in unifycoin è scaduta."
 
 #: www/views/join.html:133
 #: www/views/tab-create-personal.html:103
@@ -2998,12 +2998,12 @@ msgid "To"
 msgstr "A"
 
 #: www/views/tab-send.html:37
-msgid "To get started, buy bitcoin or share your address. You can receive bitcoin from any wallet or service."
-msgstr "Per iniziare, acquista bitcoin o condividi il tuo indirizzo. È possibile ricevere bitcoin da qualsiasi servizio o portafoglio."
+msgid "To get started, buy unifycoin or share your address. You can receive unifycoin from any wallet or service."
+msgstr "Per iniziare, acquista unifycoin o condividi il tuo indirizzo. È possibile ricevere unifycoin da qualsiasi servizio o portafoglio."
 
 #: www/views/tab-send.html:38
-msgid "To get started, you'll need to create a bitcoin wallet and get some bitcoin."
-msgstr "Per iniziare, è necessario che tu crei un portafoglio bitcoin e ottenerne qualcuno."
+msgid "To get started, you'll need to create a unifycoin wallet and get some unifycoin."
+msgstr "Per iniziare, è necessario che tu crei un portafoglio unifycoin e ottenerne qualcuno."
 
 #: src/js/services/bitpayAccountService.js:73
 msgid "To {{reason}} you must first add your UnifyPay account - {{email}}"
@@ -3094,8 +3094,8 @@ msgid "Try again in {{expires}}"
 msgstr "Provare di nuovo in {{expires}}"
 
 #: www/views/bitpayCardIntro.html:18
-msgid "Turn bitcoin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
-msgstr "Trasformare i bitcoin in dollari, fai scorrere la Visa<sup>&reg;</sup> ovunque sia accettata."
+msgid "Turn unifycoin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
+msgstr "Trasformare i unifycoin in dollari, fai scorrere la Visa<sup>&reg;</sup> ovunque sia accettata."
 
 #: www/views/tab-import-phrase.html:17
 msgid "Type the Recovery Phrase (usually 12 words)"
@@ -3204,8 +3204,8 @@ msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "ATTENZIONE: CERTIFICATO NON ATTENDIBILE"
 
 #: www/views/preferencesPrivateKey.html:14
-msgid "WARNING: Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. UnifyPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
-msgstr "ATTENZIONE: Le chiavi private estese sono tutto ciò che è necessario per accedere ai tuoi fondi bitcoin. Assicuratevi di proteggere le chiavi private e memorizzarle solo su dispositivi sicuri. UnifyPay non ha accesso alla vostre chiavi private, quindi sei l'unico responsabile per le tue chiavi. Se si condivide la tua chiave di accesso con servizi esterni, ti assumi la responsabilità per il rischio di furto o di violazione. Solo gli utenti esperti dovrebbero gestire direttamente le chiavi estese private."
+msgid "WARNING: Your extended private keys are all that is needed to access your unifycoin funds. Be sure to protect your private keys and store them only on secure devices. UnifyPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgstr "ATTENZIONE: Le chiavi private estese sono tutto ciò che è necessario per accedere ai tuoi fondi unifycoin. Assicuratevi di proteggere le chiavi private e memorizzarle solo su dispositivi sicuri. UnifyPay non ha accesso alla vostre chiavi private, quindi sei l'unico responsabile per le tue chiavi. Se si condivide la tua chiave di accesso con servizi esterni, ti assumi la responsabilità per il rischio di furto o di violazione. Solo gli utenti esperti dovrebbero gestire direttamente le chiavi estese private."
 
 #: src/js/services/onGoingProcess.js:15
 msgid "Waiting for Ledger..."
@@ -3457,16 +3457,16 @@ msgid "You can make contributions by signing up on our Crowdin community transla
 msgstr "È possibile contribuire registrandovi sulla comunità di traduzione Crowdin. Non vediamo l'ora di sentirvi!"
 
 #: www/views/tab-scan.html:16
-msgid "You can scan bitcoin addresses, payment requests, paper wallets, and more."
-msgstr "È possibile scansionare indirizzi bitcoin, richieste di pagamento, portafogli di carta e altro ancora."
+msgid "You can scan unifycoin addresses, payment requests, paper wallets, and more."
+msgstr "È possibile scansionare indirizzi unifycoin, richieste di pagamento, portafogli di carta e altro ancora."
 
 #: src/js/controllers/preferencesAbout.js:14
 msgid "You can see the latest developments and contribute to this open source app by visiting our project on GitHub."
 msgstr "Potete vedere gli ultimi sviluppi e contribuire a questa applicazione open source andando al nostro progetto su GitHub."
 
 #: www/views/onboarding/tour.html:19
-msgid "You can spend bitcoin at millions of websites and stores worldwide."
-msgstr "Si può spendere bitcoin in milioni di siti web e negozi in tutto il mondo."
+msgid "You can send & receive unifycoin with other unifypay users."
+msgstr "Si può spendere unifycoin in milioni di siti web e negozi in tutto il mondo."
 
 #: www/views/backup.html:15
 msgid "You can still export it from Advanced &gt; Export."
@@ -3477,8 +3477,8 @@ msgid "You can trade it for other currencies like US Dollars, Euros, or Pounds."
 msgstr "È possibile scambiarlo con altre valute come i dollari USA, Euro o Sterline."
 
 #: www/views/onboarding/tour.html:46
-msgid "You control your bitcoin."
-msgstr "Controlli i tuoi bitcoin."
+msgid "You control your unifycoin."
+msgstr "Controlli i tuoi unifycoin."
 
 #: www/views/modals/chooseFeeLevel.html:64
 msgid "You should not set a fee higher than {{maxFeeRecommended}} satoshis/byte."
@@ -3502,12 +3502,12 @@ msgid "Your Gift Cards"
 msgstr "Le tue carte regalo"
 
 #: www/views/includes/confirmBackupPopup.html:6
-msgid "Your bitcoin wallet is backed up!"
-msgstr "Il tuo portafoglio bitcoin ha eseguito il backup!"
+msgid "Your unifycoin wallet is backed up!"
+msgstr "Il tuo portafoglio unifycoin ha eseguito il backup!"
 
 #: www/views/tab-home.html:50
-msgid "Your bitcoin wallet is ready!"
-msgstr "Il tuo portafoglio bitcoin è pronto!"
+msgid "Your unifycoin wallet is ready!"
+msgstr "Il tuo portafoglio unifycoin è pronto!"
 
 #: www/views/modals/chooseFeeLevel.html:61
 msgid "Your fee is lower than recommended."
@@ -3598,7 +3598,7 @@ msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain inform
 msgstr "{{appName}} dipende dal servizio portafoglio di Bitcore (BWS) per informazioni blockchain, networking e sincronizzazione di Copayer. La configurazione predefinita fa riferimento a http://uws.unify.today:3232 (istanza di UnifyPay BWS pubblica)."
 
 #: src/js/controllers/confirm.js:408
-msgid "{{fee}} will be deducted for bitcoin networking fees."
+msgid "{{fee}} will be deducted for unifycoin networking fees."
 msgstr "{{fee}} verranno detratti come commissione per il network."
 
 #: www/views/confirm.html:85

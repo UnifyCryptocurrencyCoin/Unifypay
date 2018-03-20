@@ -178,11 +178,11 @@ msgid "All Addresses"
 msgstr "所有地址"
 
 #: www/views/modals/wallet-balance.html:18
-msgid "All of your bitcoin wallet balance may not be available for immediate spending."
+msgid "All of your unifycoin wallet balance may not be available for immediate spending."
 msgstr "所有您的鱼尼比的钱包余额可能无法用于直接支出。"
 
 #: www/views/tab-receive.html:25
-msgid "All signing devices must be added to this multisig wallet before bitcoin addresses can be created."
+msgid "All signing devices must be added to this multisig wallet before unifycoin addresses can be created."
 msgstr "鱼尼比地址可以创建之前，签名的所有设备都必须都添加到这个对数钱包。"
 
 #: www/views/tab-scan.html:21
@@ -229,7 +229,7 @@ msgid "An update to this app is available. For your security, please update to t
 msgstr "本程序有一个可用的更新。为了您的安全，请更新到最新版本。"
 
 #: www/views/backupWarning.html:14
-msgid "Anyone with your backup phrase can access or spend your bitcoin."
+msgid "Anyone with your backup phrase can access or spend your unifycoin."
 msgstr "任何人只要持有你的备份短语，就可以访问或者花掉你的鱼尼比。"
 
 #: www/views/addresses.html:94
@@ -241,7 +241,7 @@ msgid "Are you being watched?"
 msgstr "你正在被监视吗？"
 
 #: src/js/controllers/preferencesExternal.js:15
-msgid "Are you being watched? Anyone with your recovery phrase can access or spend your bitcoin."
+msgid "Are you being watched? Anyone with your recovery phrase can access or spend your unifycoin."
 msgstr "请确认目前没有人在监视你的屏幕！因为只要有人知道了你的恢复短语，他就拥有你的鱼尼比完全访问权限，甚至可以直接用于消费！"
 
 #: src/js/controllers/copayers.js:56
@@ -813,7 +813,7 @@ msgstr "创建自己的免费钱包"
 #: www/views/onboarding/tour.html:51
 #: www/views/tab-home.html:89
 #: www/views/tab-send.html:41
-msgid "Create bitcoin wallet"
+msgid "Create unifycoin wallet"
 msgstr "创建鱼尼比的钱包"
 
 #: www/views/tab-create-personal.html:131
@@ -939,7 +939,7 @@ msgid "Duplicating wallet..."
 msgstr "正在复制钱包……"
 
 #: www/views/addresses.html:19
-msgid "Each bitcoin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
+msgid "Each unifycoin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
 msgstr "每个鱼尼比钱包可以从您的 12 字备份生成亿万个地址。一个新的地址是自动生成和显示每个时间你收到付款。"
 
 #: src/js/services/feeService.js:13
@@ -1476,7 +1476,7 @@ msgid "I understand"
 msgstr "我知道了"
 
 #: www/views/onboarding/disclaimer.html:21
-msgid "I understand that if this app is moved to another device or deleted, my bitcoin can only be recovered with the backup phrase."
+msgid "I understand that if this app is moved to another device or deleted, my unifycoin can only be recovered with the backup phrase."
 msgstr "我明白是否这个应用程序是搬到另一个设备或删除，我鱼尼比可以只能进行恢复与备份的短语。"
 
 #: www/views/onboarding/disclaimer.html:18
@@ -1634,7 +1634,7 @@ msgid "Is this email address correct?"
 msgstr "此电子邮件地址是正确的？"
 
 #: www/views/addresses.html:25
-msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your bitcoins secure against hypothetical attacks by quantum computers."
+msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your unifycoins secure against hypothetical attacks by quantum computers."
 msgstr "它是一个好主意，以避免重用地址 — — 这既能保护您的隐私又保持您的鱼尼比安全假设攻击由量子计算机。"
 
 #: src/js/controllers/backup.js:76
@@ -1850,7 +1850,7 @@ msgid "No access key defined"
 msgstr "授权密钥未定义"
 
 #: www/views/onboarding/backupRequest.html:5
-msgid "No backup, no bitcoin."
+msgid "No backup, no unifycoin."
 msgstr "没有备份，没有鱼尼比。"
 
 #: www/views/addressbook.html:19
@@ -1952,7 +1952,7 @@ msgid "Note: if this BCH wallet was duplicated from a UNIFY wallet, they share t
 msgstr "注意: 如此比特幣錢包由小比特幣复制，他們共享相同恢復短語"
 
 #: www/views/modals/wallets.html:25
-msgid "Notice: only 1-1 (single signature) wallets can be used for sell bitcoin"
+msgid "Notice: only 1-1 (single signature) wallets can be used for sell unifycoin"
 msgstr "注意︰ 只有 1-1 （单签名） 钱包可以用于卖鱼尼比"
 
 #: www/views/preferencesNotifications.html:3
@@ -2092,7 +2092,7 @@ msgid "Paste the backup plain text code"
 msgstr "粘贴备份的纯文本代码"
 
 #: www/views/bitpayCardIntro.html:28
-msgid "Pay 0% fees to turn bitcoin into dollars."
+msgid "Pay 0% fees to turn unifycoin into dollars."
 msgstr "0%付费以鱼尼比变成美元。"
 
 #: www/views/modals/paypro.html:18
@@ -2507,7 +2507,7 @@ msgid "Search Transactions"
 msgstr "搜索交易"
 
 #: www/views/tab-send.html:18
-msgid "Search or enter bitcoin address"
+msgid "Search or enter unifycoin address"
 msgstr "搜索或输入鱼尼比地址"
 
 #: www/views/modals/search.html:16
@@ -2692,7 +2692,7 @@ msgid "Show advanced options"
 msgstr "显示高级选项"
 
 #: www/views/tab-send.html:42
-msgid "Show bitcoin address"
+msgid "Show unifycoin address"
 msgstr "显示鱼尼比地址"
 
 #: www/views/tab-send.html:64
@@ -2765,7 +2765,7 @@ msgid "Spending this balance will need significant Unifycoin network fees"
 msgstr "这笔交易将需要非常高的鱼尼比网络手续费"
 
 #: www/views/tab-send.html:33
-msgid "Start sending bitcoin"
+msgid "Start sending unifycoin"
 msgstr "开始发送鱼尼比"
 
 #: www/views/lockSetup.html:3
@@ -2803,7 +2803,7 @@ msgid "THIS ACTION CANNOT BE REVERSED"
 msgstr "此操作无法撤消"
 
 #: www/views/onboarding/welcome.html:5
-msgid "Take control of your money,<br>get started with bitcoin."
+msgid "Take control of your money,<br>get started with unifycoin."
 msgstr "把你的钱，<br>得到控制开始用鱼尼比。"
 
 #: www/views/walletDetails.html:132
@@ -2859,15 +2859,15 @@ msgid "The Ledger Chrome application is not installed"
 msgstr "Ledger Chrome 应用程序未安装"
 
 #: www/views/modals/wallet-balance.html:55
-msgid "The amount of bitcoin immediately spendable from this wallet."
+msgid "The amount of unifycoin immediately spendable from this wallet."
 msgstr "鱼尼比立即可从这个钱包的金额。"
 
 #: www/views/modals/wallet-balance.html:93
-msgid "The amount of bitcoin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
+msgid "The amount of unifycoin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
 msgstr "鱼尼比存储在分配作为你挂起的事务建议的输入这个钱包中的金额。量确定使用未用余额交易记录输出与这个钱包关联，可能会与您挂起的事务建议相关联的实际数额超过。"
 
 #: www/views/modals/wallet-balance.html:74
-msgid "The amount of bitcoin stored in this wallet with less than 1 blockchain confirmation."
+msgid "The amount of unifycoin stored in this wallet with less than 1 blockchain confirmation."
 msgstr "鱼尼比存储在与小于 1 blockchain 确认这个钱包中的金额。"
 
 #: www/views/tab-import-phrase.html:5
@@ -2922,7 +2922,7 @@ msgid "The spend proposal is not pending"
 msgstr "花费提议不是未决"
 
 #: www/views/modals/wallet-balance.html:36
-msgid "The total amount of bitcoin stored in this wallet."
+msgid "The total amount of unifycoin stored in this wallet."
 msgstr "鱼尼比存储在这个钱包的总量。"
 
 #: www/views/preferencesHistory.html:27
@@ -2953,11 +2953,11 @@ msgid "This app is fantastic!"
 msgstr "这个应用程序太棒了 ！"
 
 #: www/views/onboarding/tour.html:47
-msgid "This app stores your bitcoin with cutting-edge security."
+msgid "This app stores your unifycoin with cutting-edge security."
 msgstr "此应用程序商店你鱼尼比与尖端的安全。"
 
 #: src/js/controllers/confirm.js:523
-msgid "This bitcoin payment request has expired."
+msgid "This unifycoin payment request has expired."
 msgstr "这鱼尼比付款请求已过期。"
 
 #: www/views/join.html:133
@@ -2998,11 +2998,11 @@ msgid "To"
 msgstr "发送到"
 
 #: www/views/tab-send.html:37
-msgid "To get started, buy bitcoin or share your address. You can receive bitcoin from any wallet or service."
+msgid "To get started, buy unifycoin or share your address. You can receive unifycoin from any wallet or service."
 msgstr "若要开始，请买鱼尼比或共享您的地址。你可以从任何钱包或服务接收鱼尼比。"
 
 #: www/views/tab-send.html:38
-msgid "To get started, you'll need to create a bitcoin wallet and get some bitcoin."
+msgid "To get started, you'll need to create a unifycoin wallet and get some unifycoin."
 msgstr "若要开始，您将需要创建一个鱼尼比的钱包，并获得一些鱼尼比。"
 
 #: src/js/services/bitpayAccountService.js:73
@@ -3094,7 +3094,7 @@ msgid "Try again in {{expires}}"
 msgstr "在 {{expires}} 中再试一次"
 
 #: www/views/bitpayCardIntro.html:18
-msgid "Turn bitcoin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
+msgid "Turn unifycoin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
 msgstr "鱼尼比变成美元，刷在接受 Visa<sup>®</sup> 的任何地方。"
 
 #: www/views/tab-import-phrase.html:17
@@ -3204,7 +3204,7 @@ msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "警告︰不受信任的证书"
 
 #: www/views/preferencesPrivateKey.html:14
-msgid "WARNING: Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. UnifyPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgid "WARNING: Your extended private keys are all that is needed to access your unifycoin funds. Be sure to protect your private keys and store them only on secure devices. UnifyPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
 msgstr ""
 
 #: src/js/services/onGoingProcess.js:15
@@ -3457,7 +3457,7 @@ msgid "You can make contributions by signing up on our Crowdin community transla
 msgstr "您可以通过签约我们 Crowdin 社区翻译网站作出贡献。我们期待你的听力 ！"
 
 #: www/views/tab-scan.html:16
-msgid "You can scan bitcoin addresses, payment requests, paper wallets, and more."
+msgid "You can scan unifycoin addresses, payment requests, paper wallets, and more."
 msgstr "您可以扫描鱼尼比地址、 付款申请、 纸钱包和更多。"
 
 #: src/js/controllers/preferencesAbout.js:14
@@ -3465,7 +3465,7 @@ msgid "You can see the latest developments and contribute to this open source ap
 msgstr "你可以看到最新的事态发展和贡献这个开放源码应用程序通过在 GitHub 上访问我们的项目。"
 
 #: www/views/onboarding/tour.html:19
-msgid "You can spend bitcoin at millions of websites and stores worldwide."
+msgid "You can send & receive unifycoin with other unifypay users."
 msgstr "你可以花鱼尼比在数以百万计的网站和世界各地的商店。"
 
 #: www/views/backup.html:15
@@ -3477,7 +3477,7 @@ msgid "You can trade it for other currencies like US Dollars, Euros, or Pounds."
 msgstr "你可以换其他货币，如美元、 欧元或英镑。"
 
 #: www/views/onboarding/tour.html:46
-msgid "You control your bitcoin."
+msgid "You control your unifycoin."
 msgstr "您可以控制您的鱼尼比。"
 
 #: www/views/modals/chooseFeeLevel.html:64
@@ -3502,11 +3502,11 @@ msgid "Your Gift Cards"
 msgstr "礼品卡"
 
 #: www/views/includes/confirmBackupPopup.html:6
-msgid "Your bitcoin wallet is backed up!"
+msgid "Your unifycoin wallet is backed up!"
 msgstr "你的鱼尼比钱包被备份 ！"
 
 #: www/views/tab-home.html:50
-msgid "Your bitcoin wallet is ready!"
+msgid "Your unifycoin wallet is ready!"
 msgstr "你的鱼尼比钱包是准备好了 ！"
 
 #: www/views/modals/chooseFeeLevel.html:61
@@ -3598,7 +3598,7 @@ msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain inform
 msgstr "{{appName}} 中的区块链信息依赖于 Bitcore Wallet Service (BWS)、网络和 Copayer synchronization。默认配置指向 http://uws.unify.today:3232 (UnifyPay 的公共 BWS 实例)。"
 
 #: src/js/controllers/confirm.js:408
-msgid "{{fee}} will be deducted for bitcoin networking fees."
+msgid "{{fee}} will be deducted for unifycoin networking fees."
 msgstr "{{fee}} 将鱼尼比网络费用中扣除。"
 
 #: www/views/confirm.html:85
