@@ -29,7 +29,7 @@ angular.module('copayApp.services').factory('configService', function (storageSe
     rateApp: {
       bitpay: {
         ios: 'http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1149581638&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8',
-        android: 'https://play.google.com/store/apps/details?id=com.unifypay.wallet',
+        android: 'https://play.google.com/store/apps/details?id=com.unifypay.wallet2',
         wp: ''
       },
       copay: {

@@ -1,7 +1,7 @@
 {
   "packageName": "unifypay",
   "packageDescription": "Secure Unifycoin Wallet",
-  "packageNameId": "com.unifypay.wallet",
+  "packageNameId": "com.unifypay.wallet2",
   "statusBarColor": "#1e3186",
   "userVisibleName": "UnifyPay",
   "purposeLine": "Secure Unifycoin Wallet",

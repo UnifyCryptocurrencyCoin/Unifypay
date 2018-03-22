@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:518037034686:android:dc2868ee329c001d",
+        "mobilesdk_app_id": "1:518037034686:android:13945ecbe24d3ea6",
         "android_client_info": {
-          "package_name": "com.unifypay.wallet"
+          "package_name": "com.unifypay.wallet2"
         }
       },
       "oauth_client": [
