@@ -355,7 +355,7 @@ msgstr "UnifyPay Visa® картыllllll"
 #: www/views/addressbook.add.html:38
 #: www/views/includes/incomingDataMenu.html:29
 msgid "Unifycoin Address"
-msgstr "Биткойн-адрес"
+msgstr "Unifycoin-адрес"
 
 #: www/views/includes/walletSelector.html:42
 #: www/views/tab-home.html:112
@@ -367,7 +367,7 @@ msgstr ""
 #: www/views/preferencesFee.html:4
 #: www/views/tab-settings.html:83
 msgid "Unifycoin Network Fee Policy"
-msgstr "Политика комиссии сети Биткойн"
+msgstr "Политика комиссии сети Unifycoin"
 
 #: www/views/includes/walletSelector.html:11
 #: www/views/tab-home.html:97
@@ -381,7 +381,7 @@ msgstr ""
 
 #: www/views/onboarding/tour.html:31
 msgid "Unifycoin is a currency."
-msgstr "Биткойн - это валюта."
+msgstr "Unifycoin - это валюта."
 
 #: www/views/onboarding/disclaimer.html:15
 msgid "Unifycoin is different &ndash; it cannot be safely held with a bank or web service."
@@ -389,7 +389,7 @@ msgstr "Unifycoin is different &ndash; it cannot be safely held with a bank or w
 
 #: www/views/onboarding/tour.html:18
 msgid "Unifycoin is secure,<br>digital money."
-msgstr "Биткойн это безопасные,<br>цифровые деньги."
+msgstr "Unifycoin это безопасные,<br>цифровые деньги."
 
 #: www/views/preferencesFee.html:11
 msgid "Unifycoin transactions include a fee collected by miners on the network."
@@ -2804,7 +2804,7 @@ msgstr "ЭТО ДЕЙСТВИЕ НЕ МОЖЕТ БЫТЬ ОТМЕНЕНО"
 
 #: www/views/onboarding/welcome.html:5
 msgid "Take control of your money,<br>get started with unifycoin."
-msgstr "Возьмите ваши финансы под контроль,<br>начните пользоваться Биткойн."
+msgstr "Возьмите ваши финансы под контроль,<br>начните пользоваться Unifycoin."
 
 #: www/views/walletDetails.html:132
 #: www/views/walletDetails.html:52
