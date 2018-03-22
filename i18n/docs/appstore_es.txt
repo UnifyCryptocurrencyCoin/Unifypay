@@ -1,4 +1,4 @@
-Asegura tus bitcoin con tus propias reglas con el monedero de código abierto, multifirma de UnifyPay. 
+Asegura tus unifycoin con tus propias reglas con el monedero de código abierto, multifirma de UnifyPay. 
 Los usuario de Copay pueden mantener sus fondos individuales o compartir sus finanzas de forma segura con otros usuarios utilizando monederos multifirmas, que previenen de pagos sin autorización al requerir múltiples aprobaciones. Estas son algunas formas en que puede ser utilizado Copay con otros usuarios:
 
 Ahorrar para vacaciones o compras conjuntas con amigos 
@@ -12,12 +12,12 @@ Seguridad multifirma intuitiva para monederos personales y compartidos
 Sencillo flujo de propuesta de gastos para monederos compartidos y grupos de pagos
 Generación de direcciones HD (Hierarchical deterministic) y copias de seguridad 
 Seguridad basada en el dispositivo: todas las claves privadas se guardan localmente, no en la nube
-Soporta monederos bitcoin en testnet
+Soporta monederos unifycoin en testnet
 Acceso sincrónico desde las principales plataformas móviles y de escritorio
-Soporte al protocolo de pago (BIP70-BIP73): solicitudes de pagos fácilmente identificable y verificables como pago seguro en bitcoin
+Soporte al protocolo de pago (BIP70-BIP73): solicitudes de pagos fácilmente identificable y verificables como pago seguro en unifycoin
 Soporte a más de 150 precios de monedas y unidades de denominación en UNIFY o bits
 Notificaciones por email de pagos y transferencias
 Monederos con nombres y colores de fondo personalizables
 Soporte en 9 idiomas (EN, CS, FR, DE, IT, ES, JA, PL, RU)
 
-Copay es un software gratuito y de código abierto que funciona en servidores no-propietarios, por lo que no es necesario confiar en una empresa para soporte continuo. Cualquier persona puede revisar y contribuir al código fuente de Copay en GitHub (https://github.com/bitpay/copay). 
+Copay es un software gratuito y de código abierto que funciona en servidores no-propietarios, por lo que no es necesario confiar en una empresa para soporte continuo. Cualquier persona puede revisar y contribuir al código fuente de Copay en GitHub (https://github.com/unifycoin/unifypay). 

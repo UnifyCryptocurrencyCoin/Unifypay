@@ -12,12 +12,12 @@ Segurança de multi-assinaturas intuitiva para carteiras pessoais ou compartilha
 Fácil fluxo de propostas de gastos para carteiras compartilhadas e pagamentos agrupados
 Geração de endereço Hierarchical deterministic (HD) e backups de carteiras 
 Segurança baseada em dispositivo: todas as chaves privadas são armazenadas localmente e não na nuvem
-Suporte para carteiras de testes na Bitcoin testnet
+Suporte para carteiras de testes na Unifycoin testnet
 Acesso síncrono entre todas as principais plataformas móveis e desktops
-Suporte a protocolo de pagamento (BIP70-BIP73): solicitações de pagamento facilmente identificadas e pagamentos seguros em bitcoins verificáveis
+Suporte a protocolo de pagamento (BIP70-BIP73): solicitações de pagamento facilmente identificadas e pagamentos seguros em unifycoins verificáveis
 Suporte para mais de 150 opções de moedas e denominação de unidades em UNIFY ou bits
 Notificações por e-mail para pagamentos e transferências
 Nomes e cores de fundo customizáveis para carteiras
 9 idiomas suportados (EN, CS, FR, DE, IT, ES, JA, PL, RU)
 
-Copay é gratuito e um software livre rodando em servidores não-proprietários, que não precisa de nenhuma empresa para o suporte contínuo. Qualquer um pode revisar ou contribuir para o código-fonte da Copay no GitHub (https://github.com/bitpay/copay). 
+Copay é gratuito e um software livre rodando em servidores não-proprietários, que não precisa de nenhuma empresa para o suporte contínuo. Qualquer um pode revisar ou contribuir para o código-fonte da Copay no GitHub (https://github.com/unifycoin/unifypay). 
